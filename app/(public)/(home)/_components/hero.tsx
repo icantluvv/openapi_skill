@@ -2,7 +2,7 @@ import { Button } from '@repo/core/button';
 import { Typography } from '@repo/core/typography';
 import Image from 'next/image';
 
-export function Hero() {
+function Hero() {
     return (
         <section className="container mt-[176px] flex size-full h-[630px] items-center justify-start bg-background">
             <div className="flex flex-col gap-[12px]">
@@ -13,8 +13,8 @@ export function Hero() {
                     Бесплатная и быстрая доставка за час <br />в любое удобное для вас время
                 </Typography>
 
-                <div className="mt-[20px]">
-                    <Button size={'default'} variant={'default'}>
+                <div className="mt-[20px] max-w-[305px]">
+                    <Button form="default" variant="primary">
                         Выбрать пиццу
                     </Button>
                 </div>
@@ -29,3 +29,5 @@ export function Hero() {
         </section>
     );
 }
+
+export default Hero;

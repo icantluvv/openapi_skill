@@ -1,5 +1,6 @@
 import { Typography } from '@repo/core/typography';
-import Image from 'next/image';
+
+import Step from '@/(public)/(home)/_components/shared/step/step';
 
 function Steps() {
     return (
@@ -7,54 +8,21 @@ function Steps() {
             <Typography variant="h2">Доставка и оплата</Typography>
 
             <div className="container flex items-center justify-between gap-[32px]">
-                <div className="flex items-center gap-[24px] rounded-sm bg-background px-[24px] py-[32px]">
-                    <div className="h-[80px] w-[80px] min-w-[80px]">
-                        <Image
-                            alt={'headphones'}
-                            height={80}
-                            src={'/images/svg/headphones.svg'}
-                            width={80}
-                        ></Image>
-                    </div>
-                    <div className="flex flex-col gap-[6px]">
-                        <Typography variant="h4">Заказ</Typography>
-                        <Typography variant="p">
-                            После оформления заказа мы свяжемся с вами для уточнения деталей.
-                        </Typography>
-                    </div>
-                </div>
-                <div className="flex items-center gap-[24px] rounded-sm bg-background px-[24px] py-[32px]">
-                    <div className="h-[80px] w-[80px] min-w-[80px]">
-                        <Image
-                            alt={'motocycle'}
-                            height={80}
-                            src={'/images/svg/motocycle.svg'}
-                            width={80}
-                        ></Image>
-                    </div>
-                    <div className="flex flex-col gap-[6px]">
-                        <Typography variant="h4">Заказ</Typography>
-                        <Typography variant="p">
-                            После оформления заказа мы свяжемся с вами для уточнения деталей.
-                        </Typography>
-                    </div>
-                </div>
-                <div className="flex items-center gap-[24px] rounded-sm bg-background px-[24px] py-[32px]">
-                    <div className="h-[80px] w-[80px] min-w-[80px]">
-                        <Image
-                            alt={'paying'}
-                            height={80}
-                            src={'/images/svg/paying.svg'}
-                            width={80}
-                        ></Image>
-                    </div>
-                    <div className="flex flex-col gap-[6px]">
-                        <Typography variant="h4">Заказ</Typography>
-                        <Typography variant="p">
-                            После оформления заказа мы свяжемся с вами для уточнения деталей.
-                        </Typography>
-                    </div>
-                </div>
+                <Step
+                    description="После оформления заказа мы свяжемся с вами для уточнения деталей."
+                    src={'/images/svg/headphones.svg'}
+                    title={'Заказ'}
+                />
+                <Step
+                    description="Мы доставим вашу пиццу горячей. Бесплатная доставка по городу."
+                    src={'/images/svg/motocycle.svg'}
+                    title={'Доставка курьером'}
+                />
+                <Step
+                    description="Оплатить можно наличными или картой курьеру. И золотом тоже можно."
+                    src={'/images/svg/paying.svg'}
+                    title={'Оплата'}
+                />
             </div>
         </section>
     );

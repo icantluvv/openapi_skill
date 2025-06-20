@@ -9,7 +9,7 @@ function InstagramGallery() {
                 <Typography center variant="h2">
                     Следите за нами в Instagram
                 </Typography>
-                <Typography center className="text-shadow-text" variant="h4">
+                <Typography center className="text-shadow-text" variant="accent">
                     @pizzamenu
                 </Typography>
             </div>

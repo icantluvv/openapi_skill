@@ -7,28 +7,31 @@ import { LoaderCircle } from 'lucide-react';
 import { cn } from '../cn';
 
 const buttonVariants = cva(
-    'inline-flex cursor-pointer items-center justify-center rounded-md text-sm font-medium whitespace-nowrap ring-offset-background transition-colors focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50',
+    'inline-flex w-full cursor-pointer items-center justify-center rounded-md text-lg font-medium whitespace-nowrap ring-offset-background transition-all duration-[.3s] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50',
     {
         defaultVariants: {
+            form: 'default',
             size: 'default',
             variant: 'default',
         },
         variants: {
-            size: {
+            form: {
                 circle: 'h-[48px] w-[48px] rounded-full',
-                default: 'h-10 px-4 py-2',
-                icon: 'size-10',
-                lg: 'h-11 rounded-md px-8',
-                sm: 'h-9 rounded-md px-3',
+                default: '',
+                text: 'bg-transparent',
+            },
+            size: {
+                default: '',
+                lg: '',
+                sm: '',
             },
             variant: {
-                default: 'bg-primary text-primary-foreground hover:bg-primary/90',
-                destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90',
-                language: 'bg-language text-[18px] hover:bg-primary hover:text-primary-foreground',
-                link: 'text-primary underline-offset-4 hover:underline',
-                outline:
-                    'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
-                secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
+                default: '',
+                link: '',
+                outline: '',
+                primary:
+                    'bg-primary px-[70px] py-[18px] text-primary-foreground hover:bg-primary-hover active:bg-primary-active',
+                secondary: 'hover: rounded-full bg-light-gray font-bold text-black',
             },
         },
     }
@@ -45,9 +48,9 @@ function Button({
     asChild = false,
     children,
     className,
+    form,
     loading,
     ref,
-    size,
     type,
     variant,
     ...props
@@ -58,7 +61,7 @@ function Button({
 
     return (
         <button
-            className={cn(buttonVariants({ className, size, variant }))}
+            className={cn(buttonVariants({ className, form, variant }))}
             disabled={loading ?? props.disabled}
             ref={ref}
             type={type ?? 'button'}
@@ -66,7 +69,7 @@ function Button({
         >
             {loading ? (
                 <span className="mr-1 animate-spin">
-                    <LoaderCircle size={15} />
+                    <LoaderCircle />
                 </span>
             ) : null}
             {children}

@@ -26,9 +26,16 @@ type FeatureProps = {
     url: string;
 } & ComponentProps<'div'>;
 
-function Feature({ align = 'left', className, description, title, url }: Readonly<FeatureProps>) {
+function Feature({
+    align = 'left',
+    className,
+    description,
+    ref,
+    title,
+    url,
+}: Readonly<FeatureProps>) {
     return (
-        <div className={featureVariants({ align, className })}>
+        <div className={featureVariants({ align, className })} ref={ref}>
             <div className="min-w-[80px] md:min-w-[251px] xl:min-w-[314px]">
                 <Image alt={title} className="object-cover" height={314} src={url} width={314} />
             </div>

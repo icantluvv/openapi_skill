@@ -23,13 +23,6 @@ export const Primary: Story = {
     },
 };
 
-export const Language: Story = {
-    args: {
-        size: 'default',
-        variant: 'language',
-    },
-};
-
 export const Outline: Story = {
     args: {
         size: 'default',

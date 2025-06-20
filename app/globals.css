@@ -8,67 +8,44 @@
     --radius-md: calc(var(--radius) - 2px);
     --radius-sm: calc(var(--radius) - 4px);
 
-    --color-accent: hsl(var(--accent));
-    --color-accent-foreground: hsl(var(--accent-foreground));
-
     --color-background: hsl(var(--background));
-    --color-border: hsl(var(--border));
+    --color-foreground: hsl(var(--foreground));
 
-    --color-card: hsl(var(--card));
-    --color-card-foreground: hsl(var(--card-foreground));
+    --color-primary: hsl(var(--primary));
+    --color-primary-hover: hsl(var(--primary-hover));
+    --color-primary-active: hsl(var(--primary-active));
+    --color-primary-focus: hsl(var(--primary-focus));
+    --color-primary-foreground: hsl(var(--primary-foreground));
 
-    --color-cream: hsl(var(--cream));
+    --color-disable: hsl(var(--disable));
+    --color-disable-font: hsl(var(--disable-font));
+
+    --light-gray: 220, 17%, 94%;
+    --dark-gray: 222, 17%, 81%;
 
     --color-shadow-text: hsl(var(--shadow-text));
 
-    --color-destructive: hsl(var(--destructive));
-    --color-destructive-foreground: hsl(var(--destructive-foreground));
+    --color-light-gray: hsl(var(--light-gray));
+    --color-dark-gray: hsl(var(--dark-gray));
 
-    --color-foreground: hsl(var(--foreground));
-    --color-input: hsl(var(--input));
-
-    --color-muted: hsl(var(--muted));
-    --color-muted-foreground: hsl(var(--muted-foreground));
-
-    --color-popover: hsl(var(--popover));
-    --color-popover-foreground: hsl(var(--popover-foreground));
-
-    --color-primary: hsl(var(--primary));
-    --color-primary-foreground: hsl(var(--primary-foreground));
+    --color-cream: hsl(var(--cream));
 
     --color-ring: hsl(var(--ring));
 
-    --color-secondary: hsl(var(--secondary));
-    --color-secondary-foreground: hsl(var(--secondary-foreground));
-
-    --font-sans: var(--font-geist-sans);
-
-    @keyframes accordion-down {
-        from {
-            height: 0;
-        }
-        to {
-            height: var(--radix-accordion-content-height);
-        }
-    }
-    @keyframes accordion-up {
-        from {
-            height: var(--radix-accordion-content-height);
-        }
-        to {
-            height: 0;
-        }
-    }
+    --shadow-custom: 0 2px 5px hsl(var(--custom-shadow-border) / 0.3);
 }
 
 @utility container {
     margin-inline: auto;
-    padding-inline: 2rem;
-    @media (width >= --theme(--breakpoint-sm)) {
+    padding-inline: 5vw;
+
+    @media (width >= --theme(--breakpoint-md)) {
         max-width: none;
+        padding-inline: 3vw;
     }
     @media (width >= 1400px) {
-        max-width: 1400px;
+        padding-inline: 0;
+        max-width: 1312px;
     }
 }
 
@@ -80,6 +57,7 @@
   If we ever want to remove these styles, we need to add an explicit border
   color utility to any element that depends on these defaults.
 */
+
 @layer base {
     *,
     ::after,
@@ -100,35 +78,30 @@ body {
         --background: 0 0% 100%;
         --foreground: 0 0% 0%;
 
-        --card: 0 0% 100%;
-        --card-foreground: 222.2 84% 4.9%;
-
-        --popover: 0 0% 100%;
-        --popover-foreground: 222.2 84% 4.9%;
-
+        /* primary colors */
         --primary: 0 78% 54%;
         --primary-foreground: 210 40% 98%;
+        --primary-hover: 0, 100%, 61.8%;
+        --primary-active: 2, 73%, 43%;
+        --primary-focus: 0, 77%, 55%;
 
-        --secondary: 210 40% 96.1%;
-        --secondary-foreground: 222.2 47.4% 11.2%;
+        /* for buttons inputs etc*/
+        --disable: 0, 0%, 58%;
+        --disable-font: 0, 0%, 58%;
+        --shadow-text: 226.2 9.2% 56.1%;
+        --light-gray: 220, 17%, 94%;
+        --dark-gray: 222, 17%, 81%;
 
+        /* bg for steps block */
         --cream: 36.1 26.3% 96.3%;
 
-        --shadow-text: 226.2 9.2% 56.1%;
+        /* shadow for header */
+        --custom-shadow-border: 220 5% 67%;
 
-        --muted: 210 40% 96.1%;
-        --muted-foreground: 215.4 16.3% 46.9%;
+        /* border */
+        --ring: 208, 100%, 76%;
 
-        --accent: 210 40% 96.1%;
-        --accent-foreground: 222.2 47.4% 11.2%;
-
-        --destructive: 0 84.2% 60.2%;
-        --destructive-foreground: 210 40% 98%;
-
-        --border: 214.3 31.8% 91.4%;
-        --input: 214.3 31.8% 91.4%;
-        --ring: 222.2 84% 4.9%;
-
+        /* rounded */
         --radius: 0.5rem;
     }
 }

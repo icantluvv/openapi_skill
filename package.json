@@ -52,7 +52,8 @@
         "server-only": "0.0.1",
         "tailwind-merge": "3.3.1",
         "tsafe": "1.8.5",
-        "zod": "3.25.61"
+        "zod": "3.25.61",
+        "zustand": "5.0.5"
     },
     "devDependencies": {
         "@playwright/test": "1.53.0",

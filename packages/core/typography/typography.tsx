@@ -2,7 +2,7 @@ import type { ComponentProps, JSX, ReactNode, Ref } from 'react';
 
 import { cva } from 'class-variance-authority';
 
-export const typographyVariants = cva('text-balance', {
+export const typographyVariants = cva('text-balance transition-all', {
     defaultVariants: {
         variant: 'p',
     },
@@ -16,7 +16,8 @@ export const typographyVariants = cva('text-balance', {
         },
         variant: {
             accent: 'text-[24px] font-normal',
-            description: 'text-[12px] font-normal text-shadow-text',
+            custom: '',
+            description: 'text-[12px] font-normal',
             h1: 'text-[72px] font-bold',
             h2: 'text-[52px] font-bold',
             h3: 'text-[32px] font-semibold',
@@ -33,7 +34,7 @@ type TypographyProps = {
     className?: string;
     color?: 'primary' | 'secondary';
     ref?: Ref<HTMLParagraphElement>;
-    variant?: 'accent' | 'description' | 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'span';
+    variant?: 'accent' | 'custom' | 'description' | 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'span';
 } & ComponentProps<'p'>;
 
 export function Typography({
@@ -46,7 +47,7 @@ export function Typography({
     ...props
 }: TypographyProps) {
     const Component: keyof JSX.IntrinsicElements =
-        variant === 'description' || variant === 'accent' ? 'p' : variant;
+        variant === 'custom' || variant === 'description' || variant === 'accent' ? 'p' : variant;
 
     return (
         <Component
