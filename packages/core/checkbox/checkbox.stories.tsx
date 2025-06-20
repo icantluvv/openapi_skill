@@ -1,5 +1,5 @@
 import type { CheckboxProps } from '@radix-ui/react-checkbox';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 
 import { Checkbox } from './checkbox';
 

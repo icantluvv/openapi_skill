@@ -15,6 +15,7 @@ const buttonVariants = cva(
         },
         variants: {
             size: {
+                circle: 'h-[48px] w-[48px] rounded-full',
                 default: 'h-10 px-4 py-2',
                 icon: 'size-10',
                 lg: 'h-11 rounded-md px-8',
@@ -23,7 +24,7 @@ const buttonVariants = cva(
             variant: {
                 default: 'bg-primary text-primary-foreground hover:bg-primary/90',
                 destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90',
-                ghost: 'hover:bg-accent hover:text-accent-foreground',
+                language: 'bg-language text-[18px] hover:bg-primary hover:text-primary-foreground',
                 link: 'text-primary underline-offset-4 hover:underline',
                 outline:
                     'border border-input bg-background hover:bg-accent hover:text-accent-foreground',

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 
 import Link from 'next/link';
 
@@ -20,6 +20,13 @@ export const Primary: Story = {
     args: {
         size: 'default',
         variant: 'default',
+    },
+};
+
+export const Language: Story = {
+    args: {
+        size: 'default',
+        variant: 'language',
     },
 };
 

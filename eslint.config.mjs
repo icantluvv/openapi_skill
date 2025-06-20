@@ -42,5 +42,13 @@ export default [
             ],
         },
     },
+
+    {
+        files: ['**/*.stories.@(ts|tsx|js|jsx)', '.storybook/**/*.{ts,tsx,js,jsx}'],
+        rules: {
+            'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+        },
+    },
+
     { ignores },
 ];

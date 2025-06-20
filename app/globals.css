@@ -17,6 +17,10 @@
     --color-card: hsl(var(--card));
     --color-card-foreground: hsl(var(--card-foreground));
 
+    --color-cream: hsl(var(--cream));
+
+    --color-shadow-text: hsl(var(--shadow-text));
+
     --color-destructive: hsl(var(--destructive));
     --color-destructive-foreground: hsl(var(--destructive-foreground));
 
@@ -94,7 +98,7 @@ body {
 @layer base {
     :root {
         --background: 0 0% 100%;
-        --foreground: 222.2 84% 4.9%;
+        --foreground: 0 0% 0%;
 
         --card: 0 0% 100%;
         --card-foreground: 222.2 84% 4.9%;
@@ -102,11 +106,15 @@ body {
         --popover: 0 0% 100%;
         --popover-foreground: 222.2 84% 4.9%;
 
-        --primary: 222.2 47.4% 11.2%;
+        --primary: 0 78% 54%;
         --primary-foreground: 210 40% 98%;
 
         --secondary: 210 40% 96.1%;
         --secondary-foreground: 222.2 47.4% 11.2%;
+
+        --cream: 36.1 26.3% 96.3%;
+
+        --shadow-text: 226.2 9.2% 56.1%;
 
         --muted: 210 40% 96.1%;
         --muted-foreground: 215.4 16.3% 46.9%;

@@ -11,17 +11,17 @@ export const typographyVariants = cva('text-balance', {
             true: 'text-center',
         },
         color: {
-            primary: 'text-black',
+            primary: 'text-foreground',
             secondary: 'text-slate-',
         },
         variant: {
-            h1: 'text-4xl font-bold',
-            h2: 'text-3xl font-bold',
-            h3: 'text-2xl font-semibold',
-            h4: 'text-xl font-medium',
-            h5: 'text-lg font-medium',
-            h6: 'text-base font-medium',
-            p: 'text-base font-normal',
+            accent: 'text-[24px] font-normal',
+            description: 'text-[12px] font-normal text-shadow-text',
+            h1: 'text-[72px] font-bold',
+            h2: 'text-[52px] font-bold',
+            h3: 'text-[32px] font-semibold',
+            h4: 'text-[24px] font-medium',
+            p: 'text-[14px] font-normal',
             span: '',
         },
     },
@@ -33,7 +33,7 @@ type TypographyProps = {
     className?: string;
     color?: 'primary' | 'secondary';
     ref?: Ref<HTMLParagraphElement>;
-    variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span';
+    variant?: 'accent' | 'description' | 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'span';
 } & ComponentProps<'p'>;
 
 export function Typography({
@@ -45,7 +45,8 @@ export function Typography({
     variant = 'p',
     ...props
 }: TypographyProps) {
-    const Component: keyof JSX.IntrinsicElements = variant;
+    const Component: keyof JSX.IntrinsicElements =
+        variant === 'description' || variant === 'accent' ? 'p' : variant;
 
     return (
         <Component
