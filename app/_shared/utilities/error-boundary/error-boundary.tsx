@@ -35,7 +35,7 @@ export function ErrorFallback({ description, error, resetError, title }: ErrorFa
 
             <pre className={cn('')}>{error instanceof Error ? error.message : String(error)}</pre>
 
-            <Button onClick={resetError} type="button" variant="outline">
+            <Button onClick={resetError} type="button" variant="default">
                 Попробовать еще
             </Button>
         </div>

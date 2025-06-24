@@ -12,53 +12,70 @@ type ProductProps = {
 function Card({ product }: ProductProps) {
     const [selectedSize, setSelectedSize] = useState<null | Option>(product.options[0] ?? null);
 
+    const handleSizeChange = (option: Option) => () => {
+        setSelectedSize(option);
+    };
+
     return (
-        <li className="flex flex-row items-start justify-between rounded-sm p-[12px] pb-[24px] shadow-custom md:flex-col md:items-center md:justify-start md:p-[24px] md:pb-[48px]">
-            <div className="relative h-[100px] w-[100px] min-w-[100px] xl:h-[240px] xl:w-[240px]">
+        <li className="flex gap-[4px] p-[4px] shadow-custom">
+            <div className="relative flex h-[100px] min-w-[100px]">
                 <Image alt={product.title} fill objectFit="cover" src={product.image} />
             </div>
-            <div className="flex flex-col items-center gap-[7px]">
-                <div className="flex min-h-[115px] flex-col gap-[7px]">
-                    <Typography center variant="h4">
+
+            <div className="my-[18px] flex flex-col gap-[4px]">
+                <div className="">
+                    <Typography className="md:text-center" variant="h4">
                         {product.title}
                     </Typography>
-                    <Typography center variant="description">
+                    <Typography className="text-shadow-text md:text-center" variant="description">
                         {product.description}
                     </Typography>
                 </div>
 
-                <div className="flex gap-[5px] rounded-sm bg-light-gray p-[3px]">
+                <Typography className="md:text-center" variant="description">
+                    Размер, см
+                </Typography>
+
+                <div className="flex w-[90%] rounded-sm bg-light-gray p-[2px]">
                     {product.options.map(option => (
                         <Button
-                            className={`rounded-xs px-[25px] py-[5px] ${
+                            className={`flex-1 rounded-xs py-[5px] ${
                                 selectedSize && selectedSize.size === option.size ? 'bg-white' : ''
                             }`}
+                            form="default"
                             key={option.size}
-                            /* eslint-disable-next-line react-perf/jsx-no-new-function-as-prop */
-                            onClick={() => {
-                                setSelectedSize(option);
-                            }}
+                            onClick={handleSizeChange(option)}
+                            variant="default"
                         >
-                            <Typography variant="p">{option.size}</Typography>
+                            <Typography
+                                className={
+                                    selectedSize && selectedSize.size === option.size
+                                        ? ''
+                                        : 'text-shadow-text'
+                                }
+                                variant="description"
+                            >
+                                {option.size}
+                            </Typography>
                         </Button>
                     ))}
                 </div>
 
-                <Typography center variant="description">
-                    Размер, см
-                </Typography>
+                <div className={'hidden md:block'}>
+                    {selectedSize ? (
+                        <Typography center variant="h4">
+                            от {selectedSize.price} руб.
+                        </Typography>
+                    ) : (
+                        <Typography center variant="h4">
+                            Размер не выбран
+                        </Typography>
+                    )}
+                </div>
 
-                {selectedSize ? (
-                    <Typography center variant="h4">
-                        от {selectedSize.price} руб.
-                    </Typography>
-                ) : (
-                    <Typography center variant="h4">
-                        Размер не выбран
-                    </Typography>
-                )}
-
-                <Button variant="primary">Заказать</Button>
+                <Button className="py-[14px]" variant="primary">
+                    Заказать
+                </Button>
             </div>
         </li>
     );

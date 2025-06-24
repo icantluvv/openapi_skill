@@ -2,10 +2,10 @@ import DefaultNavigationElement from '@/_shared/header/default/default-navigatio
 
 function DefaultNavigation() {
     return (
-        <nav className="flex gap-[60px] text-white">
-            <DefaultNavigationElement href={'/menu'} title={'меню'} />
-            <DefaultNavigationElement href={'/about'} title={'о нас'} />
-            <DefaultNavigationElement href={'/contacts'} title={'контакты'} />
+        <nav className="font-alegreya flex gap-[65px] font-black text-white">
+            <DefaultNavigationElement href={'/menu'} title={'МЕНЮ'} />
+            <DefaultNavigationElement href={'/about'} title={'О НАС'} />
+            <DefaultNavigationElement href={'/contacts'} title={'КОНТАКТЫ'} />
         </nav>
     );
 }

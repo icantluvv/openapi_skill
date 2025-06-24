@@ -1,7 +1,7 @@
 import { Typography } from '@repo/core/typography';
 
-import DefaultSortBar from '@/_shared/catalog/default-sort-bar';
-import MobileSortBar from '@/_shared/catalog/mobile-sort-bar';
+import DefaultSortBar from '@/_shared/catalog/sort/default-sort-bar';
+import MobileSortBar from '@/_shared/catalog/sort/mobile-sort-bar';
 import getAllCategories from '~/api/services/products/get-all-categories';
 
 async function SortBar() {

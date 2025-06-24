@@ -1,4 +1,4 @@
-import SkeletonCard from '@/_shared/catalog/skeleton-card';
+import SkeletonCard from '@/_shared/catalog/skeleton/skeleton-card';
 
 function SkeletonList() {
     return (

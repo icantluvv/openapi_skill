@@ -8,7 +8,7 @@ import Image from 'next/image';
 
 import { useHeaderStore } from '@/store/header-store';
 
-const headerActionVariants = cva('relative flex items-center gap-[12px]');
+const headerActionVariants = cva('relative flex items-center gap-[18px]');
 
 type HeaderActionProps = {
     action?: () => void;
@@ -46,14 +46,16 @@ function HeaderAction({
             >
                 <Image alt={title} fill objectFit="cover" src={src}></Image>
             </Button>
-            <div className="hidden flex-col xl:flex">
+            <div className="font-alegreya hidden flex-col font-black xl:flex">
                 <Typography
                     className={isScroll ? `text-[${scrolledTitleSize}]` : `text-[${titleSize}]`}
                     variant="custom"
                 >
                     {title}
                 </Typography>
-                <Typography variant={'description'}>{description}</Typography>
+                <Typography className="text-shadow-text" variant={'description'}>
+                    {description}
+                </Typography>
             </div>
 
             <div className="absolute">{children}</div>

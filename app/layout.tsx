@@ -4,7 +4,6 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 
 import { Toaster } from '@repo/core/sonner';
-import { geistSans } from '#/fonts/geist';
 import { cn } from '#/utils/cn';
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
 
@@ -32,7 +31,7 @@ export type RootLayoutProps = Readonly<{ children: ReactNode }>;
 export default function RootLayout({ children }: RootLayoutProps) {
     return (
         <html lang="ru" suppressHydrationWarning>
-            <body className={cn('font-sans antialiased', geistSans.variable)}>
+            <body className={cn('font-sans antialiased')}>
                 <NuqsAdapter>
                     <main className="relative flex size-full flex-col items-center justify-center overflow-hidden bg-background antialiased">
                         {children}

@@ -18,35 +18,6 @@ type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
     args: {
-        size: 'default',
-        variant: 'default',
-    },
-};
-
-export const Outline: Story = {
-    args: {
-        size: 'default',
-        variant: 'outline',
-    },
-};
-
-export const LinkButton: Story = {
-    args: {
-        size: 'default',
-        variant: 'link',
-    },
-};
-
-export const Small: Story = {
-    args: {
-        size: 'sm',
-        variant: 'default',
-    },
-};
-
-export const Large: Story = {
-    args: {
-        size: 'lg',
         variant: 'default',
     },
 };

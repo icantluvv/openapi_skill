@@ -20,7 +20,7 @@ function DefaultHeader() {
         <header
             className={`hidden w-full transition-all duration-[.3s] xl:block ${isScroll ? 'h-[60px] bg-white shadow-custom' : 'h-[176px]'} `}
         >
-            <div className="container flex h-full items-center justify-between">
+            <div className="container flex h-full items-center gap-[70px]">
                 <Link href={'/public'}>
                     <Image
                         alt={'header_logo'}
@@ -33,12 +33,12 @@ function DefaultHeader() {
 
                 <DefaultNavigation />
 
-                <div className="flex gap-[70px]">
+                <div className="flex gap-[100px]">
                     <HeaderAction
                         description={'Ежедневно с 9:00 до 23:00'}
                         scrolledTitleSize={'18px'}
                         src={'/images/header/phone.png'}
-                        title={'+7 (918) 432-65-87'}
+                        title="+7 (918) 432-65-87"
                         titleSize={'24px'}
                     />
 
@@ -52,8 +52,8 @@ function DefaultHeader() {
                     />
                 </div>
 
-                <div className={isScroll ? 'hidden' : 'block h-[48px] w-[48px]'}>
-                    <Button form="circle" variant="secondary">
+                <div className={isScroll ? 'hidden' : 'block'}>
+                    <Button className="h-[48px] w-[48px]" form="circle" variant="secondary">
                         EN
                     </Button>
                 </div>

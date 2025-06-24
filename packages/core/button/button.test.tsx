@@ -7,25 +7,7 @@ describe('<Button />', () => {
     it('renders the button with default variant and size', () => {
         const { getByRole } = render(<Button>Button</Button>);
 
-        expect(getByRole('button')).toHaveClass(
-            buttonVariants({ size: 'default', variant: 'default' })
-        );
-    });
-
-    it('renders the button with the outline variant and small size', () => {
-        const { getByRole } = render(
-            <Button size="sm" variant="outline">
-                Button
-            </Button>
-        );
-
-        expect(getByRole('button')).toHaveClass(buttonVariants({ size: 'sm', variant: 'outline' }));
-    });
-
-    it('renders the button with the link variant', () => {
-        const { getByRole } = render(<Button variant="link">Button</Button>);
-
-        expect(getByRole('button')).toHaveClass(buttonVariants({ variant: 'link' }));
+        expect(getByRole('button')).toHaveClass(buttonVariants({ variant: 'default' }));
     });
 
     it('triggers onClick', () => {
@@ -35,20 +17,6 @@ describe('<Button />', () => {
         fireEvent.click(getByRole('button'));
 
         expect(onClick).toHaveBeenCalled();
-    });
-
-    it('renders button as A tag', () => {
-        const { getByRole } = render(
-            <Button asChild>
-                <a href="https://example.com">Link Button</a>
-            </Button>
-        );
-
-        const linkElement = getByRole('link');
-
-        expect(linkElement).toBeInTheDocument();
-        expect(linkElement).toHaveAttribute('href', 'https://example.com');
-        expect(linkElement.tagName).toBe('A');
     });
 
     it('does not render a button element when asChild is true', () => {

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700;800;900&display=swap');
 @import 'tailwindcss';
 
 @theme {
@@ -37,7 +38,7 @@
 
 @utility container {
     margin-inline: auto;
-    --container-padding: 3vw;
+    --container-padding: 5vw;
     padding-inline: var(--container-padding);
 
     @media (width >= --theme(--breakpoint-md)) {
@@ -86,6 +87,10 @@ body {
 }
 
 @layer base {
+    .font-alegreya {
+        font-family: 'Alegreya', serif;
+    }
+
     :root {
         --background: 0 0% 100%;
         --foreground: 0 0% 0%;

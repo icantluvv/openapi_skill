@@ -2,8 +2,8 @@ import { Typography } from '@repo/core/typography';
 import { Suspense } from 'react';
 
 import ProductsList from '@/_shared/catalog/product-list';
-import SkeletonList from '@/_shared/catalog/skeleton-list';
-import SortBar from '@/_shared/catalog/sort-bar';
+import SkeletonList from '@/_shared/catalog/skeleton/skeleton-list';
+import SortBar from '@/_shared/catalog/sort/sort-bar';
 
 function showSkeleton() {
     return <SkeletonList />;

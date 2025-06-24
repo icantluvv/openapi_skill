@@ -1,3 +1,5 @@
+'use client';
+
 import type { ButtonHTMLAttributes, Ref } from 'react';
 
 import { Slot } from '@radix-ui/react-slot';
@@ -7,31 +9,24 @@ import { LoaderCircle } from 'lucide-react';
 import { cn } from '../cn';
 
 const buttonVariants = cva(
-    'inline-flex size-full cursor-pointer items-center justify-center rounded-md text-lg font-medium whitespace-nowrap ring-offset-background transition-all duration-[.3s] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50',
+    'font-alegreya inline-flex cursor-pointer items-center justify-center text-[16px] font-black whitespace-nowrap ring-offset-background transition-all duration-[.3s] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 xl:text-[18px]',
     {
         defaultVariants: {
             form: 'default',
-            size: 'default',
             variant: 'default',
         },
         variants: {
             form: {
                 circle: 'rounded-full',
                 default: '',
-                text: 'bg-transparent',
+                text: '',
             },
-            size: {
-                default: '',
-                lg: '',
-                sm: '',
-            },
+
             variant: {
                 default: '',
-                link: '',
-                outline: '',
                 primary:
-                    'bg-primary px-[70px] py-[18px] text-primary-foreground hover:bg-primary-hover active:bg-primary-active',
-                secondary: 'hover: rounded-full bg-light-gray font-bold text-black',
+                    'rounded-sm bg-primary text-primary-foreground hover:bg-primary-hover active:bg-primary-active',
+                secondary: 'hover: rounded-full bg-light-gray text-black',
             },
         },
     }
