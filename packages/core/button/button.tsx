@@ -7,7 +7,7 @@ import { LoaderCircle } from 'lucide-react';
 import { cn } from '../cn';
 
 const buttonVariants = cva(
-    'inline-flex w-full cursor-pointer items-center justify-center rounded-md text-lg font-medium whitespace-nowrap ring-offset-background transition-all duration-[.3s] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50',
+    'inline-flex size-full cursor-pointer items-center justify-center rounded-md text-lg font-medium whitespace-nowrap ring-offset-background transition-all duration-[.3s] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50',
     {
         defaultVariants: {
             form: 'default',
@@ -16,7 +16,7 @@ const buttonVariants = cva(
         },
         variants: {
             form: {
-                circle: 'h-[48px] w-[48px] rounded-full',
+                circle: 'rounded-full',
                 default: '',
                 text: 'bg-transparent',
             },

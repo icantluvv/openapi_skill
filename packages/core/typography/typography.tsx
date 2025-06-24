@@ -2,7 +2,7 @@ import type { ComponentProps, JSX, ReactNode, Ref } from 'react';
 
 import { cva } from 'class-variance-authority';
 
-export const typographyVariants = cva('text-balance transition-all', {
+export const typographyVariants = cva('transition-all', {
     defaultVariants: {
         variant: 'p',
     },
@@ -15,14 +15,14 @@ export const typographyVariants = cva('text-balance transition-all', {
             secondary: 'text-slate-',
         },
         variant: {
-            accent: 'text-[24px] font-normal',
+            accent: 'text-[16px] font-normal md:text-[18px] xl:text-[24px]',
             custom: '',
             description: 'text-[12px] font-normal',
-            h1: 'text-[72px] font-bold',
-            h2: 'text-[52px] font-bold',
-            h3: 'text-[32px] font-semibold',
-            h4: 'text-[24px] font-medium',
-            p: 'text-[14px] font-normal',
+            h1: 'text-[40px] font-bold md:text-[52px] xl:text-[72px]',
+            h2: 'text-[28px] font-bold md:text-[40px] xl:text-[52px]',
+            h3: 'text-[20px] font-semibold md:text-[24px] xl:text-[32px]',
+            h4: 'text-[18px] font-medium md:text-[20px] xl:text-[24px]',
+            p: 'text-[12px] font-normal xl:text-[14px]',
             span: '',
         },
     },

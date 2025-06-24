@@ -37,15 +37,27 @@
 
 @utility container {
     margin-inline: auto;
-    padding-inline: 5vw;
+    --container-padding: 3vw;
+    padding-inline: var(--container-padding);
 
     @media (width >= --theme(--breakpoint-md)) {
         max-width: none;
-        padding-inline: 3vw;
+        --container-padding: 3vw;
     }
     @media (width >= 1400px) {
-        padding-inline: 0;
+        --container-padding: 0px;
         max-width: 1312px;
+    }
+}
+
+@layer utilities {
+    .no-scrollbar {
+        -ms-overflow-style: none; /* IE и Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
     }
 }
 

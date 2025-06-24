@@ -4,17 +4,20 @@ import Link from 'next/link';
 
 function Footer() {
     return (
-        <footer className="flex w-full justify-center bg-black py-[32px]">
-            <div className="container flex w-full items-center justify-between">
-                <div className="flex items-center gap-[100px]">
-                    <Image
-                        alt={'footer-logo'}
-                        height={52}
-                        src={'/images/footer/footer_logo.png'}
-                        width={112}
-                    ></Image>
-                    <div>
-                        <Typography className="text-white" variant="h4">
+        <footer className="flex w-full justify-center bg-black py-[24px] xl:py-[32px]">
+            <div className="container flex w-full flex-col items-center gap-[10px] md:flex-row md:justify-between md:gap-0">
+                <div className="flex flex-col items-center gap-[24px] md:flex-row md:gap-[100px]">
+                    <div className="w-[79px] md:w-[90px] xl:w-[112px]">
+                        <Image
+                            alt={'footer-logo'}
+                            height={52}
+                            src={'/images/footer/footer_logo.png'}
+                            width={112}
+                        ></Image>
+                    </div>
+
+                    <div className="flex flex-col items-center md:items-start">
+                        <Typography className="text-[24px] text-white" variant="h4">
                             +7 (918) 432-65-87
                         </Typography>
                         <Typography className="text-white" variant="description">

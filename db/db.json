@@ -1,0 +1,163 @@
+{
+    "categories": [
+        {
+            "id": 1,
+            "title": "ВСЕ",
+            "image": "/images/svg/mobile-sortbar/all.svg"
+        },
+        {
+            "id": 2,
+            "title": "ОСТРЫЕ",
+            "image": "/images/svg/mobile-sortbar/pepper.svg"
+        },
+        {
+            "id": 3,
+            "title": "МЯСНЫЕ",
+            "image": "/images/svg/mobile-sortbar/meat.svg"
+        },
+        {
+            "id": 4,
+            "title": "СЫРНЫЕ",
+            "image": "/images/svg/mobile-sortbar/cheese.svg"
+        },
+        {
+            "id": 5,
+            "title": "ВЕГАНСКИЕ",
+            "image": "/images/svg/mobile-sortbar/carrot.svg"
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "title": "Итальянская",
+            "description": "Томат, шампиньоны, сыр, оливки, чили, соус, тесто, базилик",
+            "options": [
+                { "size": 20, "price": 699 },
+                { "size": 30, "price": 799 },
+                { "size": 40, "price": 899 }
+            ],
+            "image": "/images/catalog/pizza1.png"
+        },
+        {
+            "id": 2,
+            "title": "Маргарита",
+            "description": "Тесто со шпинатом, молодой сыр и колбаски, много колбасок",
+            "options": [
+                { "size": 20, "price": 699 },
+                { "size": 30, "price": 799 },
+                { "size": 40, "price": 899 }
+            ],
+            "image": "/images/catalog/pizza2.png"
+        },
+        {
+            "id": 3,
+            "title": "Барбекю",
+            "description": "Цыплёнок, оливки, моцарелла, соус барбекю",
+            "options": [
+                { "size": 20, "price": 699 },
+                { "size": 30, "price": 799 },
+                { "size": 40, "price": 899 }
+            ],
+            "image": "/images/catalog/pizza3.png"
+        },
+        {
+            "id": 4,
+            "title": "Вегетарианская",
+            "description": "Томат, шампиньоны, сыр, оливки, чили, соус, тесто, базилик",
+            "options": [
+                { "size": 20, "price": 699 },
+                { "size": 30, "price": 799 },
+                { "size": 40, "price": 899 }
+            ],
+            "image": "/images/catalog/pizza4.png"
+        },
+        {
+            "id": 5,
+            "title": "Мясная",
+            "description": "Томат, шампиньоны, сыр, оливки, чили, соус, тесто, базилик",
+            "options": [
+                { "size": 20, "price": 699 },
+                { "size": 30, "price": 799 },
+                { "size": 40, "price": 899 }
+            ],
+            "image": "/images/catalog/pizza5.png"
+        },
+        {
+            "id": 6,
+            "title": "Овощная",
+            "description": "Тесто со шпинатом, молодой сыр и колбаски, много колбасок",
+            "options": [
+                { "size": 20, "price": 699 },
+                { "size": 30, "price": 799 },
+                { "size": 40, "price": 899 }
+            ],
+            "image": "/images/catalog/pizza6.png"
+        },
+        {
+            "id": 7,
+            "title": "Римская",
+            "description": "Цыплёнок, оливки, моцарелла, соус барбекю",
+            "options": [
+                { "size": 20, "price": 699 },
+                { "size": 30, "price": 799 },
+                { "size": 40, "price": 899 }
+            ],
+            "image": "/images/catalog/pizza7.png"
+        },
+        {
+            "id": 8,
+            "title": "С грибами",
+            "description": "Томат, шампиньоны, сыр, оливки, чили, соус, тесто, базилик",
+            "options": [
+                { "size": 20, "price": 699 },
+                { "size": 30, "price": 799 },
+                { "size": 40, "price": 899 }
+            ],
+            "image": "/images/catalog/pizza8.png"
+        },
+        {
+            "id": 9,
+            "title": "Сырная",
+            "description": "Томат, шампиньоны, сыр, оливки, чили, соус, тесто, базилик",
+            "options": [
+                { "size": 20, "price": 699 },
+                { "size": 30, "price": 799 },
+                { "size": 40, "price": 899 }
+            ],
+            "image": "/images/catalog/pizza9.png"
+        },
+        {
+            "id": 10,
+            "title": "Четыре сыра",
+            "description": "Томат, шампиньоны, сыр, оливки, чили, соус, тесто, базилик",
+            "options": [
+                { "size": 20, "price": 699 },
+                { "size": 30, "price": 799 },
+                { "size": 40, "price": 899 }
+            ],
+            "image": "/images/catalog/pizza10.png"
+        },
+        {
+            "id": 11,
+            "title": "Пепперони Фреш \u2028с томатами",
+            "description": "Томат, шампиньоны, сыр, оливки, чили, соус, тесто, базилик",
+            "options": [
+                { "size": 20, "price": 699 },
+                { "size": 30, "price": 799 },
+                { "size": 40, "price": 899 }
+            ],
+            "image": "/images/catalog/pizza11.png"
+        },
+        {
+            "id": 12,
+            "title": "Ветчина и сыр",
+            "description": "Томат, шампиньоны, сыр, оливки, чили, соус, тесто, базилик",
+            "options": [
+                { "size": 20, "price": 699 },
+                { "size": 30, "price": 799 },
+                { "size": 40, "price": 899 }
+            ],
+            "image": "/images/catalog/pizza12.png"
+        }
+    ]
+}

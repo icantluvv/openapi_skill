@@ -1,3 +1,5 @@
+import CartModal from '@/_shared/cart/cart-modal';
+import Catalog from '@/(public)/(home)/_components/catalog';
 import Features from '@/(public)/(home)/_components/features';
 import Footer from '@/(public)/(home)/_components/footer';
 import Header from '@/(public)/(home)/_components/header';
@@ -10,8 +12,10 @@ function HomePage() {
     return (
         <div className="flex w-full flex-col items-center bg-background">
             <Header />
+            <CartModal />
             <Hero />
             <Promos />
+            <Catalog />
             <Steps />
             <Features />
             <Instagram />

@@ -1,11 +1,11 @@
 import { Typography } from '@repo/core/typography';
 
-import InstagramPhotos from '@/(public)/(home)/_components/shared/instagram-image/instagram-photos';
+import InstagramPhotos from '@/_shared/instagram-image/instagram-photos';
 
 function InstagramGallery() {
     return (
-        <section className="flex w-full flex-col gap-[46px] bg-background">
-            <div className="flex flex-col gap-[13px]">
+        <section className="flex w-full flex-col gap-[24px] bg-background xl:gap-[46px]">
+            <div className="container flex flex-col gap-[4px] xl:gap-[12px]">
                 <Typography center variant="h2">
                     Следите за нами в Instagram
                 </Typography>
@@ -13,7 +13,7 @@ function InstagramGallery() {
                     @pizzamenu
                 </Typography>
             </div>
-            <InstagramPhotos /> {/* This should be InstagramPhotos, not InstagramGallery */}
+            <InstagramPhotos />
         </section>
     );
 }
