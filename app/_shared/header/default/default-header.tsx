@@ -7,8 +7,8 @@ import Link from 'next/link';
 
 import DefaultNavigation from '@/_shared/header/default/default-navigation';
 import HeaderAction from '@/_shared/header/header-action';
-import useCartStore from '@/store/cart-store';
 import { useHeaderStore } from '@/store/header-store';
+import useCartStore from '@/store/open-cart-store';
 
 function DefaultHeader() {
     useHeaderScroll();
@@ -20,8 +20,8 @@ function DefaultHeader() {
         <header
             className={`hidden w-full transition-all duration-[.3s] xl:block ${isScroll ? 'h-[60px] bg-white shadow-custom' : 'h-[176px]'} `}
         >
-            <div className="container flex h-full items-center gap-[70px]">
-                <Link href={'/public'}>
+            <div className={`container flex h-full items-center justify-between`}>
+                <Link href={'/'}>
                     <Image
                         alt={'header_logo'}
                         className={`${isScroll ? 'w-[68px]' : ''} transition-all duration-[.3s]`}
@@ -33,17 +33,21 @@ function DefaultHeader() {
 
                 <DefaultNavigation />
 
-                <div className="flex gap-[100px]">
+                <div
+                    className={`${isScroll ? 'h-[44px] justify-end' : 'h-[51px]'} flex gap-[100px] transition-all duration-[.3s]`}
+                >
                     <HeaderAction
+                        className={'items-center'}
                         description={'Ежедневно с 9:00 до 23:00'}
                         scrolledTitleSize={'18px'}
                         src={'/images/header/phone.png'}
-                        title="+7 (918) 432-65-87"
+                        title={'+7' + ' ' + ' (918) ' + ' ' + '432-65-87'}
                         titleSize={'24px'}
                     />
 
                     <HeaderAction
                         action={setShowCart}
+                        className={'items-end'}
                         description={'Итальянская и еще 2 пиццы'}
                         scrolledTitleSize={'14px'}
                         src={'/images/header/cart.svg'}

@@ -9,9 +9,11 @@ async function SortBar() {
 
     if (!categories) {
         return (
-            <Typography center variant={'accent'}>
-                Ошибка
-            </Typography>
+            <div className="mt-[40px]">
+                <Typography center variant="h4">
+                    Ошибка
+                </Typography>
+            </div>
         );
     }
 

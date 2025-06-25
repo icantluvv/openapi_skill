@@ -3,7 +3,6 @@ import './globals.css';
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 
-import { Toaster } from '@repo/core/sonner';
 import { cn } from '#/utils/cn';
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
 
@@ -35,7 +34,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 <NuqsAdapter>
                     <main className="relative flex size-full flex-col items-center justify-center overflow-hidden bg-background antialiased">
                         {children}
-                        <Toaster />
                     </main>
                 </NuqsAdapter>
             </body>

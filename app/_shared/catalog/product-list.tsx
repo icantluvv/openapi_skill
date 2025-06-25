@@ -1,6 +1,6 @@
 import { Typography } from '@repo/core/typography';
 
-import Card from '@/_shared/catalog/card';
+import Card from '@/_shared/catalog/card/card';
 import getProducts from '~/api/services/products/get-all-products';
 
 async function ProductsList() {

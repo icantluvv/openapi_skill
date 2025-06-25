@@ -5,8 +5,8 @@ import Link from 'next/link';
 
 import HeaderAction from '@/_shared/header/header-action';
 import MobileSidebar from '@/_shared/header/mobile/mobile-sidebar';
-import useCartStore from '@/store/cart-store';
 import useMobileNavStore from '@/store/mobile-nav-store';
+import useCartStore from '@/store/open-cart-store';
 
 function MobileHeader() {
     const { setShowCart } = useCartStore();

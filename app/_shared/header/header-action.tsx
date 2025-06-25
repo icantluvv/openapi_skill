@@ -8,7 +8,7 @@ import Image from 'next/image';
 
 import { useHeaderStore } from '@/store/header-store';
 
-const headerActionVariants = cva('relative flex items-center gap-[18px]');
+const headerActionVariants = cva('relative flex gap-[12px]');
 
 type HeaderActionProps = {
     action?: () => void;

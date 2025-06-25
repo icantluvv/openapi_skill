@@ -4,7 +4,7 @@ import { Typography } from '@repo/core/typography';
 import { cva } from 'class-variance-authority';
 import Image from 'next/image';
 
-const promoVariants = cva('flex w-[calc(100vw-2*var(--container-padding))] flex-col gap-[12px]');
+const promoVariants = cva('flex w-[calc(100vw-2*var(--container-padding))] flex-col gap-[10px]');
 
 type PromoProps = {
     className?: string;

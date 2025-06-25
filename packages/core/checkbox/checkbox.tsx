@@ -3,7 +3,6 @@
 import type { ComponentProps, Ref } from 'react';
 
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
-import { Check } from 'lucide-react';
 
 import { cn } from '../cn';
 
@@ -15,7 +14,7 @@ export function Checkbox({ className, ref, ...props }: CheckboxProps) {
     return (
         <CheckboxPrimitive.Root
             className={cn(
-                'peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground',
+                'peer h-[20px] w-[20px] shrink-0 cursor-pointer rounded-full border border-checkbox-border transition-colors hover:border-checkbox-border-hover active:border-checkbox-border-active',
                 className
             )}
             ref={ref}
@@ -24,7 +23,7 @@ export function Checkbox({ className, ref, ...props }: CheckboxProps) {
             <CheckboxPrimitive.Indicator
                 className={cn('flex items-center justify-center text-current')}
             >
-                <Check className="size-4" data-testid="check-icon" />
+                <div className={'h-[10px] w-[10px] rounded-full bg-primary'}></div>
             </CheckboxPrimitive.Indicator>
         </CheckboxPrimitive.Root>
     );

@@ -12,7 +12,7 @@ function Hero() {
                 src={'/images/hero/pizza_hero.png'}
                 width={1007}
             />
-            <div className="container flex flex-col gap-[12px]">
+            <div className="container flex flex-col gap-[4px]">
                 <Typography color={'primary'} variant={'h1'}>
                     Пицца на заказ
                 </Typography>
@@ -20,9 +20,9 @@ function Hero() {
                     Бесплатная и быстрая доставка за час <br />в любое удобное для вас время
                 </Typography>
 
-                <div className="mt-[20px] w-full md:max-w-[304px]">
+                <div className="mt-[25px] w-full md:max-w-[304px]">
                     <Button className={'w-full py-[18px]'} form="default" variant="primary">
-                        Выбрать пиццу
+                        ВЫБРАТЬ ПИЦЦУ
                     </Button>
                 </div>
             </div>

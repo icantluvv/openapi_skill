@@ -1,0 +1,68 @@
+'use client';
+
+import { Typography } from '@repo/core/typography';
+import { useCartBackground } from '#/hooks/use-cart-background';
+
+import CartHead from '@/_shared/cart/cart-head';
+import CartForm from '@/_shared/cart/form/cart-form';
+import CartItem from '@/_shared/cart/item-list/cart-item';
+import useCartStore from '@/store/open-cart-store';
+
+function CartModal() {
+    const { showCart } = useCartStore();
+
+    useCartBackground();
+    if (!showCart) {
+        return null;
+    }
+
+    const cartItems = [
+        { id: 1, name: 'Товар 1', price: 1000, quantity: 1 },
+        { id: 2, name: 'Товар 2', price: 2000, quantity: 2 },
+        { id: 3, name: 'Товар 3', price: 3000, quantity: 1 },
+        { id: 4, name: 'Товар 3', price: 3000, quantity: 1 },
+        { id: 5, name: 'Товар 3', price: 3000, quantity: 1 },
+    ];
+
+    return (
+        <div className="no-scrollbar fixed inset-0 z-[9999] flex items-start justify-center overflow-auto bg-black/90 pt-[calc(100px+env(safe-area-inset-top))] pb-[100px]">
+            <div className="flex w-full flex-col gap-[35px] overflow-y-auto bg-background px-[30px] py-[50px] xl:max-w-[36.4vw]">
+                <CartHead />
+
+                <div className="flex flex-col gap-[8px]">
+                    <div className="no-scrollbar max-h-[32.5vh] overflow-y-auto border-y border-light-gray">
+                        <div className="divide-y-1 divide-light-gray">
+                            {cartItems.map(item => (
+                                <CartItem key={item.id} />
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="flex items-end justify-end">
+                        <Typography
+                            className={'font-alegreya mr-[20px] text-[18px] font-extrabold'}
+                            variant="custom"
+                        >
+                            Сумма заказа
+                        </Typography>
+                        <Typography variant="h3">1 887</Typography>
+                        <Typography
+                            className={'font-alegreya text-[18px] font-extrabold'}
+                            variant="custom"
+                        >
+                            руб
+                        </Typography>
+                    </div>
+
+                    <CartForm></CartForm>
+                </div>
+
+                <Typography className={'text-shadow-text'} variant={'description'}>
+                    Нажимая кнопку «Оформить заказ» вы соглашаетесь с политикой конфиденциальности
+                </Typography>
+            </div>
+        </div>
+    );
+}
+
+export default CartModal;

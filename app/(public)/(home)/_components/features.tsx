@@ -3,7 +3,10 @@ import featuresArray from '@/_shared/feature/features-array';
 
 function Features() {
     return (
-        <section className="container flex flex-col gap-[30px] py-[16px] md:py-[80px] xl:w-[874px] xl:py-[105px]">
+        <section
+            className="container flex flex-col gap-[30px] py-[16px] md:py-[80px] xl:w-[874px] xl:py-[105px]"
+            id={'about'}
+        >
             {featuresArray.map((feature, index) => (
                 <Feature
                     align={index % 2 === 0 ? 'left' : 'right'}

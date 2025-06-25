@@ -33,6 +33,19 @@
 
     --color-ring: hsl(var(--ring));
 
+    /* input styles */
+    --color-input-border: hsl(var(--input-border));
+    --color-input-border-hover: hsl(var(--input-border-hover));
+    --color-input-border-focus: hsl(var(--input-border-focus));
+    --color-input-border-active: hsl(var(--input-border-active));
+    --colorinput-border-error: hsl(var(--input-border-error));
+
+    /* checkbox ring */
+    --color-checkbox-border: hsl(var(--checkbox-border));
+    --color-checkbox-border-hover: hsl(var(--checkbox-border-hover));
+    --color-checkbox-border-active: hsl(var(--checkbox-border-active));
+
+    /* objects shadow */
     --shadow-custom: 0 2px 5px hsl(var(--custom-shadow-border) / 0.3);
 }
 
@@ -103,7 +116,7 @@ body {
         --primary-focus: 0, 77%, 55%;
 
         /* for buttons inputs etc*/
-        --disable: 0, 0%, 58%;
+        --disable: 0, 0%, 86%;
         --disable-font: 0, 0%, 58%;
         --shadow-text: 226.2 9.2% 56.1%;
         --light-gray: 220, 17%, 94%;
@@ -114,6 +127,18 @@ body {
 
         /* shadow for header */
         --custom-shadow-border: 220 5% 67%;
+
+        /* input styles */
+        --input-border: 210, 5%, 78%;
+        --input-border-hover: 0, 0%, 0%;
+        --input-border-focus: 208, 100%, 78%;
+        --input-border-active: 210, 76%, 57%;
+        --input-border-error: 0, 94%, 73%;
+
+        /* checkbox form styles */
+        --checkbox-border: 210, 5%, 78%;
+        --checkbox-border-hover: 0 0% 0%;
+        --checkbox-border-active: 210, 11%, 23%;
 
         /* border */
         --ring: 208, 100%, 76%;

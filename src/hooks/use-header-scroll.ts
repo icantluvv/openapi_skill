@@ -7,7 +7,7 @@ export const useHeaderScroll = () => {
 
     useEffect(() => {
         function handleScroll() {
-            setIsScroll(window.scrollY > 30);
+            setIsScroll(window.scrollY > 100);
         }
 
         function checkWidthAndBind() {
