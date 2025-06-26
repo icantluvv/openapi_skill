@@ -4,7 +4,7 @@ import AddRemoveButtonItem from '@/_shared/cart/item-list/add-remove-button-item
 
 function CounterCartitem() {
     return (
-        <div className={'flex items-center gap-[67px]'}>
+        <div className={'flex w-full justify-between md:justify-start md:gap-[67px]'}>
             <div className="flex items-center gap-[16px]">
                 <AddRemoveButtonItem action={'minus'}></AddRemoveButtonItem>
                 <div className={'rounded-sm border border-dark-gray px-[25px] py-[7px]'}>

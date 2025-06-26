@@ -25,12 +25,12 @@ function CartModal() {
     ];
 
     return (
-        <div className="no-scrollbar fixed inset-0 z-[9999] flex items-start justify-center overflow-auto bg-black/90 pt-[calc(100px+env(safe-area-inset-top))] pb-[100px]">
-            <div className="flex w-full flex-col gap-[35px] overflow-y-auto bg-background px-[30px] py-[50px] xl:max-w-[36.4vw]">
+        <div className="no-scrollbar fixed inset-0 z-[9999] flex items-start justify-center overflow-auto bg-black/90 pt-[calc(50px+env(safe-area-inset-top))] pb-[50px] xl:pt-[calc(100px+env(safe-area-inset-top))] xl:pb-[100px]">
+            <div className="flex w-[90vw] flex-col gap-[20px] overflow-y-auto bg-background px-[15px] py-[25] xl:w-full xl:max-w-[36.4vw] xl:gap-[35px] xl:px-[30px] xl:py-[50px]">
                 <CartHead />
 
                 <div className="flex flex-col gap-[8px]">
-                    <div className="no-scrollbar max-h-[32.5vh] overflow-y-auto border-y border-light-gray">
+                    <div className="no-scrollbar max-h-[40vh] overflow-y-auto border-y border-light-gray xl:max-h-[32.5vh]">
                         <div className="divide-y-1 divide-light-gray">
                             {cartItems.map(item => (
                                 <CartItem key={item.id} />
@@ -40,14 +40,16 @@ function CartModal() {
 
                     <div className="flex items-end justify-end">
                         <Typography
-                            className={'font-alegreya mr-[20px] text-[18px] font-extrabold'}
+                            className={
+                                'font-alegreya mr-[20px] text-[16px] font-extrabold xl:text-[18px]'
+                            }
                             variant="custom"
                         >
                             Сумма заказа
                         </Typography>
                         <Typography variant="h3">1 887</Typography>
                         <Typography
-                            className={'font-alegreya text-[18px] font-extrabold'}
+                            className={'font-alegreya text-[16px] font-extrabold xl:text-[18px]'}
                             variant="custom"
                         >
                             руб

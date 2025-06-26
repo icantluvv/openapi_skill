@@ -20,7 +20,7 @@ function CartFormContacts() {
                 Контакты
             </Typography>
 
-            <div className={'flex w-full gap-[32px]'}>
+            <div className={'flex w-full gap-[12px] xl:gap-[32px]'}>
                 <Input
                     onChange={changeData(setName)}
                     placeholder={'Ваше имя'}
@@ -36,7 +36,7 @@ function CartFormContacts() {
             </div>
 
             <Input
-                className="mt-[12px]"
+                className="mt-[8px] xl:mt-[12px]"
                 onChange={changeData(setAddress)}
                 placeholder={'Адрес доставки'}
                 required

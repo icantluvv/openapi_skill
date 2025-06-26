@@ -3,7 +3,7 @@ import CartFormPayMethod from '@/_shared/cart/form/cart-form-pay-method';
 
 function CartForm() {
     return (
-        <form className={'flex flex-col gap-[32px]'}>
+        <form className={'flex flex-col gap-[20px] xl:gap-[32px]'}>
             <CartFormContacts />
             <CartFormPayMethod />
         </form>

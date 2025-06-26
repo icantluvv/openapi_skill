@@ -12,10 +12,16 @@ function CartHead() {
     }
 
     return (
-        <div className="flex h-[40px] items-center justify-between">
+        <div className="flex items-center justify-between xl:h-[40px]">
             <Typography variant="h3">Ваш заказ</Typography>
             <Button className={'hover:opacity-75 active:opacity-50'} onClick={handleCloseCart}>
-                <Image alt="Закрыть" height={40} src="/images/svg/close-black.svg" width={40} />
+                <Image
+                    alt="Закрыть"
+                    height={40}
+                    sizes="(max-width: 768px) 25px, 40px"
+                    src="/images/svg/close-black.svg"
+                    width={40}
+                />
             </Button>
         </div>
     );

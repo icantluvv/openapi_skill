@@ -10,7 +10,7 @@ function Card({ product }: ProductProps) {
                 <Image alt={product.title} layout={'fill'} objectFit="cover" src={product.image} />
             </div>
 
-            <div className="flex flex-col gap-[4px] md:flex-1 md:justify-between md:gap-[8px] md:px-[10px]">
+            <div className="my-[22px] flex flex-col gap-[4px] md:my-0 md:flex-1 md:justify-between md:gap-[8px] md:px-[10px]">
                 <div className="flex flex-col gap-[4px]">
                     <Typography className="md:text-center" variant="h4">
                         {product.title}
