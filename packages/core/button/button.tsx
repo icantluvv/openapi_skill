@@ -24,7 +24,7 @@ const buttonVariants = cva(
 
             variant: {
                 default: '',
-                disable: 'rounded-sm bg-disable text-disable-font',
+                disable: 'cursor-default rounded-sm bg-disable text-disable-font',
                 primary:
                     'rounded-sm bg-primary text-primary-foreground hover:bg-primary-hover active:bg-primary-active',
                 secondary:

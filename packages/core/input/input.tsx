@@ -17,7 +17,7 @@ export function Input({ className, ref, type, ...props }: InputProps) {
                 'hover:border-input-border-hover',
                 'focus:border-input-border-focus',
                 'active:border-black',
-                'data-[invalid]:border-input-border-error',
+                'data-[invalid]:border-input-border-error font-roboto',
                 className
             )}
             ref={ref}

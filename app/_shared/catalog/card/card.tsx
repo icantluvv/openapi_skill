@@ -16,7 +16,7 @@ function Card({ product }: ProductProps) {
                         {product.title}
                     </Typography>
                     <Typography
-                        className="text-[11px] text-shadow-text md:text-center md:text-[12px]"
+                        className="font-roboto text-[11px] text-shadow-text md:text-center md:text-[12px]"
                         variant="custom"
                     >
                         {product.description}
