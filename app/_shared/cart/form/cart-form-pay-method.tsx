@@ -3,12 +3,16 @@ import { Checkbox } from '@repo/core/checkbox';
 import { Typography } from '@repo/core/typography';
 import { useState } from 'react';
 
+import { useOrderFormStore } from '@/store/order-form-store';
+
 function CartFormPayMethod() {
     const [payMethod, setPayMethod] = useState<null | number>(null);
 
     const chooseMethod = (id: number) => () => {
         setPayMethod(payMethod === id ? null : id); // Toggle if clicking the same one
     };
+
+    const { fillForm } = useOrderFormStore();
 
     return (
         <>
@@ -37,7 +41,7 @@ function CartFormPayMethod() {
                 <Button
                     className="w-full py-3"
                     type={'submit'}
-                    variant={payMethod === null ? 'disable' : 'primary'}
+                    variant={payMethod === null || !fillForm ? 'disable' : 'primary'}
                 >
                     Оформить заказ
                 </Button>
