@@ -1,4 +1,3 @@
-'use client';
 import { Button } from '@repo/core/button';
 import { Typography } from '@repo/core/typography';
 import { useState } from 'react';

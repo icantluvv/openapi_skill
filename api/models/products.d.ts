@@ -4,7 +4,7 @@ type Option = {
 };
 
 type Product = {
-    categories: number[];
+    categories: tring[];
     description: string;
     id: number;
     image: string;

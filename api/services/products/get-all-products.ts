@@ -1,12 +1,12 @@
 import axios from 'axios';
 
-async function getProducts(): Promise<null | Product[]> {
+async function getProducts(): Promise<Product[]> {
     const baseUrl = process.env.BACK_INTERNAL_URL;
 
     if (!baseUrl) {
         console.error('BACK_INTERNAL_URL is not defined');
 
-        return null;
+        return [];
     }
 
     try {
@@ -16,7 +16,7 @@ async function getProducts(): Promise<null | Product[]> {
     } catch (error) {
         console.error('Ошибка при загрузке продуктов', error);
 
-        return null;
+        return [];
     }
 }
 
