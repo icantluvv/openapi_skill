@@ -5,7 +5,7 @@ import { cva } from 'class-variance-authority';
 import Image from 'next/image';
 
 const stepVariants = cva(
-    'flex flex-1 items-start gap-[12px] rounded-sm bg-background p-[14px] md:min-h-[208px] md:flex-col xl:flex-row xl:items-center xl:gap-[24px] xl:px-[24px] xl:py-[32px]'
+    'flex flex-1 items-start gap-[12px] rounded-sm bg-background p-[14px] shadow-custom md:min-h-[208px] md:flex-col xl:min-h-auto xl:flex-row xl:items-center xl:gap-[24px] xl:px-[24px] xl:py-[32px]'
 );
 
 type StepProps = {

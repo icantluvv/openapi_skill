@@ -9,7 +9,7 @@ async function SortBar() {
 
     if (!categories) {
         return (
-            <div className="mt-[40px]">
+            <div className="">
                 <Typography center variant="h4">
                     Ошибка
                 </Typography>

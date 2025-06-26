@@ -36,8 +36,8 @@ function Feature({
 }: Readonly<FeatureProps>) {
     return (
         <div className={featureVariants({ align, className })} ref={ref}>
-            <div className="w-[80px] min-w-[80px] md:min-w-[251px] xl:min-w-[314px]">
-                <Image alt={title} className="object-cover" height={314} src={url} width={314} />
+            <div className="w-[80px] min-w-[80px] md:min-w-[251px] xl:min-w-[304px]">
+                <Image alt={title} className="object-cover" height={304} src={url} width={304} />
             </div>
             <div className="flex flex-col gap-[4px] md:max-w-[370px] md:gap-[12px] xl:max-w-[416px]">
                 <Typography color="primary" variant="h3">

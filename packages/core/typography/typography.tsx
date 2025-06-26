@@ -20,7 +20,7 @@ export const typographyVariants = cva('transition-all', {
             description: 'font-roboto text-[12px] font-normal',
             h1: 'font-alegreya text-[40px] font-black md:text-[52px] xl:text-[72px]',
             h2: 'font-alegreya text-[28px] font-black md:text-[40px] xl:text-[52px]',
-            h3: 'font-alegreya text-[20px] font-extrabold md:text-[24px] xl:text-[32px]',
+            h3: 'font-alegreya text-[20px] leading-10 font-extrabold md:text-[24px] xl:text-[32px]',
             h4: 'font-alegreya text-[18px] font-extrabold md:text-[20px] xl:text-[24px]',
             p: 'font-roboto text-[12px] font-normal xl:text-[14px]',
             span: '',

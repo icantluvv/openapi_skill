@@ -20,7 +20,7 @@ function DefaultSortBar({ categories }: CategoryProps) {
     return (
         <div
             className={
-                'mt-[24px] hidden items-center justify-center gap-[40px] md:flex xl:mt-[55px]'
+                'mt-[24px] hidden items-center justify-center gap-[45px] md:flex xl:mt-[50px]'
             }
         >
             {categories?.map(category => (

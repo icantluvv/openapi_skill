@@ -29,8 +29,12 @@ function CardSizePicker({ product }: ProductProps) {
     }
 
     return (
-        <>
-            <div className="flex w-[90%] rounded-sm bg-light-gray p-[2px]">
+        <div className={'flex flex-col gap-[4px] md:items-center'}>
+            <Typography className="md:text-center" variant="description">
+                Размер, см
+            </Typography>
+
+            <div className="flex w-[90%] rounded-sm bg-light-gray p-[2px] xl:max-w-[182px]">
                 {product.options.map(option => (
                     <Button
                         className={`flex-1 rounded-xs py-[5px] ${
@@ -51,18 +55,23 @@ function CardSizePicker({ product }: ProductProps) {
                 ))}
             </div>
 
-            <Typography center className="mt-[7px] text-[20px] font-bold" variant={'custom'}>
+            <Typography center className="hidden text-[24px] font-bold md:block" variant={'custom'}>
                 от {selectedSize.price} руб.
             </Typography>
 
             <Button
-                className="mt-[12px] w-[120px] py-[4px] md:w-full md:py-[14px]"
+                className="w-[120px] py-[4px] md:w-full md:py-[8px] xl:py-[13px]"
                 onClick={addToCart}
                 variant="primary"
             >
-                Заказать
+                <Typography className={'md:hidden'} variant={'accent'}>
+                    от {selectedSize.price} руб.
+                </Typography>
+                <Typography className={'hidden text-[18px] md:block'} variant={'custom'}>
+                    ЗАКАЗАТЬ
+                </Typography>
             </Button>
-        </>
+        </div>
     );
 }
 

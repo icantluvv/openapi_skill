@@ -2,7 +2,7 @@ import Promo from '@/_shared/promo/promo';
 
 function Promos() {
     return (
-        <section className="mb-[50px] w-full bg-background xl:mb-[105px]">
+        <section className="mt-[10px] mb-[50px] w-full bg-background xl:mb-[105px]">
             <div className="no-scrollbar container overflow-x-auto">
                 <div className="flex w-max gap-[32px] md:w-full">
                     <Promo

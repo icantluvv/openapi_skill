@@ -5,13 +5,13 @@ import CardSizePicker from '@/_shared/catalog/card/card-size-picker';
 
 function Card({ product }: ProductProps) {
     return (
-        <li className="flex gap-[4px] p-[4px] shadow-custom">
-            <div className="relative flex h-[100px] min-w-[100px]">
-                <Image alt={product.title} fill objectFit="cover" src={product.image} />
+        <li className="flex rounded-sm p-[4px] shadow-custom md:flex-col md:items-center md:p-[10px] md:pb-[40px] xl:p-[20px] xl:pb-[40px]">
+            <div className="relative flex h-[100px] min-w-[100px] md:h-[220px] md:min-w-[220px] xl:h-[240px] xl:w-[240px] xl:min-w-[240px]">
+                <Image alt={product.title} layout={'fill'} objectFit="cover" src={product.image} />
             </div>
 
-            <div className="my-[18px] flex flex-col gap-[12px] md:gap-[4px]">
-                <div className="">
+            <div className="flex flex-col gap-[4px] md:flex-1 md:justify-between md:gap-[8px] md:px-[10px]">
+                <div className="flex flex-col gap-[4px]">
                     <Typography className="md:text-center" variant="h4">
                         {product.title}
                     </Typography>
@@ -22,10 +22,6 @@ function Card({ product }: ProductProps) {
                         {product.description}
                     </Typography>
                 </div>
-
-                <Typography className="md:text-center" variant="description">
-                    Размер, см
-                </Typography>
 
                 <CardSizePicker product={product}></CardSizePicker>
             </div>

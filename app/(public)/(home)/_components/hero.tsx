@@ -4,11 +4,12 @@ import Image from 'next/image';
 
 function Hero() {
     return (
-        <section className="mt-[70px] mb-[60px] flex size-full flex-col items-center justify-start bg-background md:mt-[185px] md:mb-[120px] md:flex-row-reverse lg:mt-[200px] xl:mt-[300px] xl:mb-[150px] 2xl:mt-[350px] 2xl:mb-[240px]">
+        <section className="flex size-full flex-col justify-start bg-background md:mt-[185px] md:mb-[120px] md:flex-row-reverse lg:mt-[200px] xl:mt-[300px] xl:mb-[150px] 2xl:mt-[350px] 2xl:mb-[240px]">
             <Image
                 alt={'pizza-hero'}
-                className="relative w-[100vw] md:absolute md:right-[-10%] md:w-[60vw] xl:right-0 xl:w-[1007px]"
+                className="absolute top-[125px] right-0"
                 height={630}
+                sizes="1007px"
                 src={'/images/hero/pizza_hero.png'}
                 width={1007}
             />
@@ -21,7 +22,7 @@ function Hero() {
                 </Typography>
 
                 <div className="mt-[25px] w-full md:max-w-[304px]">
-                    <Button className={'w-full py-[18px]'} form="default" variant="primary">
+                    <Button className={'w-full py-[17px]'} form="default" variant="primary">
                         ВЫБРАТЬ ПИЦЦУ
                     </Button>
                 </div>
