@@ -1,12 +1,11 @@
 import { Button } from '@repo/core/button';
 import { Typography } from '@repo/core/typography';
 import Image from 'next/image';
-import { useCallback, useState } from 'react';
+import { useCallback } from 'react';
 
 import { useCartStore } from '@/store/cart/cart-store';
 
 function CounterCartItem({ item }: CartItemProps) {
-    const [lastItem, setLastItem] = useState<boolean>(true);
     const { updateQuantity } = useCartStore();
 
     const minusItem = useCallback(() => {
@@ -15,24 +14,17 @@ function CounterCartItem({ item }: CartItemProps) {
         }
 
         updateQuantity(item.cartItemId, item.quantity - 1);
-
-        if (item.quantity === 2) {
-            setLastItem(true);
-        } else {
-            setLastItem(false);
-        }
     }, [item.cartItemId, item.quantity, updateQuantity]);
 
     const plusItem = useCallback(() => {
         updateQuantity(item.cartItemId, item.quantity + 1);
-        setLastItem(false);
     }, [item.cartItemId, item.quantity, updateQuantity]);
 
     return (
         <div className={'flex w-full justify-between md:justify-start md:gap-[67px]'}>
             <div className="flex items-center gap-[16px]">
                 <Button
-                    className={`h-[24px] w-[24px] ${lastItem ? 'bg-light-gray' : 'bg-dark-gray'}`}
+                    className={`h-[24px] w-[24px] ${item.quantity === 1 ? 'bg-light-gray' : 'bg-dark-gray'}`}
                     form={'circle'}
                     onClick={minusItem}
                 >
