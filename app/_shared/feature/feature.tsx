@@ -4,7 +4,7 @@ import { Typography } from '@repo/core/typography';
 import { cva } from 'class-variance-authority';
 import Image from 'next/image';
 
-const featureVariants = cva('flex gap-[12px] md:items-center md:gap-[37px] xl:gap-[27px]', {
+const featureVariants = cva('flex gap-[12px] md:items-center md:gap-[37px] xl:gap-[30px]', {
     defaultVariants: {
         align: 'left',
     },
@@ -40,7 +40,7 @@ function Feature({
                 <Image alt={title} className="object-cover" height={304} src={url} width={304} />
             </div>
             <div className="flex flex-col gap-[4px] md:max-w-[370px] md:gap-[12px] xl:max-w-[416px]">
-                <Typography color="primary" variant="h3">
+                <Typography className={'leading-10'} color="primary" variant="h3">
                     {title}
                 </Typography>
                 <Typography color="primary" variant="p">

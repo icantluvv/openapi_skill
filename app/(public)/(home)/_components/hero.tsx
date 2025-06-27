@@ -4,16 +4,17 @@ import Image from 'next/image';
 
 function Hero() {
     return (
-        <section className="flex size-full flex-col justify-start bg-background md:mt-[185px] md:mb-[120px] md:flex-row-reverse lg:mt-[200px] xl:mt-[300px] xl:mb-[150px] 2xl:mt-[350px] 2xl:mb-[240px]">
-            <Image
-                alt={'pizza-hero'}
-                className="absolute top-[125px] right-0"
-                height={630}
-                sizes="1007px"
-                src={'/images/hero/pizza_hero.png'}
-                width={1007}
-            />
-            <div className="container flex flex-col gap-[4px]">
+        <section className="mt-[60px] flex size-full flex-col items-center justify-start overflow-hidden bg-background md:mt-[185px] md:mb-[120px] md:flex-row-reverse lg:mt-[200px] xl:mt-[300px] xl:mb-[150px] 2xl:mt-[350px] 2xl:mb-[240px]">
+            <div className="relative flex w-[100vw] justify-end md:absolute md:right-[-10vw] md:max-w-[60.5vw] xl:right-0 xl:max-w-[53vw]">
+                <Image
+                    alt={'pizza-hero'}
+                    className=""
+                    height={630}
+                    src={'/images/hero/pizza_hero.png'}
+                    width={1007}
+                />
+            </div>
+            <div className="container flex w-full flex-col gap-[4px]">
                 <Typography color={'primary'} variant={'h1'}>
                     Пицца на заказ
                 </Typography>

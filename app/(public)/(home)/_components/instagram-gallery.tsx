@@ -15,7 +15,11 @@ async function InstagramGallery() {
                 <Typography center variant="h2">
                     Следите за нами в Instagram
                 </Typography>
-                <Typography center className="text-shadow-text xl:hidden" variant="accent">
+                <Typography
+                    center
+                    className="font-alegreya font-extrabold text-shadow-text xl:hidden"
+                    variant="custom"
+                >
                     @pizzamenu
                 </Typography>
             </div>
