@@ -2,7 +2,7 @@ import { Button } from '@repo/core/button';
 import { Typography } from '@repo/core/typography';
 import { useState } from 'react';
 
-import { useCart } from '@/store/cart-store';
+import { useCartStore } from '@/store/cart/cart-store';
 
 const DEFAULT_OPTION: Option = {
     price: 0,
@@ -16,15 +16,20 @@ function CardSizePicker({ product }: ProductProps) {
         setSelectedSize(option);
     };
 
-    const { addCart } = useCart();
+    const { addItem } = useCartStore();
 
     function addToCart() {
         const CartItem = {
-            product,
+            cartItemId: `${product.id.toString()}_${selectedSize.size.toString()}`,
+            id: product.id,
+            image: product.image,
+            price: selectedSize.price,
             quantity: 1,
+            size: selectedSize.size,
+            title: product.title,
         };
 
-        addCart(CartItem);
+        addItem(CartItem);
     }
 
     return (

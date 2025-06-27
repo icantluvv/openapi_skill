@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import useCartStore from '@/store/open-cart-store';
+import { useCartStore } from '@/store/cart/cart-store';
 
 export const useCartBackground = () => {
     const { showCart } = useCartStore();

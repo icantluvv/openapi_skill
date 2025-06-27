@@ -1,9 +1,24 @@
 import { Button } from '@repo/core/button';
 import Image from 'next/image';
 
-function DeleteItemButton() {
+import { useCartStore } from '@/store/cart/cart-store';
+
+type DeleteItemButtonProps = {
+    cartItemId: string;
+};
+
+function DeleteItemButton({ cartItemId }: DeleteItemButtonProps) {
+    const { removeItem } = useCartStore();
+
+    function deleteItem() {
+        removeItem(cartItemId);
+    }
+
     return (
-        <Button className={'absolute top-0 right-0 hover:opacity-75 active:opacity-50'}>
+        <Button
+            className={'absolute top-0 right-0 hover:opacity-75 active:opacity-50'}
+            onClick={deleteItem}
+        >
             <Image
                 alt={'delete_cartitem'}
                 height={24}

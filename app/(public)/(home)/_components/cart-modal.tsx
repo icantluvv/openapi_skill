@@ -6,23 +6,15 @@ import { useCartBackground } from '#/hooks/use-cart-background';
 import CartHead from '@/_shared/cart/cart-head';
 import CartForm from '@/_shared/cart/form/cart-form';
 import CartItem from '@/_shared/cart/item-list/cart-item';
-import useCartStore from '@/store/open-cart-store';
+import { useCartStore } from '@/store/cart/cart-store';
 
 function CartModal() {
-    const { showCart } = useCartStore();
+    const { items, showCart, totalPrice } = useCartStore();
 
     useCartBackground();
     if (!showCart) {
         return null;
     }
-
-    const cartItems = [
-        { id: 1, name: 'Товар 1', price: 1000, quantity: 1 },
-        { id: 2, name: 'Товар 2', price: 2000, quantity: 2 },
-        { id: 3, name: 'Товар 3', price: 3000, quantity: 1 },
-        { id: 4, name: 'Товар 3', price: 3000, quantity: 1 },
-        { id: 5, name: 'Товар 3', price: 3000, quantity: 1 },
-    ];
 
     return (
         <div className="no-scrollbar fixed inset-0 z-[9999] flex items-start justify-center overflow-auto bg-black/90 pt-[calc(50px+env(safe-area-inset-top))] pb-[50px] xl:pt-[calc(100px+env(safe-area-inset-top))] xl:pb-[100px]">
@@ -32,8 +24,8 @@ function CartModal() {
                 <div className="flex flex-col gap-[8px]">
                     <div className="no-scrollbar max-h-[40vh] overflow-y-auto border-y border-light-gray xl:max-h-[32.5vh]">
                         <div className="divide-y-1 divide-light-gray">
-                            {cartItems.map(item => (
-                                <CartItem key={item.id} />
+                            {items.map(item => (
+                                <CartItem item={item} key={item.cartItemId} />
                             ))}
                         </div>
                     </div>
@@ -47,7 +39,7 @@ function CartModal() {
                         >
                             Сумма заказа
                         </Typography>
-                        <Typography variant="h3">1 887</Typography>
+                        <Typography variant="h3">{totalPrice}</Typography>
                         <Typography
                             className={'font-alegreya text-[16px] font-extrabold xl:text-[18px]'}
                             variant="custom"

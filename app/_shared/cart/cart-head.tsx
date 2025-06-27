@@ -2,7 +2,7 @@ import { Button } from '@repo/core/button';
 import { Typography } from '@repo/core/typography';
 import Image from 'next/image';
 
-import useCartStore from '@/store/open-cart-store';
+import { useCartStore } from '@/store/cart/cart-store';
 
 function CartHead() {
     const { setShowCart } = useCartStore();

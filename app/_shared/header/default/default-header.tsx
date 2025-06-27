@@ -7,8 +7,8 @@ import Link from 'next/link';
 
 import DefaultNavigation from '@/_shared/header/default/default-navigation';
 import HeaderAction from '@/_shared/header/header-action';
+import { useCartStore } from '@/store/cart/cart-store';
 import { useHeaderStore } from '@/store/header-store';
-import useCartStore from '@/store/open-cart-store';
 
 function DefaultHeader() {
     useHeaderScroll();
