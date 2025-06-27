@@ -47,9 +47,10 @@ function DefaultHeader() {
 
                     <HeaderAction
                         action={setShowCart}
-                        className={'items-end'}
+                        className={'relative items-end'}
                         description={'Итальянская и еще 2 пиццы'}
                         scrolledTitleSize={'14px'}
+                        showCartCounter
                         src={'/images/header/cart.svg'}
                         title={'ВАШ ЗАКАЗ'}
                         titleSize={'18px'}

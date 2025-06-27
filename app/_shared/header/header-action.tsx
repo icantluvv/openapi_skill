@@ -6,6 +6,7 @@ import { useHeaderScroll } from '#/hooks/use-header-scroll';
 import { cva } from 'class-variance-authority';
 import Image from 'next/image';
 
+import CartCounter from '@/_shared/header/cart-counter';
 import { useHeaderStore } from '@/store/header-store';
 
 const headerActionVariants = cva('relative flex gap-[12px]');
@@ -17,6 +18,7 @@ type HeaderActionProps = {
     description: string;
     ref?: Ref<HTMLDivElement>;
     scrolledTitleSize: string;
+    showCartCounter?: boolean;
     src: string;
     title: string;
     titleSize: string;
@@ -29,6 +31,7 @@ function HeaderAction({
     description,
     ref,
     scrolledTitleSize,
+    showCartCounter = false,
     src,
     title,
     titleSize,
@@ -44,6 +47,8 @@ function HeaderAction({
                 onClick={action}
                 variant="default"
             >
+                {Boolean(showCartCounter) && <CartCounter />}
+
                 <Image alt={title} fill objectFit="cover" src={src}></Image>
             </Button>
             <div className="font-alegreya hidden flex-col font-black xl:flex">
