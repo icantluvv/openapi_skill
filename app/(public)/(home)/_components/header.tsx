@@ -3,10 +3,10 @@ import MobileHeader from '@/_shared/header/mobile/mobile-header';
 
 function Header() {
     return (
-        <div className={'fixed top-0 left-0 z-[9000] w-full'}>
+        <header className={'fixed top-0 left-0 z-[9000] w-full'}>
             <DefaultHeader />
             <MobileHeader />
-        </div>
+        </header>
     );
 }
 

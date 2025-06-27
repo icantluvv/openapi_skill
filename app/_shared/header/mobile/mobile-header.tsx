@@ -16,8 +16,8 @@ function MobileHeader() {
         <div className="xl:hidden">
             <MobileSidebar />
 
-            <header className={`h-[64px] w-full bg-white md:h-[120px]`}>
-                <div className="container flex h-full items-center justify-between">
+            <div className={`h-[64px] w-full bg-white md:h-[120px]`}>
+                <div className="flex h-full items-center justify-between px-[30px]">
                     <Link className="w-[85px] md:w-[130px]" href={'/'}>
                         <Image
                             alt={'header_logo'}
@@ -34,7 +34,7 @@ function MobileHeader() {
                             src={'/images/header/phone.png'}
                             title={'+7 (918) 432-65-87'}
                             titleSize={'24px'}
-                        ></HeaderAction>
+                        />
 
                         <HeaderAction
                             action={setShowCart}
@@ -45,8 +45,9 @@ function MobileHeader() {
                             title={'ВАШ ЗАКАЗ'}
                             titleSize={'18px'}
                         ></HeaderAction>
+
                         <Button
-                            className="hidden h-[48px] w-[48px] md:block"
+                            className="ml-[38px] hidden h-[48px] w-[48px] md:block"
                             form="circle"
                             variant="secondary"
                         >
@@ -68,7 +69,7 @@ function MobileHeader() {
                         </Button>
                     </div>
                 </div>
-            </header>
+            </div>
         </div>
     );
 }

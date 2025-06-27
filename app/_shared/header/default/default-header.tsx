@@ -36,14 +36,16 @@ function DefaultHeader() {
                 <div
                     className={`${isScroll ? 'h-[44px] justify-end' : 'h-[51px]'} flex gap-[100px] transition-all duration-[.3s]`}
                 >
-                    <HeaderAction
-                        className={'items-center'}
-                        description={'Ежедневно с 9:00 до 23:00'}
-                        scrolledTitleSize={'18px'}
-                        src={'/images/header/phone.png'}
-                        title={'+7' + ' ' + ' (918) ' + ' ' + '432-65-87'}
-                        titleSize={'24px'}
-                    />
+                    <Link href="tel:+7(918)432-65-87">
+                        <HeaderAction
+                            className={'items-center'}
+                            description={'Ежедневно с 9:00 до 23:00'}
+                            scrolledTitleSize={'18px'}
+                            src={'/images/header/phone.png'}
+                            title={'+7' + ' ' + ' (918) ' + ' ' + '432-65-87'}
+                            titleSize={'24px'}
+                        />
+                    </Link>
 
                     <HeaderAction
                         action={setShowCart}

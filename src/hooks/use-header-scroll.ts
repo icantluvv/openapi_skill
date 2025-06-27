@@ -13,10 +13,9 @@ export const useHeaderScroll = () => {
         function checkWidthAndBind() {
             if (window.innerWidth >= 1280) {
                 window.addEventListener('scroll', handleScroll);
-                // Проверим сразу при добавлении слушателя
                 handleScroll();
             } else {
-                setIsScroll(false); // сбросим состояние, если ширина меньше 1280
+                setIsScroll(false);
             }
         }
 

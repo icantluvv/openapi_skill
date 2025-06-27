@@ -8,7 +8,7 @@ import CardSizePicker from '@/_shared/catalog/card/card-size-picker';
 
 function Card({ product }: ProductProps) {
     const [hoveredCard, setHoveredCard] = useState<null | number>(null);
-    const categoryName: string = product.categories[1] ?? '';
+    const categoryName = product.categories[1] ?? '';
 
     function handleMouseEnter() {
         setHoveredCard(product.id);
@@ -28,7 +28,7 @@ function Card({ product }: ProductProps) {
                 <div className="absolute top-2 left-2 h-[12px] w-[12px] md:top-5 md:left-5 md:h-[20px] md:w-[20px] xl:h-[24px] xl:w-[24px]">
                     <Image
                         alt="category"
-                        className={`z-[10] transition-all duration-300 md:opacity-100 xl:${hoveredCard === product.id ? 'opacity-100' : 'opacity-0'}`}
+                        className={`z-[10] transition-all duration-300 ${hoveredCard === product.id ? 'opacity-100' : 'opacity-100 xl:opacity-0'}`}
                         layout="fill"
                         src={`/images/svg/mobile-sortbar/${categoryName}.svg`}
                     />
@@ -41,7 +41,10 @@ function Card({ product }: ProductProps) {
 
             <div className="my-[22px] flex flex-col gap-[4px] md:my-0 md:flex-1 md:justify-between md:gap-[8px] md:px-[10px]">
                 <div className="flex flex-col gap-[4px]">
-                    <Typography className="md:text-center" variant="h4">
+                    <Typography
+                        className={` ${hoveredCard === product.id ? 'text-primary' : 'text-black'} md:text-center`}
+                        variant="h4"
+                    >
                         {product.title}
                     </Typography>
                     <Typography

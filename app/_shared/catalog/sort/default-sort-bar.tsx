@@ -6,12 +6,11 @@ import { useState } from 'react';
 
 function DefaultSortBar({ categories }: CategoryProps) {
     const [chooseCategory, setChooseCategory] = useState<number>(0);
-
     const [mouseEnter, setMouseEnter] = useState<number>();
 
-    function setCategory(categoryId: number) {
+    const handleCategoryClick = (categoryId: number) => () => {
         setChooseCategory(categoryId);
-    }
+    };
 
     const handleMouseEnter = (id: number) => () => {
         setMouseEnter(id);
@@ -27,10 +26,7 @@ function DefaultSortBar({ categories }: CategoryProps) {
                 <Button
                     form={'text'}
                     key={category.id}
-                    /* eslint-disable-next-line react-perf/jsx-no-new-function-as-prop */
-                    onClick={() => {
-                        setCategory(category.id);
-                    }}
+                    onClick={handleCategoryClick(category.id)}
                     onMouseEnter={handleMouseEnter(category.id)}
                     onMouseLeave={handleMouseEnter(0)}
                 >

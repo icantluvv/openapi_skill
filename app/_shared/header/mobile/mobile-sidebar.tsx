@@ -17,7 +17,7 @@ function MobileSidebar() {
 
     return (
         <div
-            className={`fixed right-0 z-[1] flex size-full flex-col bg-[#313945] pt-[12px] pb-[30px] text-white transition-all duration-[.3s] md:w-[320px] md:py-[40px] ${showMobileNav ? 'translate-x-0' : 'translate-x-full'}`}
+            className={`fixed right-0 z-[9000] flex size-full flex-col bg-[#313945] pt-[12px] pb-[30px] text-white transition-all duration-[.3s] md:w-[320px] md:py-[40px] ${showMobileNav ? 'translate-x-0' : 'translate-x-full'}`}
         >
             <div className="container flex w-full flex-1 flex-col items-center">
                 <div className="flex w-full items-center justify-between md:justify-end">
@@ -47,9 +47,12 @@ function MobileSidebar() {
                     <Typography center variant="description">
                         Заказать по телефону
                     </Typography>
-                    <Typography center variant="h4">
-                        +7 (918) 432-65-87
-                    </Typography>
+                    <Link href="tel:+7 (918) 432-65-87">
+                        <Typography center variant="h4">
+                            +7 (918) 432-65-87
+                        </Typography>
+                    </Link>
+
                     <Typography center variant="description">
                         Ежедневно с 9:00 до 23:00
                     </Typography>

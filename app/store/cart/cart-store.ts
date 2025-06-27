@@ -60,7 +60,7 @@ export const useCartStore = create<CartStore>()(
             },
         }),
         {
-            name: 'cart-storage', // ключ в localStorage
+            name: 'cart-storage',
         }
     )
 );

@@ -16,7 +16,6 @@ export const useHeaderStore = create<HeaderState>(set => ({
 
         window.addEventListener('scroll', handleScroll);
 
-        // removeListener если нужно
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };

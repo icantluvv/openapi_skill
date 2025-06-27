@@ -36,16 +36,6 @@ export default defineConfig(() => {
                 output: { path: 'ky' },
             }),
 
-            // pluginReactQuery({
-            //     client: { dataReturnType: 'data', importPath },
-            //     group: { type: 'tag' },
-            //     output: {
-            //         path: './hooks',
-            //     },
-            //     paramsType: 'object',
-            //     parser: 'zod',
-            // }),
-
             pluginZod({
                 dateType: 'date',
                 group: { type: 'tag' },

@@ -1,10 +1,11 @@
 import { Button } from '@repo/core/button';
 import { Typography } from '@repo/core/typography';
 import Image from 'next/image';
+import Link from 'next/link';
 
 function Hero() {
     return (
-        <section className="mt-[60px] flex size-full flex-col items-center justify-start overflow-hidden bg-background md:mt-[185px] md:mb-[120px] md:flex-row-reverse lg:mt-[200px] xl:mt-[300px] xl:mb-[150px] 2xl:mt-[350px] 2xl:mb-[240px]">
+        <section className="mt-[60px] flex size-full flex-col items-center justify-start overflow-hidden bg-background md:mt-[160px] md:mb-[120px] md:flex-row-reverse lg:mt-[200px] xl:mt-[300px] xl:mb-[150px] 2xl:mt-[350px] 2xl:mb-[240px]">
             <div className="relative flex w-[100vw] justify-end md:absolute md:right-[-10vw] md:max-w-[60.5vw] xl:right-0 xl:max-w-[53vw]">
                 <Image
                     alt={'pizza-hero'}
@@ -23,9 +24,11 @@ function Hero() {
                 </Typography>
 
                 <div className="mt-[25px] w-full md:max-w-[304px]">
-                    <Button className={'w-full py-[17px]'} form="default" variant="primary">
-                        ВЫБРАТЬ ПИЦЦУ
-                    </Button>
+                    <Link href={'/#menu'}>
+                        <Button className={'w-full py-[17px]'} form="default" variant="primary">
+                            ВЫБРАТЬ ПИЦЦУ
+                        </Button>
+                    </Link>
                 </div>
             </div>
         </section>

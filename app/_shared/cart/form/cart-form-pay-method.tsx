@@ -1,5 +1,6 @@
 import { Button } from '@repo/core/button';
 import { Checkbox } from '@repo/core/checkbox';
+import { Label } from '@repo/core/label';
 import { Typography } from '@repo/core/typography';
 import { useState } from 'react';
 
@@ -12,7 +13,7 @@ function CartFormPayMethod() {
     const { items } = useCartStore();
 
     const chooseMethod = (id: number) => () => {
-        setPayMethod(payMethod === id ? null : id); // Toggle if clicking the same one
+        setPayMethod(payMethod === id ? null : id);
     };
 
     const { fillForm } = useOrderFormStore();
@@ -28,23 +29,35 @@ function CartFormPayMethod() {
                 </Typography>
 
                 <div className="flex items-center gap-[8px]">
-                    <Checkbox checked={payMethod === 0} onClick={chooseMethod(0)} />
-                    <Typography
-                        className={'font-roboto text-[14px] xl:text-[16px]'}
-                        variant={'custom'}
-                    >
-                        Оплата наличными или картой курьеру
-                    </Typography>
+                    <Label className="flex cursor-pointer items-center gap-[8px]">
+                        <Checkbox
+                            checked={payMethod === 0}
+                            id="pay-method-0"
+                            onClick={chooseMethod(0)}
+                        />
+                        <Typography
+                            className={'font-roboto text-[14px] xl:text-[16px]'}
+                            variant={'custom'}
+                        >
+                            Оплата наличными или картой курьеру
+                        </Typography>
+                    </Label>
                 </div>
 
                 <div className="flex items-center gap-[8px]">
-                    <Checkbox checked={payMethod === 1} onClick={chooseMethod(1)} />
-                    <Typography
-                        className={'font-roboto text-[14px] xl:text-[16px]'}
-                        variant={'custom'}
-                    >
-                        Оплата картой онлайн на сайте
-                    </Typography>
+                    <Label className="flex cursor-pointer items-center gap-[8px]">
+                        <Checkbox
+                            checked={payMethod === 1}
+                            id="pay-method-1"
+                            onClick={chooseMethod(1)}
+                        />
+                        <Typography
+                            className={'font-roboto text-[14px] xl:text-[16px]'}
+                            variant={'custom'}
+                        >
+                            Оплата картой онлайн на сайте
+                        </Typography>
+                    </Label>
                 </div>
             </div>
 

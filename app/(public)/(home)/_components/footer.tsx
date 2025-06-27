@@ -7,19 +7,21 @@ function Footer() {
         <footer className="flex w-full justify-center bg-black py-[24px] xl:py-[32px]">
             <div className="container flex w-full flex-col items-center gap-[10px] md:flex-row md:justify-between md:gap-0">
                 <div className="flex flex-col items-center gap-[24px] md:flex-row md:gap-[100px]">
-                    <div className="w-[79px] md:w-[90px] xl:w-[112px]">
+                    <Link className="w-[79px] md:w-[90px] xl:w-[112px]" href={'/'}>
                         <Image
                             alt={'footer-logo'}
                             height={52}
                             src={'/images/footer/footer_logo.png'}
                             width={112}
                         ></Image>
-                    </div>
+                    </Link>
 
                     <div className="flex flex-col items-center md:items-start">
-                        <Typography className="text-[24px] text-white" variant="h4">
-                            +7 (918) 432-65-87
-                        </Typography>
+                        <Link href="tel:+79184326587">
+                            <Typography className="text-[24px] text-white" variant="h4">
+                                +7 (918) 432-65-87
+                            </Typography>
+                        </Link>
                         <Typography className="text-white" variant="description">
                             Ежедневно с 9:00 до 23:00
                         </Typography>
@@ -27,7 +29,7 @@ function Footer() {
                 </div>
 
                 <Link href={'/policy'}>
-                    <Typography className="text-white" variant="description">
+                    <Typography className="text-white hover:underline" variant="description">
                         Политика конфиденциальности
                     </Typography>
                 </Link>

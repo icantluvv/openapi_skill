@@ -52,7 +52,7 @@ function CardSizePicker({ product }: ProductProps) {
                         variant="default"
                     >
                         <Typography
-                            className={selectedSize.size === option.size ? '' : 'text-shadow-text'}
+                            className={`${selectedSize.size === option.size ? '' : 'text-shadow-text'} hover:text-black`}
                             variant="description"
                         >
                             {option.size}

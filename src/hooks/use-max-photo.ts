@@ -6,17 +6,22 @@ function useMaxPhotos() {
     useEffect(() => {
         function updateMaxPhotos() {
             const width = window.innerWidth;
+            let newMaxPhotos = 10;
 
             if (width < 768) {
-                // eslint-disable-next-line @eslint-react/hooks-extra/no-direct-set-state-in-use-effect
-                setMaxPhotos(4);
+                newMaxPhotos = 4;
             } else if (width < 1280) {
-                // eslint-disable-next-line @eslint-react/hooks-extra/no-direct-set-state-in-use-effect
-                setMaxPhotos(6);
-            } else {
-                // eslint-disable-next-line @eslint-react/hooks-extra/no-direct-set-state-in-use-effect
-                setMaxPhotos(10);
+                newMaxPhotos = 6;
             }
+
+            setMaxPhotos(previous => {
+                // Обновляем состояние только если значение изменилось
+                if (previous !== newMaxPhotos) {
+                    return newMaxPhotos;
+                }
+
+                return previous;
+            });
         }
 
         updateMaxPhotos();

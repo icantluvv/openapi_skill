@@ -56,7 +56,7 @@
 
     @media (width >= --theme(--breakpoint-md)) {
         max-width: none;
-        --container-padding: 3vw;
+        --container-padding: 30px;
     }
     @media (width >= 1400px) {
         --container-padding: 0px;
@@ -97,6 +97,7 @@
 html,
 body {
     overscroll-behavior: none;
+    scroll-behavior: smooth;
 }
 
 @layer base {
