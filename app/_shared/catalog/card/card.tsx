@@ -25,13 +25,14 @@ function Card({ product }: ProductProps) {
             onMouseLeave={handleMouseLeave}
         >
             {Boolean(categoryName) && (
-                <Image
-                    alt="category"
-                    className={`absolute top-5 left-5 z-[10] transition-all duration-300 ${hoveredCard === product.id ? 'opacity-100' : 'opacity-0'}`}
-                    height={24}
-                    src={`/images/svg/mobile-sortbar/${categoryName}.svg`}
-                    width={24}
-                />
+                <div className="absolute top-2 left-2 h-[12px] w-[12px] md:top-5 md:left-5 md:h-[20px] md:w-[20px] xl:h-[24px] xl:w-[24px]">
+                    <Image
+                        alt="category"
+                        className={`z-[10] transition-all duration-300 md:opacity-100 xl:${hoveredCard === product.id ? 'opacity-100' : 'opacity-0'}`}
+                        layout="fill"
+                        src={`/images/svg/mobile-sortbar/${categoryName}.svg`}
+                    />
+                </div>
             )}
 
             <div className="relative flex h-[100px] min-w-[100px] md:h-[220px] md:min-w-[220px] xl:h-[240px] xl:w-[240px] xl:min-w-[240px]">

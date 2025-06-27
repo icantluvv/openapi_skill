@@ -19,10 +19,12 @@ function CardSizePicker({ product }: ProductProps) {
     const { addItem } = useCartStore();
 
     function addToCart() {
-        const CartItem = {
+        const CartItem: CartItem = {
             cartItemId: `${product.id.toString()}_${selectedSize.size.toString()}`,
+            categoryImage: product.categories[1] ?? '',
             id: product.id,
             image: product.image,
+
             price: selectedSize.price,
             quantity: 1,
             size: selectedSize.size,
@@ -64,7 +66,7 @@ function CardSizePicker({ product }: ProductProps) {
             </Typography>
 
             <Button
-                className="w-[120px] py-[4px] md:w-full md:py-[8px] xl:py-[13px]"
+                className="mt-[8px] w-[120px] py-[4px] md:mt-0 md:w-full md:py-[8px] xl:py-[13px]"
                 onClick={addToCart}
                 variant="primary"
             >

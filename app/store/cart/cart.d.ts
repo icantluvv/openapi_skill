@@ -1,5 +1,6 @@
 type CartItem = {
     cartItemId: string;
+    categoryImage: string;
     id: number;
     image: string;
     price: number;
