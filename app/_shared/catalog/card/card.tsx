@@ -8,7 +8,7 @@ import CardSizePicker from '@/_shared/catalog/card/card-size-picker';
 
 function Card({ product }: ProductProps) {
     const [hoveredCard, setHoveredCard] = useState<null | number>(null);
-    const categoryName: string = product.categories[1];
+    const categoryName: string = product.categories[1] ?? '';
 
     function handleMouseEnter() {
         setHoveredCard(product.id);

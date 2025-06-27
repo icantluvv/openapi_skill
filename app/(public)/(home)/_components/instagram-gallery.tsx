@@ -1,8 +1,11 @@
 import { Typography } from '@repo/core/typography';
 
 import InstagramPhotos from '@/_shared/instagram-image/instagram-photos';
+import getGallery from '~/api/services/products/get-gallery';
 
-function InstagramGallery() {
+async function InstagramGallery() {
+    const gallery = await getGallery();
+
     return (
         <section
             className="flex w-full scroll-mt-[100px] flex-col gap-[24px] bg-background xl:gap-[46px]"
@@ -16,7 +19,7 @@ function InstagramGallery() {
                     @pizzamenu
                 </Typography>
             </div>
-            <InstagramPhotos />
+            <InstagramPhotos gallery={gallery} />
         </section>
     );
 }

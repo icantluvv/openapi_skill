@@ -1,4 +1,24 @@
 {
+    "promo": [
+        {
+            "id": 1,
+            "title": "Закажи 2 пиццы – 3-я в подарок",
+            "description": "При заказе 2-х больших пицц – средняя пицца в подарок",
+            "image": "/images/promo/Event 1.png"
+        },
+        {
+            "id": 2,
+            "title": "Напиток в подарок",
+            "description": "Скидка на заказ от 3 000 рублей + напиток в подарок",
+            "image": "/images/promo/Event 2.png"
+        },
+        {
+            "id": 3,
+            "title": "25% при первом заказе",
+            "description": "Скидка новым клиентам!",
+            "image": "/images/promo/Event 3.png"
+        }
+    ],
     "categories": [
         {
             "id": 1,
@@ -179,6 +199,49 @@
             ],
             "categories": ["all", "meat", "cheese"],
             "image": "/images/catalog/pizza12.png"
+        }
+    ],
+
+    "gallery": [
+        {
+            "id": 1,
+            "image": "/images/instagram/inst01.png"
+        },
+        {
+            "id": 2,
+            "image": "/images/instagram/inst02.png"
+        },
+        {
+            "id": 3,
+            "image": "/images/instagram/inst03.png"
+        },
+        {
+            "id": 4,
+            "image": "/images/instagram/inst04.png"
+        },
+        {
+            "id": 5,
+            "image": "/images/instagram/inst05.png"
+        },
+        {
+            "id": 6,
+            "image": "/images/instagram/inst06.png"
+        },
+        {
+            "id": 7,
+            "image": "/images/instagram/inst07.png"
+        },
+        {
+            "id": 8,
+            "image": "/images/instagram/inst08.png"
+        },
+        {
+            "id": 9,
+            "image": "/images/instagram/inst09.png"
+        },
+        {
+            "id": 10,
+            "image": "/images/instagram/inst10.png"
         }
     ]
 }
