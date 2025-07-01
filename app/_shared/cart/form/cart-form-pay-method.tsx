@@ -4,7 +4,7 @@ import { Label } from '@repo/core/label';
 import { Typography } from '@repo/core/typography';
 import { useState } from 'react';
 
-import { useCartStore } from '@/store/cart/cart-store';
+import { useCartStore } from '@/store/cart-store';
 import { useOrderFormStore } from '@/store/order-form-store';
 
 function CartFormPayMethod() {

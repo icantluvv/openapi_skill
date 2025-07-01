@@ -1,6 +1,6 @@
 import { Typography } from '@repo/core/typography';
 
-import { useCartStore } from '@/store/cart/cart-store';
+import { useCartStore } from '@/store/cart-store';
 
 function CartCounter() {
     const { items } = useCartStore();

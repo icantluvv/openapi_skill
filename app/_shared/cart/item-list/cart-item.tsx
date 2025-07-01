@@ -1,9 +1,15 @@
 import { Typography } from '@repo/core/typography';
 import Image from 'next/image';
 
+import type { CartItemType } from '@/store/cart-store';
+
 import DeleteItemButton from '@/_shared/cart/item-list/delete-item-button';
 
 import CounterCartitem from './counter-cartitem';
+
+type CartItemProps = {
+    item: CartItemType;
+};
 
 function CartItem({ item }: CartItemProps) {
     return (
@@ -13,10 +19,10 @@ function CartItem({ item }: CartItemProps) {
                     alt={'category'}
                     className={'absolute top-0 left-0 z-[1000]'}
                     height={12}
-                    src={`/images/svg/mobile-sortbar/${item.categoryImage}.svg`}
+                    src={item.categoryImage}
                     width={12}
                 ></Image>
-                <div className="relative h-[100px] w-[100px]">
+                <div className="relative mx-[10px] h-[80px] w-[80px] min-w-[80px]">
                     <Image alt={'pizza'} layout="fill" src={item.image}></Image>
                 </div>
                 <div className={'flex flex-col gap-[4px]'}>
