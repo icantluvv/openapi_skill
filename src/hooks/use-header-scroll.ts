@@ -19,10 +19,8 @@ export const useHeaderScroll = () => {
             }
         }
 
-        // Навешиваем слушатель только если ширина >=1280
         checkWidthAndBind();
 
-        // Для обновления слушателя при ресайзе — удалим и добавим заново
         function handleResize() {
             window.removeEventListener('scroll', handleScroll);
             checkWidthAndBind();
@@ -30,7 +28,6 @@ export const useHeaderScroll = () => {
 
         window.addEventListener('resize', handleResize);
 
-        // Очистка
         return () => {
             window.removeEventListener('scroll', handleScroll);
             window.removeEventListener('resize', handleResize);

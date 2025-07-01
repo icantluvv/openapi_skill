@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 import DefaultNavigation from '@/_shared/header/default/default-navigation';
 import HeaderAction from '@/_shared/header/header-action';
-import { useCartStore } from '@/store/cart/cart-store';
+import { useCartStore } from '@/store/cart-store';
 import { useHeaderStore } from '@/store/header-store';
 
 function DefaultHeader() {
@@ -20,7 +20,7 @@ function DefaultHeader() {
         <header
             className={`hidden w-full transition-all duration-[.3s] xl:block ${isScroll ? 'h-[60px] bg-white shadow-custom' : 'h-[176px]'} `}
         >
-            <div className={`container flex h-full items-center justify-between`}>
+            <div className={`container flex h-full items-center gap-[92px]`}>
                 <Link href={'/'}>
                     <Image
                         alt={'header_logo'}
@@ -33,36 +33,37 @@ function DefaultHeader() {
 
                 <DefaultNavigation />
 
-                <div
-                    className={`${isScroll ? 'h-[44px] justify-end' : 'h-[51px]'} flex gap-[100px] transition-all duration-[.3s]`}
-                >
-                    <Link href="tel:+7(918)432-65-87">
+                <div className={'flex items-center gap-[44px]'}>
+                    <div
+                        className={`${isScroll ? 'h-[44px] justify-end' : 'h-[51px]'} flex gap-[64px] transition-all duration-[.3s]`}
+                    >
+                        <Link className={'flex'} href="tel:+7(918)432-65-87">
+                            <HeaderAction
+                                className={'w-[244px] items-center'}
+                                description={'Ежедневно с 9:00 до 23:00'}
+                                scrolledTitleSize={'18px'}
+                                src={'/images/header/phone.png'}
+                                title={'+7' + ' ' + ' (918) ' + ' ' + '432-65-87'}
+                                titleSize={'24px'}
+                            />
+                        </Link>
+
                         <HeaderAction
-                            className={'items-center'}
-                            description={'Ежедневно с 9:00 до 23:00'}
-                            scrolledTitleSize={'18px'}
-                            src={'/images/header/phone.png'}
-                            title={'+7' + ' ' + ' (918) ' + ' ' + '432-65-87'}
-                            titleSize={'24px'}
+                            action={setShowCart}
+                            className={'relative w-[212px] items-end'}
+                            description={'Итальянская и еще 2 пиццы'}
+                            scrolledTitleSize={'14px'}
+                            showCartCounter
+                            src={'/images/header/cart.svg'}
+                            title={'ВАШ ЗАКАЗ'}
+                            titleSize={'18px'}
                         />
-                    </Link>
-
-                    <HeaderAction
-                        action={setShowCart}
-                        className={'relative items-end'}
-                        description={'Итальянская и еще 2 пиццы'}
-                        scrolledTitleSize={'14px'}
-                        showCartCounter
-                        src={'/images/header/cart.svg'}
-                        title={'ВАШ ЗАКАЗ'}
-                        titleSize={'18px'}
-                    />
-                </div>
-
-                <div className={isScroll ? 'hidden' : 'block'}>
-                    <Button className="h-[48px] w-[48px]" form="circle" variant="secondary">
-                        EN
-                    </Button>
+                    </div>
+                    <div className={isScroll ? 'hidden' : 'block'}>
+                        <Button className="h-[48px] w-[48px]" form="circle" variant="secondary">
+                            EN
+                        </Button>
+                    </div>
                 </div>
             </div>
         </header>

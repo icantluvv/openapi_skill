@@ -1,11 +1,12 @@
 'use client';
 import { Button } from '@repo/core/button';
+import { Typography } from '@repo/core/typography';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import HeaderAction from '@/_shared/header/header-action';
 import MobileSidebar from '@/_shared/header/mobile/mobile-sidebar';
-import { useCartStore } from '@/store/cart/cart-store';
+import { useCartStore } from '@/store/cart-store';
 import useMobileNavStore from '@/store/mobile-nav-store';
 
 function MobileHeader() {
@@ -28,13 +29,15 @@ function MobileHeader() {
                     </Link>
 
                     <div className="flex items-center gap-[16px] md:gap-[32px]">
-                        <HeaderAction
-                            description={'Ежедневно с 9:00 до 23:00'}
-                            scrolledTitleSize={'18px'}
-                            src={'/images/header/phone.png'}
-                            title={'+7 (918) 432-65-87'}
-                            titleSize={'24px'}
-                        />
+                        <Link href="tel:+7(918)432-65-87">
+                            <HeaderAction
+                                description={'Ежедневно с 9:00 до 23:00'}
+                                scrolledTitleSize={'18px'}
+                                src={'/images/header/phone.png'}
+                                title={'+7 (918) 432-65-87'}
+                                titleSize={'24px'}
+                            />
+                        </Link>
 
                         <HeaderAction
                             action={setShowCart}
@@ -51,7 +54,7 @@ function MobileHeader() {
                             form="circle"
                             variant="secondary"
                         >
-                            EN
+                            <Typography variant={'button'}>EN</Typography>
                         </Button>
 
                         <Button
