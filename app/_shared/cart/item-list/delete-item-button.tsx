@@ -1,7 +1,7 @@
 import { Button } from '@repo/core/button';
 import Image from 'next/image';
 
-import { useCartStore } from '@/store/cart/cart-store';
+import { useCartStore } from '@/store/cart-store';
 
 type DeleteItemButtonProps = {
     cartItemId: string;

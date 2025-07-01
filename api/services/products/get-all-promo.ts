@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-async function getPromo(): Promise<Product[]> {
+async function getPromo(): Promise<Promo[]> {
     const baseUrl = process.env.BACK_INTERNAL_URL;
 
     if (!baseUrl) {
@@ -10,7 +10,7 @@ async function getPromo(): Promise<Product[]> {
     }
 
     try {
-        const response = await axios.get<Product[]>(`${baseUrl}/promo`);
+        const response = await axios.get<Promo[]>(`${baseUrl}/promo`);
 
         return response.data;
     } catch (error) {

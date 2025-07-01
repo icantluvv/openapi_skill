@@ -1,27 +1,32 @@
+'use client';
+
 import { useEffect, useState } from 'react';
+
+function getMaxPhotosByWidth() {
+    const width = window.innerWidth;
+
+    if (width < 768) {
+        return 4;
+    }
+    if (width < 1280) {
+        return 6;
+    }
+
+    return 10;
+}
 
 function useMaxPhotos() {
     const [maxPhotos, setMaxPhotos] = useState(10);
 
+    const makeNewMax = (newMaxPhotos: number) => {
+        setMaxPhotos(previous => (previous === newMaxPhotos ? previous : newMaxPhotos));
+    };
+
     useEffect(() => {
         function updateMaxPhotos() {
-            const width = window.innerWidth;
-            let newMaxPhotos = 10;
+            const newMaxPhotos = getMaxPhotosByWidth();
 
-            if (width < 768) {
-                newMaxPhotos = 4;
-            } else if (width < 1280) {
-                newMaxPhotos = 6;
-            }
-
-            setMaxPhotos(previous => {
-                // Обновляем состояние только если значение изменилось
-                if (previous !== newMaxPhotos) {
-                    return newMaxPhotos;
-                }
-
-                return previous;
-            });
+            makeNewMax(newMaxPhotos);
         }
 
         updateMaxPhotos();
@@ -34,5 +39,4 @@ function useMaxPhotos() {
 
     return maxPhotos;
 }
-
 export default useMaxPhotos;

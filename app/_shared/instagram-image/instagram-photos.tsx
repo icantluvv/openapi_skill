@@ -7,7 +7,7 @@ function InstagramPhotos({ gallery }: GalleryProps) {
     const maxPhotos = useMaxPhotos();
 
     return (
-        <div className="grid w-full grid-cols-2 place-content-stretch md:grid-cols-3 xl:grid-cols-5">
+        <div className="mt-[35px] grid w-full grid-cols-2 place-content-stretch md:grid-cols-3 xl:grid-cols-5">
             {gallery.slice(0, maxPhotos).map(photo => (
                 <Image
                     alt="Instagram post"
