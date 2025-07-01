@@ -1,82 +1,82 @@
-import { Button } from '@repo/core/button';
 import { Typography } from '@repo/core/typography';
-import { useState } from 'react';
 
-import { useCartStore } from '@/store/cart/cart-store';
+import BuyButton from '@/_shared/catalog/card/buy-button';
+import { type CartItemType, useCartStore } from '@/store/cart-store';
+import { useProductSizeStore } from '@/store/product-size-store';
 
-const DEFAULT_OPTION: Option = {
-    price: 0,
-    size: 0,
+import SizeOptionButton from './size-option-button';
+
+type ProductProps = {
+    categories: Category[];
+    product: Product;
 };
 
-function CardSizePicker({ product }: ProductProps) {
-    const [selectedSize, setSelectedSize] = useState<Option>(product.options[0] ?? DEFAULT_OPTION);
+const DEFAULT_OPTION: Option = { price: 0, size: 0 };
 
-    const handleSizeChange = (option: Option) => () => {
-        setSelectedSize(option);
+function createCartItem(
+    product: Product,
+    selectedOption: Option,
+    categoryImage: string
+): CartItemType {
+    return {
+        cartItemId: `${product.id.toString()}_${selectedOption.size.toString()}`,
+        categoryImage,
+        id: product.id,
+        image: product.image,
+        price: selectedOption.price,
+        quantity: 1,
+        size: selectedOption.size,
+        title: product.title,
+    };
+}
+
+function CardSizePicker({ categories, product }: ProductProps) {
+    const { addItem } = useCartStore();
+    const { selectedSizes, setSelectedSize } = useProductSizeStore();
+
+    const selectedOption = selectedSizes[product.id] ?? product.options[0] ?? DEFAULT_OPTION;
+    const categoryImage = categories[1]?.image ?? '';
+
+    const handleSizeChange = (option: Option) => {
+        setSelectedSize(product.id, option);
     };
 
-    const { addItem } = useCartStore();
-
     function addToCart() {
-        const CartItem: CartItem = {
-            cartItemId: `${product.id.toString()}_${selectedSize.size.toString()}`,
-            categoryImage: product.categories[1] ?? '',
-            id: product.id,
-            image: product.image,
+        const cartItem = createCartItem(product, selectedOption, categoryImage);
 
-            price: selectedSize.price,
-            quantity: 1,
-            size: selectedSize.size,
-            title: product.title,
-        };
-
-        addItem(CartItem);
+        addItem(cartItem);
     }
 
     return (
-        <div className={'flex flex-col gap-[4px] md:items-center'}>
-            <Typography className="md:text-center" variant="description">
-                Размер, см
-            </Typography>
+        <div className="flex flex-col gap-[12px] md:items-center xl:gap-[4px]">
+            <div className={'flex w-full flex-col items-center gap-[4px]'}>
+                <Typography className="md:text-center" variant="description">
+                    Размер, см
+                </Typography>
 
-            <div className="flex w-[90%] rounded-sm bg-light-gray p-[2px] xl:max-w-[182px]">
-                {product.options.map(option => (
-                    <Button
-                        className={`flex-1 rounded-xs py-[5px] ${
-                            selectedSize.size === option.size ? 'bg-white' : ''
-                        }`}
-                        form="default"
-                        key={option.size}
-                        onClick={handleSizeChange(option)}
-                        variant="default"
-                    >
-                        <Typography
-                            className={`${selectedSize.size === option.size ? '' : 'text-shadow-text'} hover:text-black`}
-                            variant="description"
-                        >
-                            {option.size}
-                        </Typography>
-                    </Button>
-                ))}
+                <div className="flex w-[90%] rounded-sm bg-light-gray p-[2px] xl:max-w-[182px]">
+                    {product.options.map(option => (
+                        <SizeOptionButton
+                            key={option.size}
+                            onClick={handleSizeChange}
+                            option={option}
+                            selectedSize={selectedOption.size}
+                        />
+                    ))}
+                </div>
             </div>
 
-            <Typography center className="hidden text-[24px] font-bold md:block" variant={'custom'}>
-                от {selectedSize.price} руб.
-            </Typography>
+            <div className={'flex w-full flex-col gap-[11px] xl:gap-[8px]'}>
+                <Typography
+                    center
+                    className="hidden text-[20px] font-bold md:block xl:text-[24px]"
+                    variant="custom"
+                >
+                    от {selectedOption.price} руб.
+                </Typography>
 
-            <Button
-                className="mt-[8px] w-[120px] py-[4px] md:mt-0 md:w-full md:py-[8px] xl:py-[13px]"
-                onClick={addToCart}
-                variant="primary"
-            >
-                <Typography className={'md:hidden'} variant={'accent'}>
-                    от {selectedSize.price} руб.
-                </Typography>
-                <Typography className={'hidden text-[18px] md:block'} variant={'custom'}>
-                    ЗАКАЗАТЬ
-                </Typography>
-            </Button>
+                <BuyButton action={addToCart} price={selectedOption.price} />
+            </div>
         </div>
     );
 }

@@ -1,26 +1,26 @@
 import { Typography } from '@repo/core/typography';
 import { Suspense } from 'react';
 
-import ProductsList from '@/_shared/catalog/product-list';
+import CategoryWrapper from '@/_shared/catalog/category-wrapper';
+import ProductsWrapper from '@/_shared/catalog/product-wrapper';
 import SkeletonList from '@/_shared/catalog/skeleton/skeleton-list';
-import SortBar from '@/_shared/catalog/sort/sort-bar';
 
 function showSkeleton() {
     return <SkeletonList />;
 }
 function Catalog() {
     return (
-        <section className={'container mb-[100px] flex scroll-mt-[100px] flex-col'} id={'menu'}>
+        <section className={'container flex scroll-mt-[15vh] flex-col xl:mb-[100px]'} id={'menu'}>
             <Typography center variant={'h2'}>
                 Выберите пиццу
             </Typography>
 
             <Suspense fallback={showSkeleton()}>
-                <SortBar></SortBar>
+                <CategoryWrapper />
             </Suspense>
 
             <Suspense fallback={showSkeleton()}>
-                <ProductsList />
+                <ProductsWrapper />
             </Suspense>
         </section>
     );

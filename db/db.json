@@ -56,7 +56,7 @@
                 { "size": 30, "price": 799 },
                 { "size": 40, "price": 899 }
             ],
-            "categories": ["all", "pepper", "meat"],
+            "categories": [1, 2, 3],
             "image": "/images/catalog/pizza1.png"
         },
         {
@@ -68,7 +68,7 @@
                 { "size": 30, "price": 799 },
                 { "size": 40, "price": 899 }
             ],
-            "categories": ["all", "meat"],
+            "categories": [1, 3],
             "image": "/images/catalog/pizza2.png"
         },
         {
@@ -80,7 +80,7 @@
                 { "size": 30, "price": 799 },
                 { "size": 40, "price": 899 }
             ],
-            "categories": ["all", "meat"],
+            "categories": [1, 3],
 
             "image": "/images/catalog/pizza3.png"
         },
@@ -93,7 +93,7 @@
                 { "size": 30, "price": 799 },
                 { "size": 40, "price": 899 }
             ],
-            "categories": ["all", "vegan"],
+            "categories": [1, 5],
 
             "image": "/images/catalog/pizza4.png"
         },
@@ -106,7 +106,7 @@
                 { "size": 30, "price": 799 },
                 { "size": 40, "price": 899 }
             ],
-            "categories": ["all", "meat"],
+            "categories": [1, 3],
 
             "image": "/images/catalog/pizza5.png"
         },
@@ -119,7 +119,7 @@
                 { "size": 30, "price": 799 },
                 { "size": 40, "price": 899 }
             ],
-            "categories": ["all", "vegan"],
+            "categories": [1, 5],
 
             "image": "/images/catalog/pizza6.png"
         },
@@ -132,7 +132,7 @@
                 { "size": 30, "price": 799 },
                 { "size": 40, "price": 899 }
             ],
-            "categories": ["all", "meat"],
+            "categories": [1, 3],
 
             "image": "/images/catalog/pizza7.png"
         },
@@ -145,8 +145,7 @@
                 { "size": 30, "price": 799 },
                 { "size": 40, "price": 899 }
             ],
-            "categories": ["all", "vegan"],
-
+            "categories": [1, 5],
             "image": "/images/catalog/pizza8.png"
         },
         {
@@ -158,7 +157,7 @@
                 { "size": 30, "price": 799 },
                 { "size": 40, "price": 899 }
             ],
-            "categories": ["all", "cheese"],
+            "categories": [1, 4],
 
             "image": "/images/catalog/pizza9.png"
         },
@@ -171,7 +170,7 @@
                 { "size": 30, "price": 799 },
                 { "size": 40, "price": 899 }
             ],
-            "categories": ["all", "cheese"],
+            "categories": [1, 4],
 
             "image": "/images/catalog/pizza10.png"
         },
@@ -184,7 +183,7 @@
                 { "size": 30, "price": 799 },
                 { "size": 40, "price": 899 }
             ],
-            "categories": ["all", "pepper", "meat"],
+            "categories": [1, 2, 3],
 
             "image": "/images/catalog/pizza11.png"
         },
@@ -197,7 +196,7 @@
                 { "size": 30, "price": 799 },
                 { "size": 40, "price": 899 }
             ],
-            "categories": ["all", "meat", "cheese"],
+            "categories": [1, 3, 4],
             "image": "/images/catalog/pizza12.png"
         }
     ],

@@ -5,9 +5,5 @@ type Category = {
 };
 
 type CategoryProps = {
-    categories: Category[] | null;
-};
-
-type ProductProps = {
-    product: Product;
+    categories: Category[];
 };

@@ -3,7 +3,11 @@ import { Typography } from '@repo/core/typography';
 import Image from 'next/image';
 import { useCallback } from 'react';
 
-import { useCartStore } from '@/store/cart/cart-store';
+import { type CartItemType, useCartStore } from '@/store/cart-store';
+
+type CartItemProps = {
+    item: CartItemType;
+};
 
 function CounterCartItem({ item }: CartItemProps) {
     const { updateQuantity } = useCartStore();
