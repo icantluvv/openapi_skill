@@ -1,9 +1,19 @@
+'use client';
+
 import { Button } from '@repo/core/button';
 import Image from 'next/image';
 
-import type { DeepNonNullable } from '@/types/utilities';
+import { useSortStore } from '@/store/sort-bar-store';
 
-function MobileSortBar({ categories }: DeepNonNullable<CategoryProps>) {
+function MobileSortBar() {
+    const { categories, chooseCategory, chosenCategory } = useSortStore();
+
+    const handleCategoryClick = (categoryId: number) => () => {
+        const newCategoryId = chosenCategory === categoryId ? 0 : categoryId;
+
+        chooseCategory(newCategoryId);
+    };
+
     return (
         <div
             className={
@@ -11,7 +21,13 @@ function MobileSortBar({ categories }: DeepNonNullable<CategoryProps>) {
             }
         >
             {categories.map(category => (
-                <Button className="w-[24px]" form={'default'} key={category.id} variant="default">
+                <Button
+                    className="w-[24px]"
+                    form={'default'}
+                    key={category.id}
+                    onClick={handleCategoryClick(category.id)}
+                    variant="default"
+                >
                     <Image alt={'all-pizzas'} height={24} src={category.image} width={24}></Image>
                 </Button>
             ))}

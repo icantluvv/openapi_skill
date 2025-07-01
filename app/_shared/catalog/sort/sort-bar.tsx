@@ -1,26 +1,27 @@
-import { Typography } from '@repo/core/typography';
+'use client';
+import { useCallback, useEffect } from 'react';
+
+import type { DeepNonNullable } from '@/types/utilities';
 
 import DefaultSortBar from '@/_shared/catalog/sort/default-sort-bar';
 import MobileSortBar from '@/_shared/catalog/sort/mobile-sort-bar';
-import getAllCategories from '~/api/services/products/get-all-categories';
+import { useSortStore } from '@/store/sort-bar-store';
 
-async function SortBar() {
-    const categories = await getAllCategories();
+function SortBar({ categories }: DeepNonNullable<CategoryProps>) {
+    const { setCategories } = useSortStore();
 
-    if (!categories) {
-        return (
-            <div className="">
-                <Typography center variant="h4">
-                    Ошибка
-                </Typography>
-            </div>
-        );
-    }
+    const saveCategories = useCallback(() => {
+        setCategories(categories);
+    }, [categories, setCategories]);
+
+    useEffect(() => {
+        saveCategories();
+    }, [saveCategories]);
 
     return (
         <>
-            <DefaultSortBar categories={categories} />
-            <MobileSortBar categories={categories} />
+            <DefaultSortBar />
+            <MobileSortBar />
         </>
     );
 }
