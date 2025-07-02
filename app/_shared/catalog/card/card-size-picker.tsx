@@ -2,16 +2,15 @@ import { Typography } from '@repo/core/typography';
 
 import BuyButton from '@/_shared/catalog/card/buy-button';
 import { type CartItemType, useCartStore } from '@/store/cart-store';
-import { useProductSizeStore } from '@/store/product-size-store';
 
 import SizeOptionButton from './size-option-button';
 
 type ProductProps = {
     categories: Category[];
     product: Product;
+    selectedOption: Option;
+    setSelectedOption: (option: Option) => void;
 };
-
-const DEFAULT_OPTION: Option = { price: 0, size: 0 };
 
 function createCartItem(
     product: Product,
@@ -30,16 +29,10 @@ function createCartItem(
     };
 }
 
-function CardSizePicker({ categories, product }: ProductProps) {
+function CardSizePicker({ categories, product, selectedOption, setSelectedOption }: ProductProps) {
     const { addItem } = useCartStore();
-    const { selectedSizes, setSelectedSize } = useProductSizeStore();
 
-    const selectedOption = selectedSizes[product.id] ?? product.options[0] ?? DEFAULT_OPTION;
     const categoryImage = categories[1]?.image ?? '';
-
-    const handleSizeChange = (option: Option) => {
-        setSelectedSize(product.id, option);
-    };
 
     function addToCart() {
         const cartItem = createCartItem(product, selectedOption, categoryImage);
@@ -58,7 +51,7 @@ function CardSizePicker({ categories, product }: ProductProps) {
                     {product.options.map(option => (
                         <SizeOptionButton
                             key={option.size}
-                            onClick={handleSizeChange}
+                            onClick={setSelectedOption}
                             option={option}
                             selectedSize={selectedOption.size}
                         />

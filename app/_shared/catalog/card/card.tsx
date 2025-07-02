@@ -8,7 +8,6 @@ import type { DeepNonNullable } from '@/types/utilities';
 
 import CardSizePicker from '@/_shared/catalog/card/card-size-picker';
 import CategoryImages from '@/_shared/catalog/card/category-images';
-import { useProductSizeStore } from '@/store/product-size-store';
 
 type CardProps = {
     categories: Category[];
@@ -17,7 +16,7 @@ type CardProps = {
 
 type PizzaSize = 20 | 30 | 40;
 
-const DEFAULT_SIZE: PizzaSize = 20;
+const DEFAULT_OPTION: Option = { price: 0, size: 20 };
 
 const sizeToCssClass: Record<PizzaSize, string> = {
     20: 'w-[60px] md:w-[140px] xl:w-[150px] h-[60px] md:h-[140px] xl:h-[150px]',
@@ -27,9 +26,10 @@ const sizeToCssClass: Record<PizzaSize, string> = {
 
 function Card({ categories, product }: DeepNonNullable<CardProps>) {
     const [isHovered, setIsHovered] = useState(false);
-    const { selectedSizes } = useProductSizeStore();
 
-    const selectedSize = (selectedSizes[product.id]?.size ?? DEFAULT_SIZE) as PizzaSize;
+    const [selectedOption, setSelectedOption] = useState<Option>(
+        product.options[0] ?? DEFAULT_OPTION
+    );
 
     function handleMouse() {
         setIsHovered(!isHovered);
@@ -51,7 +51,9 @@ function Card({ categories, product }: DeepNonNullable<CardProps>) {
                     src="/images/svg/pizza_back.svg"
                     width={220}
                 />
-                <div className={`absolute ${sizeToCssClass[selectedSize]}`}>
+                <div
+                    className={`absolute transition-all duration-[.3s] ${sizeToCssClass[selectedOption.size as PizzaSize]}`}
+                >
                     <Image
                         alt={product.title}
                         className="rounded-full object-contain"
@@ -77,7 +79,12 @@ function Card({ categories, product }: DeepNonNullable<CardProps>) {
                     </Typography>
                 </div>
 
-                <CardSizePicker categories={categories} product={product} />
+                <CardSizePicker
+                    categories={categories}
+                    product={product}
+                    selectedOption={selectedOption}
+                    setSelectedOption={setSelectedOption}
+                />
             </div>
         </li>
     );
