@@ -9,7 +9,7 @@ function DefaultSortBar() {
     return (
         <div
             className={
-                'mt-[20px] hidden items-center justify-center gap-[50px] md:flex xl:mt-[24px] xl:mt-[50px] xl:gap-[45px]'
+                'mt-[18px] hidden items-center justify-center gap-[50px] md:flex xl:mt-[24px] xl:mt-[50px] xl:gap-[45px]'
             }
         >
             {categories.map(category => (

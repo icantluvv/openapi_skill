@@ -20,7 +20,9 @@ function DefaultHeader() {
         <header
             className={`hidden w-full transition-all duration-[.3s] xl:block ${isScroll ? 'h-[60px] bg-white shadow-custom' : 'h-[176px]'} `}
         >
-            <div className={`container flex h-full items-center gap-[92px]`}>
+            <div
+                className={`container flex h-full items-center transition-all ${isScroll ? 'justify-between' : 'gap-[92px]'} `}
+            >
                 <Link href={'/'}>
                     <Image
                         alt={'header_logo'}
@@ -43,7 +45,7 @@ function DefaultHeader() {
                                 description={'Ежедневно с 9:00 до 23:00'}
                                 scrolledTitleSize={'18px'}
                                 src={'/images/header/phone.png'}
-                                title={'+7' + ' ' + ' (918) ' + ' ' + '432-65-87'}
+                                title={'+7 (918) 432-65-87'}
                                 titleSize={'24px'}
                             />
                         </Link>

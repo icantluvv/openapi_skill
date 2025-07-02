@@ -23,7 +23,7 @@ function CardsList({ products }: CardsListProps) {
     }, [chosenCategory, products]);
 
     return (
-        <ul className="mt-[40px] grid w-full grid-cols-1 place-content-stretch gap-[32px] md:grid-cols-3 xl:grid-cols-4">
+        <ul className="mt-[13px] grid w-full grid-cols-1 place-content-stretch gap-[5px] md:mt-[40px] md:grid-cols-3 md:gap-[33px] xl:grid-cols-4">
             {filteredProducts.map(product => {
                 const productCategories = categories.filter(cat =>
                     product.categories.includes(Number(cat.id))

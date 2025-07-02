@@ -42,10 +42,12 @@ function CardSizePicker({ categories, product, selectedOption, setSelectedOption
 
     return (
         <div className="flex flex-col gap-[12px] md:items-center xl:gap-[4px]">
-            <div className={'flex w-full flex-col items-center gap-[4px]'}>
-                <Typography className="md:text-center" variant="description">
-                    Размер, см
-                </Typography>
+            <div className={'flex w-full flex-col items-start gap-[4px] md:items-center'}>
+                <div className={'w-full'}>
+                    <Typography className="text-start md:text-center" variant="description">
+                        Размер, см
+                    </Typography>
+                </div>
 
                 <div className="flex w-[90%] rounded-sm bg-light-gray p-[2px] xl:max-w-[182px]">
                     {product.options.map(option => (
@@ -59,7 +61,7 @@ function CardSizePicker({ categories, product, selectedOption, setSelectedOption
                 </div>
             </div>
 
-            <div className={'flex w-full flex-col gap-[11px] xl:gap-[8px]'}>
+            <div className={'flex w-full flex-col gap-[11px] xl:gap-[10px]'}>
                 <Typography
                     center
                     className="hidden text-[20px] font-bold md:block xl:text-[24px]"

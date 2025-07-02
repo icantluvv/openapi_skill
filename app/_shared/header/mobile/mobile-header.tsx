@@ -18,7 +18,7 @@ function MobileHeader() {
             <MobileSidebar />
 
             <div className={`h-[64px] w-full bg-white md:h-[120px]`}>
-                <div className="flex h-full items-center justify-between px-[30px]">
+                <div className="container flex h-full items-center justify-between">
                     <Link className="w-[85px] md:w-[130px]" href={'/'}>
                         <Image
                             alt={'header_logo'}
@@ -28,7 +28,7 @@ function MobileHeader() {
                         />
                     </Link>
 
-                    <div className="flex items-center gap-[16px] md:gap-[32px]">
+                    <div className="flex items-center gap-[21px] md:gap-[32px]">
                         <Link href="tel:+7(918)432-65-87">
                             <HeaderAction
                                 description={'Ежедневно с 9:00 до 23:00'}
@@ -58,7 +58,7 @@ function MobileHeader() {
                         </Button>
 
                         <Button
-                            className="relative flex h-[40px] w-[40px]"
+                            className="relative ml-[4px] flex h-[40px] w-[40px] md:ml-0"
                             form={'default'}
                             onClick={setShowMobileNav}
                             variant="default"

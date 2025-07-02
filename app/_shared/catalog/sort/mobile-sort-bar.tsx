@@ -17,7 +17,7 @@ function MobileSortBar() {
     return (
         <div
             className={
-                'mt-[24px] flex items-center justify-center gap-[28px] md:hidden xl:mt-[55px]'
+                'mt-[20px] flex items-center justify-center gap-[28px] md:hidden xl:mt-[55px]'
             }
         >
             {categories.map(category => (

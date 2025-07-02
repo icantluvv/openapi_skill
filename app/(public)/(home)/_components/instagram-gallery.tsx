@@ -9,12 +9,12 @@ async function InstagramGallery() {
 
     return (
         <section
-            className="flex w-full scroll-mt-[15vh] flex-col gap-[24px] bg-background xl:gap-[46px]"
+            className="mt-[44px] flex w-full scroll-mt-[15vh] flex-col gap-[22px] bg-background md:mt-[17px] xl:mt-[20px] xl:gap-[46px]"
             id={'contact'}
         >
-            <div className="container flex flex-col gap-[4px] xl:gap-[12px]">
-                <Typography center variant="h2">
-                    Следите за нами в Instagram
+            <div className="container flex flex-col items-center gap-[4px] md:gap-[10px] xl:gap-[25px]">
+                <Typography center className={'leading-[32px]'} variant="h2">
+                    Следите за нами <br className={'md:hidden'} /> в Instagram
                 </Typography>
 
                 <Link

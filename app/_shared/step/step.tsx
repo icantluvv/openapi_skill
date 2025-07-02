@@ -14,15 +14,17 @@ type StepProps = {
 function Step({ description, ref, src, title }: Readonly<StepProps>) {
     return (
         <div
-            className={`flex flex-1 items-start gap-[12px] rounded-sm bg-background p-[14px] shadow-custom md:min-h-[208px] md:flex-col md:p-[28px] xl:min-h-auto xl:flex-row xl:items-center xl:gap-[24px] xl:px-[24px] xl:py-[32px]`}
+            className={`flex flex-1 items-start gap-[14px] rounded-sm bg-background px-[14px] pt-[10px] pb-[20px] shadow-custom md:min-h-[208px] md:flex-col md:gap-[6px] md:px-[22px] md:pt-[20px] md:pb-[40px] xl:min-h-auto xl:flex-row xl:items-center xl:gap-[24px] xl:px-[24px] xl:py-[28px]`}
             ref={ref}
         >
-            <div className="h-[48px] w-[48px] md:h-[55px] md:w-[55px] xl:h-[80px] xl:w-[80px] xl:min-w-[80px]">
+            <div className="my-1 h-[48px] w-[48px] min-w-[48px] md:h-[56px] md:w-[56px] md:min-w-[56px] xl:h-[80px] xl:w-[80px] xl:min-w-[80px]">
                 <Image alt={title} height={80} src={src} width={80}></Image>
             </div>
-            <div className="flex w-full flex-col gap-[4px] xl:gap-[6px]">
+            <div className="flex w-full flex-col gap-[2px] xl:gap-[6px]">
                 <Typography variant="h4">{title}</Typography>
-                <Typography variant="description">{description}</Typography>
+                <div className={'pr-[8px] md:pr-[6px]'}>
+                    <Typography variant="description">{description}</Typography>
+                </div>
             </div>
         </div>
     );

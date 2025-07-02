@@ -10,7 +10,12 @@ function showSkeleton() {
 }
 function Catalog() {
     return (
-        <section className={'container flex scroll-mt-[15vh] flex-col xl:mb-[100px]'} id={'menu'}>
+        <section
+            className={
+                'container mb-[60px] flex scroll-mt-[15vh] flex-col md:mb-[85px] xl:mb-[100px]'
+            }
+            id={'menu'}
+        >
             <Typography center variant={'h2'}>
                 Выберите пиццу
             </Typography>

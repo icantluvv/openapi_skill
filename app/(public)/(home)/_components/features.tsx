@@ -4,7 +4,7 @@ import featuresArray from '@/_shared/feature/features-array';
 function Features() {
     return (
         <section
-            className="container flex scroll-mt-[15vh] flex-col gap-[40px] py-[16px] md:py-[80px] xl:w-[860px] xl:py-[105px]"
+            className="container flex scroll-mt-[15vh] flex-col gap-[20px] py-[20px] md:py-[82px] lg:w-[860px] xl:gap-[40px] xl:py-[105px]"
             id={'about'}
         >
             {featuresArray.map((feature, index) => (

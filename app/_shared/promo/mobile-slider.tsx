@@ -37,10 +37,10 @@ function MobileSlider({ items }: MobileSliderProps) {
                 ))}
             </div>
 
-            <div className="mt-4 flex justify-center gap-2">
+            <div className="mt-[20px] flex justify-center gap-2">
                 {items.map((item, index) => (
                     <div
-                        className={`h-2 w-2 rounded-full transition-colors ${
+                        className={`h-[12px] w-[12px] rounded-full transition-colors ${
                             currentIndex === index ? 'bg-primary' : 'bg-gray-300'
                         }`}
                         key={item.id}

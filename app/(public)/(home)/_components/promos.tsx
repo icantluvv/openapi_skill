@@ -6,7 +6,7 @@ async function Promos() {
     const promos = await getPromo();
 
     return (
-        <section className="mt-[60px] mb-[50px] w-full bg-background md:mt-[0px] md:mb-[75px] xl:mb-[105px]">
+        <section className="mt-[60px] mb-[60px] w-full bg-background md:mt-[0px] md:mb-[85px] xl:mb-[105px]">
             <div className="no-scrollbar container overflow-x-auto">
                 <div className="flex hidden w-max gap-[32px] md:flex md:w-full">
                     {promos.map(promo => (

@@ -19,11 +19,12 @@ export const typographyVariants = cva('transition-all', {
             button: 'font-alegreya text-[18px] font-black',
             custom: '',
             description: 'font-roboto text-[12px] font-normal',
-            h1: 'font-alegreya text-[40px] font-black md:text-[52px] xl:text-[72px]',
-            h2: 'font-alegreya text-[28px] font-black md:text-[40px] xl:text-[52px]',
+            h1: 'font-alegreya text-[40px] font-black tracking-wide md:text-[52px] xl:text-[72px]',
+            h2: 'font-alegreya text-[28px] font-black tracking-wide md:text-[40px] xl:text-[52px]',
             h3: 'font-alegreya text-[20px] font-extrabold md:text-[24px] xl:text-[32px]',
-            h4: 'font-alegreya text-[18px] font-extrabold md:text-[20px] xl:text-[24px]',
-            p: 'font-roboto text-[12px] font-normal xl:text-[14px]',
+            h4: 'font-alegreya text-[18px] font-extrabold tracking-normal md:text-[20px] xl:text-[24px]',
+            h4_promo: 'font-alegreya text-[20px] font-extrabold xl:text-[24px]',
+            p: 'font-roboto text-[12px] font-normal md:text-[14px]',
 
             span: '',
         },
@@ -44,6 +45,7 @@ type TypographyProps = {
         | 'h1'
         | 'h2'
         | 'h3'
+        | 'h4_promo'
         | 'h4'
         | 'p'
         | 'span';
@@ -62,7 +64,8 @@ export function Typography({
         variant === 'custom' ||
         variant === 'description' ||
         variant === 'accent' ||
-        variant === 'button'
+        variant === 'button' ||
+        variant === 'h4_promo'
             ? 'p'
             : variant;
 

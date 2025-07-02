@@ -1,10 +1,7 @@
 import type { ComponentProps, Ref } from 'react';
 
 import { Typography } from '@repo/core/typography';
-import { cva } from 'class-variance-authority';
 import Image from 'next/image';
-
-const promoVariants = cva('flex w-[calc(100vw-2*var(--container-padding))] flex-col gap-[10px]');
 
 type PromoProps = {
     className?: string;
@@ -14,9 +11,14 @@ type PromoProps = {
     title: string;
 } & ComponentProps<'div'>;
 
-function Promo({ className, description, ref, src, title }: Readonly<PromoProps>) {
+function Promo({ description, ref, src, title }: Readonly<PromoProps>) {
     return (
-        <div className={promoVariants({ className })} ref={ref}>
+        <div
+            className={
+                'flex w-[calc(100vw-2*var(--container-padding))] flex-col gap-[10px] md:gap-[8px] xl:gap-[10px]'
+            }
+            ref={ref}
+        >
             <div>
                 <Image
                     alt={title}
@@ -26,8 +28,18 @@ function Promo({ className, description, ref, src, title }: Readonly<PromoProps>
                     width={416}
                 ></Image>
             </div>
-            <Typography variant={'h4'}>{title}</Typography>
-            <Typography variant={'p'}>{description}</Typography>
+
+            <div className={'mt-[4px] max-w-[60vw] md:max-w-[85%]'}>
+                <Typography className={'leading-6'} variant={'h4_promo'}>
+                    {title}
+                </Typography>
+            </div>
+
+            <div className={'max-w-[85vw] xl:mt-2'}>
+                <Typography className={'text-sm'} variant={'custom'}>
+                    {description}
+                </Typography>
+            </div>
         </div>
     );
 }

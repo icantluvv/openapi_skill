@@ -25,7 +25,7 @@ function BuyButton({ action, price }: BuyButtonProps) {
 
     return (
         <Button
-            className="mt-[8px] w-[120px] py-[4px] md:mt-0 md:w-full md:py-[8px] xl:py-[13px]"
+            className="w-[120px] py-[2px] md:w-full md:py-[8px] xl:py-[13px]"
             onClick={clickButton}
             variant={isDisabled ? 'disable' : 'primary'}
         >
