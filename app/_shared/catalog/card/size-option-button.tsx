@@ -1,5 +1,6 @@
 import { Button } from '@repo/core/button';
 import { Typography } from '@repo/core/typography';
+import { useState } from 'react';
 
 function SizeOptionButton({
     onClick,
@@ -10,10 +11,15 @@ function SizeOptionButton({
     option: Option;
     selectedSize: number;
 }) {
+    const [isHovered, setIsHovered] = useState(false);
     const isSelected = selectedSize === option.size;
 
     function handleClick() {
         onClick(option);
+    }
+
+    function handleHover() {
+        setIsHovered(!isHovered);
     }
 
     return (
@@ -22,10 +28,12 @@ function SizeOptionButton({
             form="default"
             key={option.size}
             onClick={handleClick}
+            onMouseEnter={handleHover}
+            onMouseLeave={handleHover}
             variant="default"
         >
             <Typography
-                className={`${isSelected ? '' : 'text-shadow-text'} hover:text-black`}
+                className={isHovered || isSelected ? 'text-black' : 'text-shadow-text'}
                 variant="description"
             >
                 {option.size}
