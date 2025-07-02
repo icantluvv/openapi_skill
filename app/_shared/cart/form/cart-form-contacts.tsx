@@ -28,8 +28,9 @@ function CartFormContacts() {
                     value={name}
                 />
                 <Input
+                    mask="+7 (999) 999-99-99"
                     onChange={changeData(setPhone)}
-                    placeholder={'Телефон'}
+                    placeholder="Телефон"
                     required
                     value={phone}
                 />
