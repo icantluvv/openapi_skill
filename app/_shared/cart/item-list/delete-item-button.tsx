@@ -16,7 +16,7 @@ function DeleteItemButton({ cartItemId }: DeleteItemButtonProps) {
 
     return (
         <Button
-            className={'absolute top-0 right-0 hover:opacity-75 active:opacity-50'}
+            className={'absolute top-[8px] right-[2px] hover:opacity-75 active:opacity-50'}
             onClick={deleteItem}
         >
             <Image

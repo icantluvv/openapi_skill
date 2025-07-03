@@ -13,18 +13,22 @@ type CartItemProps = {
 
 function CartItem({ item }: CartItemProps) {
     return (
-        <div className="relative grid grid-flow-row grid-cols-[2fr,1fr] grid-rows-[120px] py-[12px] pr-[10px] md:grid-flow-col md:items-center md:justify-between md:py-0 xl:pr-[30px]">
-            <div className="relative flex min-w-0 items-center gap-[4px]">
+        <div className="relative grid grid-flow-row grid-cols-[2fr,1fr] gap-2 px-[4px] py-[12px] md:grid-flow-col md:items-center md:justify-between md:py-[7.5px] xl:gap-0 xl:px-[7px]">
+            <div className="relative flex items-center">
                 <Image
                     alt={'category'}
-                    className={'absolute top-0 left-0 z-[1000]'}
+                    className={'absolute top-[5px] left-0 z-[1000]'}
                     height={12}
                     src={item.categoryImage}
                     width={12}
                 ></Image>
-                <div className="relative mx-[10px] h-[80px] w-[80px] min-w-[80px]">
-                    <Image alt={'pizza'} layout="fill" src={item.image}></Image>
+
+                <div className={'flex h-[100px] w-[100px] items-center justify-center'}>
+                    <div className="relative h-[78px] w-[78px] min-w-[78px]">
+                        <Image alt={'pizza'} layout="fill" src={item.image}></Image>
+                    </div>
                 </div>
+
                 <div className={'flex flex-col gap-[4px]'}>
                     <Typography
                         className="font-alegreya text-[18px] font-extrabold"

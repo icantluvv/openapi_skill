@@ -20,7 +20,7 @@ function CartFormPayMethod() {
 
     return (
         <>
-            <div className="flex flex-col gap-[8px]">
+            <div className="flex flex-col gap-[12px]">
                 <Typography
                     className={'font-alegreya text-[18px] font-extrabold'}
                     variant={'custom'}

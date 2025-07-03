@@ -18,6 +18,7 @@ async function InstagramGallery() {
                 </Typography>
 
                 <Link
+                    className={'hover:underline'}
                     href={
                         'https://www.google.com/search?q=google&oq=google&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTITCAEQLhiDARjHARixAxjRAxiABDIMCAIQIxgnGIAEGIoFMg0IAxAAGIMBGLEDGIAEMg0IBBAAGIMBGLEDGIAEMgYIBRBFGDwyBggGEEUYPDIGCAcQRRg80gEIMjczNWowajeoAgCwAgA&sourceid=chrome&ie=UTF-8'
                     }

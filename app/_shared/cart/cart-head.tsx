@@ -12,21 +12,24 @@ function CartHead() {
     }
 
     return (
-        <div className="flex items-center justify-between xl:h-[40px]">
+        <div className="flex items-center justify-between">
             <Typography variant="h3">Ваш заказ</Typography>
-            <Button
-                className={
-                    'relative h-[25px] w-[25px] hover:opacity-75 active:opacity-50 xl:h-[40px] xl:w-[40px]'
-                }
-                onClick={handleCloseCart}
-            >
-                <Image
-                    alt="Закрыть"
-                    fill
-                    objectFit={'cover'}
-                    src="/images/svg/cart/close-black.svg"
-                />
-            </Button>
+
+            <div className="absolute top-[10px] right-[10px] xl:top-[20px] xl:right-[20px]">
+                <Button
+                    className={
+                        'relative h-[25px] w-[25px] hover:opacity-75 active:opacity-50 xl:h-[40px] xl:w-[40px]'
+                    }
+                    onClick={handleCloseCart}
+                >
+                    <Image
+                        alt="Закрыть"
+                        fill
+                        objectFit={'cover'}
+                        src="/images/svg/cart/close-black.svg"
+                    />
+                </Button>
+            </div>
         </div>
     );
 }

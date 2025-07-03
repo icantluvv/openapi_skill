@@ -29,7 +29,6 @@ function HeaderAction({
     children,
     className,
     description,
-    ref,
     scrolledTitleSize,
     showCartCounter = false,
     src,
@@ -43,18 +42,18 @@ function HeaderAction({
     const titleClass = isScroll ? `text-[${scrolledTitleSize}]` : `text-[${titleSize}]`;
 
     return (
-        <div className={cn('relative flex gap-3', className)} ref={ref}>
-            <Button
-                className={cn('relative', buttonSize)}
-                form="default"
-                onClick={action}
-                variant="default"
-            >
+        <Button
+            className={cn('relative flex gap-3', className)}
+            form="default"
+            onClick={action}
+            variant="default"
+        >
+            <div className={cn('relative', buttonSize)}>
                 {Boolean(showCartCounter) && <CartCounter />}
                 <Image alt={title} fill objectFit="cover" src={src} />
-            </Button>
+            </div>
 
-            <div className="font-alegreya hidden flex-col font-black xl:flex">
+            <div className="font-alegreya hidden flex-col text-start font-black xl:flex">
                 <Typography className={titleClass} variant="custom">
                     {title}
                 </Typography>
@@ -64,7 +63,7 @@ function HeaderAction({
             </div>
 
             {Boolean(children) && <div className="absolute">{children}</div>}
-        </div>
+        </Button>
     );
 }
 
