@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700;800;900&family=Roboto:wght@300;400;500;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+    --animate-accordion-down: accordion-down 0.2s ease-out;
+    --animate-accordion-up: accordion-up 0.2s ease-out;
+
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    --color-background: hsl(var(--background));
+    --color-foreground: hsl(var(--foreground));
+
+    --color-primary: hsl(var(--primary));
+    --color-primary-hover: hsl(var(--primary-hover));
+    --color-primary-active: hsl(var(--primary-active));
+    --color-primary-focus: hsl(var(--primary-focus));
+    --color-primary-foreground: hsl(var(--primary-foreground));
+
+    --color-disable: hsl(var(--disable));
+    --color-disable-font: hsl(var(--disable-font));
+
+    --light-gray: 220, 17%, 94%;
+    --dark-gray: 222, 17%, 81%;
+
+    --color-shadow-text: hsl(var(--shadow-text));
+
+    --color-light-gray: hsl(var(--light-gray));
+    --color-dark-gray: hsl(var(--dark-gray));
+
+    --color-cream: hsl(var(--cream));
+
+    --color-ring: hsl(var(--ring));
+
+    /* input styles */
+    --color-input-border: hsl(var(--input-border));
+    --color-input-border-hover: hsl(var(--input-border-hover));
+    --color-input-border-focus: hsl(var(--input-border-focus));
+    --color-input-border-active: hsl(var(--input-border-active));
+    --colorinput-border-error: hsl(var(--input-border-error));
+
+    /* checkbox ring */
+    --color-checkbox-border: hsl(var(--checkbox-border));
+    --color-checkbox-border-hover: hsl(var(--checkbox-border-hover));
+    --color-checkbox-border-active: hsl(var(--checkbox-border-active));
+
+    /* objects shadow */
+    --shadow-custom: 0 2px 5px hsl(var(--custom-shadow-border) / 0.3);
+}
+
+@utility container {
+    margin-inline: auto;
+    --container-padding: 5vw;
+    padding-inline: var(--container-padding);
+
+    @media (width >= --theme(--breakpoint-md)) {
+        max-width: none;
+        --container-padding: 30px;
+    }
+    @media (width >= 1400px) {
+        --container-padding: 0px;
+        max-width: 1312px;
+    }
+}
+
+@layer utilities {
+    .no-scrollbar {
+        -ms-overflow-style: none; /* IE и Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+}
+
+html,
+body {
+    overscroll-behavior: none;
+    scroll-behavior: smooth;
+}
+
+@layer base {
+    .font-alegreya {
+        font-family: 'Alegreya', serif;
+    }
+
+    .font-roboto {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 0 0% 0%;
+
+        /* primary colors */
+        --primary: 0 78% 54%;
+        --primary-foreground: 210 40% 98%;
+        --primary-hover: 0, 100%, 61.8%;
+        --primary-active: 2, 73%, 43%;
+        --primary-focus: 0, 77%, 55%;
+
+        /* for buttons inputs etc*/
+        --disable: 0, 0%, 86%;
+        --disable-font: 0, 0%, 58%;
+        --shadow-text: 226.2 9.2% 56.1%;
+        --light-gray: 220, 17%, 94%;
+        --dark-gray: 222, 17%, 81%;
+
+        /* bg for steps block */
+        --cream: 36.1 26.3% 96.3%;
+
+        /* shadow for header */
+        --custom-shadow-border: 220 5% 67%;
+
+        /* input styles */
+        --input-border: 210, 5%, 78%;
+        --input-border-hover: 0, 0%, 0%;
+        --input-border-focus: 208, 100%, 78%;
+        --input-border-active: 210, 76%, 57%;
+        --input-border-error: 0, 94%, 73%;
+
+        /* checkbox form styles */
+        --checkbox-border: 210, 5%, 78%;
+        --checkbox-border-hover: 0 0% 0%;
+        --checkbox-border-active: 210, 11%, 23%;
+
+        /* border */
+        --ring: 208, 100%, 76%;
+
+        /* rounded */
+        --radius: 0.5rem;
+    }
+}
+
+@layer components {
+    #__next {
+        @apply h-full;
+    }
+}
