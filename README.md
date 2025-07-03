@@ -1,6 +1,6 @@
 # NextJS Starter
 
-A robust boilerplate for quickly building web applications with Next.js.
+A robust boilerplate for quickly building web applications with Next.js
 
 ## 🪄 Features:
 
