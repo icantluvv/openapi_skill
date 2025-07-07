@@ -29,6 +29,7 @@ function CounterCartItem({ item }: CartItemProps) {
             <div className="flex items-center gap-[8px]">
                 <Button
                     className={`h-[18px] w-[18px] xl:h-[24px] xl:w-[24px] ${item.quantity === 1 ? 'bg-light-gray' : 'bg-dark-gray'}`}
+                    data-testid={`cart-minus-button-${item.cartItemId}`}
                     form={'circle'}
                     onClick={minusItem}
                 >
@@ -52,6 +53,7 @@ function CounterCartItem({ item }: CartItemProps) {
 
                 <Button
                     className="h-[18px] w-[18px] bg-dark-gray xl:h-[24px] xl:w-[24px]"
+                    data-testid={`cart-plus-button-${item.cartItemId}`}
                     form={'circle'}
                     onClick={plusItem}
                 >
