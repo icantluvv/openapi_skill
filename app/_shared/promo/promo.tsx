@@ -22,7 +22,7 @@ function Promo({ description, ref, src, title }: Readonly<PromoProps>) {
             <div>
                 <Image
                     alt={title}
-                    className="rounded-sm object-cover"
+                    className="w-full rounded-sm object-cover"
                     height={247}
                     src={src}
                     width={416}
