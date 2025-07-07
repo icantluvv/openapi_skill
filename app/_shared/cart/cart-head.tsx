@@ -26,7 +26,7 @@ function CartHead() {
                         alt="Закрыть"
                         fill
                         objectFit={'cover'}
-                        src="/images/svg/cart/close-black.svg"
+                        src="/images/svg/cart/closeblack.svg"
                     />
                 </Button>
             </div>

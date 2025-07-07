@@ -32,7 +32,12 @@ function CounterCartItem({ item }: CartItemProps) {
                     form={'circle'}
                     onClick={minusItem}
                 >
-                    <Image alt={''} height={12} src={'/images/cart/minus.svg'} width={12}></Image>
+                    <Image
+                        alt={''}
+                        height={12}
+                        src={'/images/svg/cart/minus.svg'}
+                        width={12}
+                    ></Image>
                 </Button>
 
                 <div
@@ -50,7 +55,12 @@ function CounterCartItem({ item }: CartItemProps) {
                     form={'circle'}
                     onClick={plusItem}
                 >
-                    <Image alt={''} height={12} src={'/images/cart/plus.svg'} width={12}></Image>
+                    <Image
+                        alt={''}
+                        height={12}
+                        src={'/images/svg/cart/plus.svg'}
+                        width={12}
+                    ></Image>
                 </Button>
             </div>
 

@@ -22,7 +22,7 @@ function DeleteItemButton({ cartItemId }: DeleteItemButtonProps) {
             <Image
                 alt={'delete_cartitem'}
                 height={24}
-                src={'/images/cart/delete_cartitem.svg'}
+                src={'/images/svg/cart/delete_cartitem.svg'}
                 width={24}
             ></Image>
         </Button>
