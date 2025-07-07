@@ -4,7 +4,22 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 
 import { cn } from '#/utils/cn';
+import { Alegreya, Roboto } from 'next/font/google';
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
+
+const roboto = Roboto({
+    display: 'swap',
+    subsets: ['latin'],
+    variable: '--font-roboto',
+    weight: ['300', '400', '500', '700'],
+});
+
+const alegreya = Alegreya({
+    display: 'swap',
+    subsets: ['latin'],
+    variable: '--font-alegreya',
+    weight: ['400', '700', '800', '900'],
+});
 
 export const dynamic = 'auto';
 // 'auto' | 'force-dynamic' | 'error' | 'force-static'
@@ -29,7 +44,11 @@ export type RootLayoutProps = Readonly<{ children: ReactNode }>;
 
 export default function RootLayout({ children }: RootLayoutProps) {
     return (
-        <html lang="ru" suppressHydrationWarning>
+        <html
+            className={`${alegreya.variable} ${roboto.variable}`}
+            lang="ru"
+            suppressHydrationWarning
+        >
             <body className={cn('font-sans antialiased')}>
                 <NuqsAdapter>
                     <main className="relative flex size-full flex-col items-center justify-center overflow-hidden bg-background antialiased">
