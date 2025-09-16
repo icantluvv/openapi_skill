@@ -5,6 +5,7 @@ import type { NextConfig } from 'next';
 import { RsdoctorWebpackPlugin } from '@rsdoctor/webpack-plugin';
 import { environment as clientEnv } from '#/env/client';
 import { environment as serverEnv } from '#/env/server';
+import createNextIntlPlugin from 'next-intl/plugin';
 
 const jiti = createJiti(import.meta.url);
 
@@ -172,31 +173,30 @@ const nextConfig: NextConfig = {
     },
 };
 
+const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
+let config = withNextIntl(nextConfig);
+
 const isProduction =
     process.env.NODE_ENV === 'production' && process.env.NEXT_PUBLIC_APP_ENV === 'PROD';
 
-const withSentry = () => {
-    if (process.env.NEXT_PUBLIC_SENTRY_DSN && process.env.NEXT_PUBLIC_SENTRY_DSN?.length > 0) {
-        return withSentryConfig(nextConfig, {
-            org: process.env.SENTRY_ORG,
-            project: process.env.APP_NAME,
-            authToken: process.env.SENTRY_AUTH_TOKEN,
-            sentryUrl: process.env.SENTRY_URL,
-            silent: true,
-            widenClientFileUpload: true,
-            sourcemaps: { deleteSourcemapsAfterUpload: true },
-            reactComponentAnnotation: { enabled: true },
-            disableLogger: true,
-            telemetry: false,
-            bundleSizeOptimizations: {
-                excludeDebugStatements: true,
-                excludeReplayShadowDom: true,
-                excludeReplayIframe: true,
-            },
-        });
-    }
+if (isProduction && process.env.NEXT_PUBLIC_SENTRY_DSN) {
+    config = withSentryConfig(config, {
+        org: process.env.SENTRY_ORG,
+        project: process.env.APP_NAME,
+        authToken: process.env.SENTRY_AUTH_TOKEN,
+        sentryUrl: process.env.SENTRY_URL,
+        silent: true,
+        widenClientFileUpload: true,
+        sourcemaps: { deleteSourcemapsAfterUpload: true },
+        reactComponentAnnotation: { enabled: true },
+        disableLogger: true,
+        telemetry: false,
+        bundleSizeOptimizations: {
+            excludeDebugStatements: true,
+            excludeReplayShadowDom: true,
+            excludeReplayIframe: true,
+        },
+    });
+}
 
-    return nextConfig;
-};
-
-export default isProduction ? withSentry() : nextConfig;
+export default config;

@@ -38,15 +38,15 @@ function CartModal() {
     }
 
     return (
-        <div className="no-scrollbar fixed inset-0 z-[9999] flex items-start justify-center overflow-y-auto bg-black/90 pt-[calc(50px+env(safe-area-inset-top))] pb-[50px] xl:pt-[calc(100px+env(safe-area-inset-top))] xl:pb-[100px]">
+        <div className="no-scrollbar fixed inset-0 z-[9999] flex items-start justify-center overflow-y-auto bg-black/90 pb-[50px] pt-[calc(50px+env(safe-area-inset-top))] xl:pb-[100px] xl:pt-[calc(100px+env(safe-area-inset-top))]">
             <div
-                className="relative z-[10000] flex w-[90vw] flex-col gap-[20px] overflow-x-hidden overflow-y-auto rounded-md bg-background px-[15px] py-[25] xl:w-full xl:max-w-[70vw] xl:gap-[20px] xl:px-[30px] xl:py-[30px] 2xl:max-w-[36.7vw]"
+                className="bg-background relative z-[10000] flex w-[90vw] flex-col gap-[20px] overflow-y-auto overflow-x-hidden rounded-md px-[15px] py-[25] xl:w-full xl:max-w-[70vw] xl:gap-[20px] xl:px-[30px] xl:py-[30px] 2xl:max-w-[36.7vw]"
                 ref={modalRef}
             >
                 <CartHead />
 
                 <div className="flex flex-col gap-[4px]">
-                    <div className="no-scrollbar max-h-[40vh] overflow-x-hidden overflow-y-auto border-y border-light-gray xl:max-h-[36vh]">
+                    <div className="no-scrollbar border-light-gray max-h-[40vh] overflow-y-auto overflow-x-hidden border-y xl:max-h-[36vh]">
                         <div className="divide-y-1 divide-light-gray">
                             {items.map(item => (
                                 <CartItem item={item} key={item.cartItemId} />

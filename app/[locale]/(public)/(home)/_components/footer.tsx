@@ -7,7 +7,7 @@ function Footer() {
         <footer className="flex w-full justify-center bg-black py-[24px] xl:py-[32px]">
             <div className="container flex w-full flex-col items-center gap-[10px] md:flex-row md:justify-between md:gap-0">
                 <div className="flex flex-col items-center gap-[25px] md:flex-row md:gap-[80px] xl:gap-[100px]">
-                    <Link className="w-[79px] md:w-[90px] xl:w-[112px]" href={'/'}>
+                    <Link className="w-[79px] md:w-[90px] xl:w-[112px]" href={'/public'}>
                         <Image
                             alt={'footer-logo'}
                             height={52}

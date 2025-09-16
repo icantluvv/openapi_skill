@@ -1,9 +1,9 @@
 'use client';
-import logger from '@repo/logger';
 import * as Sentry from '@sentry/nextjs';
 import { useEffect } from 'react';
 
 import { ErrorFallback } from '@/_shared/utilities/error-boundary';
+import logger from '~/packages/logger';
 
 type GlobalErrorProps = {
     error: { digest?: string } & Error;

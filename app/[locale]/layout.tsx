@@ -4,8 +4,12 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 
 import { cn } from '#/utils/cn';
+import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { Alegreya, Roboto } from 'next/font/google';
+import { notFound } from 'next/navigation';
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
+
+import { routing } from '~/i18n/routing';
 
 const roboto = Roboto({
     display: 'swap',
@@ -42,7 +46,23 @@ export const metadata: Metadata = {
 
 export type RootLayoutProps = Readonly<{ children: ReactNode }>;
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export function generateStaticParams() {
+    return routing.locales.map(locale => ({ locale }));
+}
+
+export default async function RootLayout({
+    children,
+    params,
+}: {
+    children: React.ReactNode;
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = await params;
+
+    if (!hasLocale(routing.locales, locale)) {
+        notFound();
+    }
+
     return (
         <html
             className={`${alegreya.variable} ${roboto.variable}`}
@@ -51,8 +71,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
         >
             <body className={cn('font-sans antialiased')}>
                 <NuqsAdapter>
-                    <main className="relative flex size-full flex-col items-center justify-center overflow-hidden bg-background antialiased">
-                        {children}
+                    <main className="bg-background relative flex size-full flex-col items-center justify-center overflow-hidden antialiased">
+                        <NextIntlClientProvider>{children}</NextIntlClientProvider>
                     </main>
                 </NuqsAdapter>
             </body>

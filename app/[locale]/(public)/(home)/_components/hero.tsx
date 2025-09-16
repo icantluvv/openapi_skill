@@ -1,11 +1,17 @@
-import { Button } from '@repo/core/button';
-import { Typography } from '@repo/core/typography';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 
+// eslint-disable-next-line no-restricted-imports
+import { Button } from '~/packages/core/button';
+// eslint-disable-next-line no-restricted-imports
+import { Typography } from '~/packages/core/typography';
+
 function Hero() {
+    const t = useTranslations('HomePage');
+
     return (
-        <section className="mt-[57px] flex size-full flex-col items-center justify-start overflow-hidden bg-background md:mt-[165px] md:mb-[112px] md:flex-row-reverse lg:mt-[200px] xl:mt-[300px] xl:mb-[150px] 2xl:mt-[322px] 2xl:mb-[280px]">
+        <section className="bg-background mt-[57px] flex size-full flex-col items-center justify-start overflow-hidden md:mb-[112px] md:mt-[165px] md:flex-row-reverse lg:mt-[200px] xl:mb-[150px] xl:mt-[300px] 2xl:mb-[280px] 2xl:mt-[322px]">
             <div className="relative flex w-[100vw] justify-end md:absolute md:right-[-8.5%] md:mt-[18px] md:max-w-[60.5vw] xl:right-0 xl:max-w-[53vw] 2xl:mt-[25px]">
                 <Image
                     alt={'pizza-hero'}
@@ -18,7 +24,7 @@ function Hero() {
 
             <div className="container mt-[10px] flex w-full flex-col gap-[4px] md:mt-0">
                 <Typography color={'primary'} variant={'h1'}>
-                    Пицца на заказ
+                    {t('title')}
                 </Typography>
 
                 <div className={'max-w-full'}>
@@ -28,7 +34,7 @@ function Hero() {
                     </Typography>
                 </div>
                 <div className="mt-[10px] w-full md:mt-[20px] md:max-w-[304px] xl:mt-[25px]">
-                    <Link href={'/#menu'}>
+                    <Link href={'/public#menu'}>
                         <Button
                             className={'w-full py-[12px] md:py-[17px]'}
                             form="default"

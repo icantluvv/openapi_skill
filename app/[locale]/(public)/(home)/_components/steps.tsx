@@ -4,7 +4,7 @@ import Step from '@/_shared/step/step';
 
 function Steps() {
     return (
-        <section className="flex w-full flex-col items-center gap-[12px] bg-cream pt-[24px] pb-[40px] md:gap-[34px] md:pt-[50px] md:pb-[62px] xl:gap-[42px] xl:py-[80px]">
+        <section className="bg-cream flex w-full flex-col items-center gap-[12px] pb-[40px] pt-[24px] md:gap-[34px] md:pb-[62px] md:pt-[50px] xl:gap-[42px] xl:py-[80px]">
             <Typography center className={'leading-[35px]'} variant="h2">
                 Доставка и оплата
             </Typography>

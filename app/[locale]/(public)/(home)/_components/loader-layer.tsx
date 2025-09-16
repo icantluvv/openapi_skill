@@ -10,8 +10,8 @@ function LoaderLayer() {
     }
 
     return (
-        <div className="fixed inset-0 z-[10000] flex items-center justify-center bg-background">
-            <div className="h-12 w-12 animate-spin rounded-full border-4 border-solid border-primary border-t-transparent"></div>
+        <div className="bg-background fixed inset-0 z-[10000] flex items-center justify-center">
+            <div className="border-primary h-12 w-12 animate-spin rounded-full border-4 border-solid border-t-transparent"></div>
         </div>
     );
 }
