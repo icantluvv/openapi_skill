@@ -14,7 +14,7 @@ type InputProps = {
 
 export function Input({ className, mask, ref, type = 'text', ...props }: InputProps) {
     const inputClassName = cn(
-        'placeholder:text-border-input-border w-full rounded-sm border p-[10px] text-[16px] transition-colors focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-hidden',
+        'placeholder:text-border-input-border focus-visible:ring-ring focus-visible:outline-hidden w-full rounded-sm border p-[10px] text-[16px] transition-colors focus-visible:ring-2',
         'border-input-border',
         'hover:border-input-border-hover',
         'focus:border-input-border-focus',

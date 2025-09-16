@@ -18,7 +18,7 @@ function DefaultHeader() {
 
     return (
         <header
-            className={`hidden w-full transition-all duration-[.3s] xl:block ${isScroll ? 'h-[60px] bg-white shadow-custom' : 'h-[176px]'} `}
+            className={`hidden w-full transition-all duration-[.3s] xl:block ${isScroll ? 'shadow-custom h-[60px] bg-white' : 'h-[176px]'} `}
         >
             <div
                 className={`container flex h-full items-center transition-all ${isScroll ? 'justify-between' : 'gap-[92px]'} `}

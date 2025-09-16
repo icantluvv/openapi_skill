@@ -16,7 +16,7 @@ function DefaultNavigationElement({ href, title }: NavigationElementProps) {
     return (
         <Link href={href}>
             <Typography
-                className={`${isScroll ? 'text-[16px]' : 'text-[18px]'} text-black hover:text-primary active:text-primary-active`}
+                className={`${isScroll ? 'text-[16px]' : 'text-[18px]'} hover:text-primary active:text-primary-active text-black`}
                 variant="custom"
             >
                 {title}

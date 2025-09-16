@@ -21,7 +21,7 @@ function MobileSidebar() {
         >
             <Button className={'absolute top-0 z-[1] size-full'} onClick={toggleNav}></Button>
             <div
-                className={`z-[2] flex size-full flex-col bg-[#313945] pt-[12px] pb-[30px] text-white md:w-[320px] md:py-[40px]`}
+                className={`z-[2] flex size-full flex-col bg-[#313945] pb-[30px] pt-[12px] text-white md:w-[320px] md:py-[40px]`}
             >
                 <div className="container flex w-full flex-1 flex-col items-center">
                     <div className="flex w-full items-center justify-between md:justify-end">

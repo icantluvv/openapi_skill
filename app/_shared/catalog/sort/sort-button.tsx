@@ -35,7 +35,7 @@ function SortButton({ category }: SortButtonProps) {
             onMouseLeave={handleMouseLeave}
         >
             <Typography
-                className={`${chosenCategory === category.id ? 'text-primary' : 'text-black'} tracking-tight hover:text-primary-hover active:text-primary-active xl:tracking-wide`}
+                className={`${chosenCategory === category.id ? 'text-primary' : 'text-black'} hover:text-primary-hover active:text-primary-active tracking-tight xl:tracking-wide`}
                 variant={'custom'}
             >
                 {category.title}

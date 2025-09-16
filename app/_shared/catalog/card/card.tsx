@@ -37,13 +37,13 @@ function Card({ categories, product }: DeepNonNullable<CardProps>) {
 
     return (
         <li
-            className="relative flex rounded-sm p-[2px] shadow-custom md:flex-col md:items-center md:p-[10px] md:pb-[40px] xl:p-[20px] xl:pb-[40px]"
+            className="shadow-custom relative flex rounded-sm p-[2px] md:flex-col md:items-center md:p-[10px] md:pb-[40px] xl:p-[20px] xl:pb-[40px]"
             onMouseEnter={handleMouse}
             onMouseLeave={handleMouse}
         >
             <CategoryImages categories={categories} isHovered={isHovered} />
 
-            <div className="relative mt-[8px] mr-[5px] flex h-[100px] w-[100px] min-w-[100px] items-center justify-center md:mr-0 md:h-[210px] md:w-[210px] xl:h-[228px] xl:w-[228px]">
+            <div className="relative mr-[5px] mt-[8px] flex h-[100px] w-[100px] min-w-[100px] items-center justify-center md:mr-0 md:h-[210px] md:w-[210px] xl:h-[228px] xl:w-[228px]">
                 <Image
                     alt="pizza-background"
                     className={'w-[85px] md:w-[180px] xl:w-[200px]'}
@@ -66,7 +66,7 @@ function Card({ categories, product }: DeepNonNullable<CardProps>) {
             <div className="my-[22px] flex flex-col gap-[4px] md:my-0 md:flex-1 md:justify-between md:gap-[8px] md:px-[10px] xl:gap-[9px]">
                 <div className="flex flex-col xl:gap-[4px]">
                     <Typography
-                        className={`${isHovered ? 'cursor-pointer text-primary' : 'text-black'} md:text-center`}
+                        className={`${isHovered ? 'text-primary cursor-pointer' : 'text-black'} md:text-center`}
                         variant="h4"
                     >
                         {product.title}
@@ -74,7 +74,7 @@ function Card({ categories, product }: DeepNonNullable<CardProps>) {
 
                     <div className="">
                         <Typography
-                            className="font-roboto pr-[3.5px] text-[11px] text-shadow-text md:text-center md:text-[12px]"
+                            className="font-roboto text-shadow-text pr-[3.5px] text-[11px] md:text-center md:text-[12px]"
                             variant="custom"
                         >
                             {product.description}

@@ -43,7 +43,7 @@ function CounterCartItem({ item }: CartItemProps) {
 
                 <div
                     className={
-                        'rounded-sm border border-dark-gray px-[18px] py-[4px] xl:px-[25px] xl:py-[7px]'
+                        'border-dark-gray rounded-sm border px-[18px] py-[4px] xl:px-[25px] xl:py-[7px]'
                     }
                 >
                     <Typography className="text-[16px]" variant={'custom'}>
@@ -52,7 +52,7 @@ function CounterCartItem({ item }: CartItemProps) {
                 </div>
 
                 <Button
-                    className="h-[18px] w-[18px] bg-dark-gray xl:h-[24px] xl:w-[24px]"
+                    className="bg-dark-gray h-[18px] w-[18px] xl:h-[24px] xl:w-[24px]"
                     data-testid={`cart-plus-button-${item.cartItemId}`}
                     form={'circle'}
                     onClick={plusItem}

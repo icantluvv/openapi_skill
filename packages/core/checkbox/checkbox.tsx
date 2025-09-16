@@ -14,7 +14,7 @@ export function Checkbox({ className, ref, ...props }: CheckboxProps) {
     return (
         <CheckboxPrimitive.Root
             className={cn(
-                'peer h-[14px] w-[14px] shrink-0 cursor-pointer rounded-full border border-checkbox-border transition-colors hover:border-checkbox-border-hover active:border-checkbox-border-active xl:h-[20px] xl:w-[20px]',
+                'border-checkbox-border hover:border-checkbox-border-hover active:border-checkbox-border-active peer h-[14px] w-[14px] shrink-0 cursor-pointer rounded-full border transition-colors xl:h-[20px] xl:w-[20px]',
                 className
             )}
             ref={ref}
@@ -23,7 +23,7 @@ export function Checkbox({ className, ref, ...props }: CheckboxProps) {
             <CheckboxPrimitive.Indicator
                 className={cn('flex items-center justify-center text-current')}
             >
-                <div className={'h-[10px] w-[10px] rounded-full bg-primary'}></div>
+                <div className={'bg-primary h-[10px] w-[10px] rounded-full'}></div>
             </CheckboxPrimitive.Indicator>
         </CheckboxPrimitive.Root>
     );

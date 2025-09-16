@@ -17,7 +17,7 @@ function CartItem({ item }: CartItemProps) {
             <div className="relative flex items-center">
                 <Image
                     alt={'category'}
-                    className={'absolute top-[5px] left-0 z-[1000]'}
+                    className={'absolute left-0 top-[5px] z-[1000]'}
                     height={12}
                     src={item.categoryImage}
                     width={12}

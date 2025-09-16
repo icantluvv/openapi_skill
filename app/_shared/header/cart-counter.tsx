@@ -14,11 +14,11 @@ function CartCounter() {
     return (
         <div
             className={
-                'absolute top-[-10px] right-[-10px] z-[1000] flex h-[20px] w-[20px] items-center justify-center rounded-full bg-primary'
+                'bg-primary absolute right-[-10px] top-[-10px] z-[1000] flex h-[20px] w-[20px] items-center justify-center rounded-full'
             }
         >
             <Typography
-                className={'font-roboto text-[11px] text-primary-foreground'}
+                className={'font-roboto text-primary-foreground text-[11px]'}
                 variant={'custom'}
             >
                 {totalItems > 99 ? '99+' : totalItems}

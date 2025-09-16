@@ -49,7 +49,7 @@ function CardSizePicker({ categories, product, selectedOption, setSelectedOption
                     </Typography>
                 </div>
 
-                <div className="flex w-[90%] rounded-sm bg-light-gray p-[2px] xl:max-w-[182px]">
+                <div className="bg-light-gray flex w-[90%] rounded-sm p-[2px] xl:max-w-[182px]">
                     {product.options.map(option => (
                         <SizeOptionButton
                             key={option.size}

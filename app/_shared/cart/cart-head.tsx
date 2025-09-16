@@ -15,7 +15,7 @@ function CartHead() {
         <div className="flex items-center justify-between">
             <Typography variant="h3">Ваш заказ</Typography>
 
-            <div className="absolute top-[10px] right-[10px] xl:top-[20px] xl:right-[20px]">
+            <div className="absolute right-[10px] top-[10px] xl:right-[20px] xl:top-[20px]">
                 <Button
                     className={
                         'relative h-[25px] w-[25px] hover:opacity-75 active:opacity-50 xl:h-[40px] xl:w-[40px]'

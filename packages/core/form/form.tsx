@@ -9,7 +9,7 @@ import {
     createContext,
     type HTMLAttributes,
     type Ref,
-    useContext,
+    use,
     useId,
     useMemo,
 } from 'react';
@@ -50,8 +50,8 @@ export function FormField<
 }
 
 export const useFormField = () => {
-    const fieldContext = useContext(FormFieldContext);
-    const itemContext = useContext(FormItemContext);
+    const fieldContext = use(FormFieldContext);
+    const itemContext = use(FormItemContext);
     const { formState, getFieldState } = useFormContext();
 
     const fieldState = getFieldState(fieldContext.name, formState);
@@ -132,7 +132,7 @@ export function FormDescription({ className, ref, ...props }: FormDescriptionPro
 
     return (
         <p
-            className={cn('text-sm text-muted-foreground', className)}
+            className={cn('text-muted-foreground text-sm', className)}
             id={formDescriptionId}
             ref={ref}
             {...props}
@@ -154,7 +154,7 @@ export function FormMessage({ children, className, ref, ...props }: FormMessageP
 
     return (
         <p
-            className={cn('text-sm font-medium text-destructive', className)}
+            className={cn('text-destructive text-sm font-medium', className)}
             id={formMessageId}
             ref={ref}
             {...props}

@@ -24,7 +24,7 @@ function SizeOptionButton({
 
     return (
         <Button
-            className={`flex-1 rounded-xs py-[5px] ${isSelected ? 'bg-white' : ''}`}
+            className={`rounded-xs flex-1 py-[5px] ${isSelected ? 'bg-white' : ''}`}
             form="default"
             key={option.size}
             onClick={handleClick}
