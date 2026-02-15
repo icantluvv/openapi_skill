@@ -1,6 +1,6 @@
-import type { Category } from '~/api/models/types';
+import type { Category } from '../../models/types';
 
-import { mockCategories } from '~/api/mocks/data';
+import { mockCategories } from '../../mocks/data';
 
 function getAllCategories(): Promise<Category[] | null> {
     return Promise.resolve(mockCategories);

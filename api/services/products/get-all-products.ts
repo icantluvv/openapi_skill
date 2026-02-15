@@ -1,6 +1,6 @@
-import type { Product } from '~/api/models/types';
+import type { Product } from '../../models/types';
 
-import { mockProducts } from '~/api/mocks/data';
+import { mockProducts } from '../../mocks/data';
 
 function getProducts(): Promise<Product[]> {
     return Promise.resolve(mockProducts);

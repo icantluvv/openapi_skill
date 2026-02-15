@@ -1,6 +1,6 @@
-import type { Promo } from '~/api/models/types';
+import type { Promo } from '../../models/types';
 
-import { mockPromos } from '~/api/mocks/data';
+import { mockPromos } from '../../mocks/data';
 
 function getPromo(): Promise<Promo[]> {
     return Promise.resolve(mockPromos);

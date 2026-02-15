@@ -1,6 +1,6 @@
-import type { Gallery } from '~/api/models/types';
+import type { Gallery } from '../../models/types';
 
-import { mockGallery } from '~/api/mocks/data';
+import { mockGallery } from '../../mocks/data';
 
 function getGallery(): Promise<Gallery[]> {
     return Promise.resolve(mockGallery);
