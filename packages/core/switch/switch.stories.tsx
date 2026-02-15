@@ -1,0 +1,25 @@
+import type { Meta, StoryObj } from '@storybook/nextjs';
+
+import { Switch } from './switch';
+
+const meta: Meta<typeof Switch> = {
+    component: Switch,
+    title: 'core/Switch',
+};
+
+export default meta;
+
+type Story = StoryObj<typeof Switch>;
+
+export const Primary: Story = {
+    args: {},
+    render: () => {
+        return (
+            <div className="flex flex-col gap-2">
+                <Switch />
+                <Switch checked />
+                <Switch disabled />
+            </div>
+        );
+    },
+};

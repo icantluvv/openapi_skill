@@ -1,0 +1,16 @@
+import type { Meta, StoryObj } from '@storybook/nextjs';
+
+import { Dialog } from './dialog';
+
+const meta: Meta<typeof Dialog> = {
+    component: Dialog,
+    title: 'core/Dialog',
+};
+
+export default meta;
+
+type Story = StoryObj<typeof Dialog>;
+
+export const Primary: Story = {
+    args: {},
+};
