@@ -1,8 +1,11 @@
+import { toast } from '@repo/core/sonner';
 import { Typography } from '@repo/core/typography';
 
 import BuyButton from '@/_shared/catalog/card/buy-button';
-import { type CartItemType, useCartStore } from '@/store/cart-store';
+import { useCartStore } from '@/store/cart-store';
 
+import { DISCOUNT_TOAST_MESSAGE } from './constant';
+import { createCartItem } from './create-cart-item';
 import SizeOptionButton from './size-option-button';
 
 type ProductProps = {
@@ -12,32 +15,23 @@ type ProductProps = {
     setSelectedOption: (option: Option) => void;
 };
 
-function createCartItem(
-    product: Product,
-    selectedOption: Option,
-    categoryImage: string
-): CartItemType {
-    return {
-        cartItemId: `${product.id.toString()}_${selectedOption.size.toString()}`,
-        categoryImage,
-        id: product.id,
-        image: product.image,
-        price: selectedOption.price,
-        quantity: 1,
-        size: selectedOption.size,
-        title: product.title,
-    };
-}
-
 function CardSizePicker({ categories, product, selectedOption, setSelectedOption }: ProductProps) {
-    const { addItem } = useCartStore();
+    const { addItem, items } = useCartStore();
 
     const categoryImage = categories[1]?.image ?? '';
 
     function addToCart() {
         const cartItem = createCartItem(product, selectedOption, categoryImage);
+        const existingItem = items.find(
+            item => item.id === cartItem.id && item.size === cartItem.size
+        );
+        const willBeDuplicate = Boolean(existingItem && existingItem.quantity === 1);
 
         addItem(cartItem);
+
+        if (willBeDuplicate) {
+            toast.success(DISCOUNT_TOAST_MESSAGE);
+        }
     }
 
     return (

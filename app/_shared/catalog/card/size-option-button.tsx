@@ -2,15 +2,13 @@ import { Button } from '@repo/core/button';
 import { Typography } from '@repo/core/typography';
 import { useState } from 'react';
 
-function SizeOptionButton({
-    onClick,
-    option,
-    selectedSize,
-}: {
+type SizeOptionButtonProps = {
     onClick: (option: Option) => void;
     option: Option;
     selectedSize: number;
-}) {
+};
+
+function SizeOptionButton({ onClick, option, selectedSize }: SizeOptionButtonProps) {
     const [isHovered, setIsHovered] = useState(false);
     const isSelected = selectedSize === option.size;
 

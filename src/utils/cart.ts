@@ -1,7 +1,15 @@
 import type { CartItemType } from '~/app/store/cart-store';
 
+const DUPLICATE_DISCOUNT = 0.9;
+
+function itemTotalWithDiscount(item: CartItemType): number {
+    const baseTotal = item.price * item.quantity;
+
+    return item.quantity >= 2 ? baseTotal * DUPLICATE_DISCOUNT : baseTotal;
+}
+
 export function updateTotalPrice(items: CartItemType[]) {
-    return items.reduce((accumulator, item) => accumulator + item.price * item.quantity, 0);
+    return items.reduce((accumulator, item) => accumulator + itemTotalWithDiscount(item), 0);
 }
 
 export function addItemToCart(items: CartItemType[], newItem: CartItemType): CartItemType[] {

@@ -3,13 +3,15 @@ import './globals.css';
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 
-import { cn } from '#/utils/cn';
+import { Toaster } from '@repo/core/sonner';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { Alegreya, Roboto } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
 
 import { routing } from '~/i18n/routing';
+
+import { cn } from '../../src/utils/cn';
 
 const roboto = Roboto({
     display: 'swap',
@@ -74,6 +76,7 @@ export default async function RootLayout({
                     <main className="bg-background relative flex size-full flex-col items-center justify-center overflow-hidden antialiased">
                         <NextIntlClientProvider>{children}</NextIntlClientProvider>
                     </main>
+                    <Toaster />
                 </NuqsAdapter>
             </body>
         </html>

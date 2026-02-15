@@ -8,36 +8,38 @@ import type { DeepNonNullable } from '@/types/utilities';
 
 import CardSizePicker from '@/_shared/catalog/card/card-size-picker';
 import CategoryImages from '@/_shared/catalog/card/category-images';
+import { useHiddenCardsStore } from '@/store/hidden-cards-store';
+
+import { DEFAULT_OPTION, type PizzaSize, sizeToCssClass } from './constant';
 
 type CardProps = {
     categories: Category[];
+    isRemoving?: boolean;
     product: Product;
 };
 
-type PizzaSize = 20 | 30 | 40;
-
-const DEFAULT_OPTION: Option = { price: 0, size: 20 };
-
-const sizeToCssClass: Record<PizzaSize, string> = {
-    20: 'w-[60px] md:w-[140px] xl:w-[150px] h-[60px] md:h-[140px] xl:h-[150px]',
-    30: 'w-[73px] md:w-[155px] xl:w-[180px] h-[73px] md:h-[155px] xl:h-[180px]',
-    40: 'w-[85px] md:w-[180px] xl:w-[200px] h-[85px] md:h-[190px] xl:h-[210px]',
-};
-
-function Card({ categories, product }: DeepNonNullable<CardProps>) {
+function Card({ categories, isRemoving = false, product }: DeepNonNullable<CardProps>) {
     const [isHovered, setIsHovered] = useState(false);
+    const addHiddenId = useHiddenCardsStore(state => state.addHiddenId);
 
-    const [selectedOption, setSelectedOption] = useState<Option>(
-        product.options[0] ?? DEFAULT_OPTION
-    );
+    const { description, id, image, options, title } = product;
+
+    const [selectedOption, setSelectedOption] = useState<Option>(options[0] ?? DEFAULT_OPTION);
 
     function handleMouse() {
         setIsHovered(!isHovered);
     }
 
+    function handleAnimationEnd() {
+        if (isRemoving) {
+            addHiddenId(id);
+        }
+    }
+
     return (
         <li
-            className="shadow-custom relative flex rounded-sm p-[2px] md:flex-col md:items-center md:p-[10px] md:pb-[40px] xl:p-[20px] xl:pb-[40px]"
+            className={`shadow-custom relative flex rounded-sm p-[2px] md:flex-col md:items-center md:p-[10px] md:pb-[40px] xl:p-[20px] xl:pb-[40px] ${isRemoving ? 'animate-card-flip-out origin-center [perspective:1000px]' : ''}`}
+            onAnimationEnd={handleAnimationEnd}
             onMouseEnter={handleMouse}
             onMouseLeave={handleMouse}
         >
@@ -54,12 +56,7 @@ function Card({ categories, product }: DeepNonNullable<CardProps>) {
                 <div
                     className={`absolute transition-all duration-[.3s] ${sizeToCssClass[selectedOption.size as PizzaSize]}`}
                 >
-                    <Image
-                        alt={product.title}
-                        className="rounded-full object-contain"
-                        fill
-                        src={product.image}
-                    />
+                    <Image alt={title} className="rounded-full object-contain" fill src={image} />
                 </div>
             </div>
 
@@ -69,7 +66,7 @@ function Card({ categories, product }: DeepNonNullable<CardProps>) {
                         className={`${isHovered ? 'text-primary cursor-pointer' : 'text-black'} md:text-center`}
                         variant="h4"
                     >
-                        {product.title}
+                        {title}
                     </Typography>
 
                     <div className="">
@@ -77,7 +74,7 @@ function Card({ categories, product }: DeepNonNullable<CardProps>) {
                             className="font-roboto text-shadow-text pr-[3.5px] text-[11px] md:text-center md:text-[12px]"
                             variant="custom"
                         >
-                            {product.description}
+                            {description}
                         </Typography>
                     </div>
                 </div>
