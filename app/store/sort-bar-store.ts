@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-import type { Category } from '~/api/models/types';
+import type { Category } from '~/lib/models/types';
 
 type SortStore = {
     categories: Category[];

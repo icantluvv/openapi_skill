@@ -2,7 +2,7 @@
 
 import { useCallback, useRef, useState } from 'react';
 
-import type { Promo as PromoType } from '~/api/models/types';
+import type { Promo as PromoType } from '~/lib/models/types';
 
 import Promo from '@/_shared/promo/promo';
 

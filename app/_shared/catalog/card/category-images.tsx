@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import type { Category } from '~/api/models/types';
+import type { Category } from '~/lib/models/types';
 
 function CategoryImages({ categories, isHovered }: { categories: Category[]; isHovered: boolean }) {
     return (

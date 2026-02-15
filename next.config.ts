@@ -1,10 +1,10 @@
+import { environment as clientEnv } from '#/env/client';
+import { environment as serverEnv } from '#/env/server';
+import { RsdoctorWebpackPlugin } from '@rsdoctor/webpack-plugin';
 import { withSentryConfig } from '@sentry/nextjs';
 import { createJiti } from 'jiti';
 import { nanoid } from 'nanoid';
 import type { NextConfig } from 'next';
-import { RsdoctorWebpackPlugin } from '@rsdoctor/webpack-plugin';
-import { environment as clientEnv } from '#/env/client';
-import { environment as serverEnv } from '#/env/server';
 import createNextIntlPlugin from 'next-intl/plugin';
 
 const jiti = createJiti(import.meta.url);
@@ -24,6 +24,12 @@ const nextConfig: NextConfig = {
     cleanDistDir: true,
 
     webpack: (config, { isServer, nextRuntime }) => {
+        config.resolve.extensionAlias = {
+            '.js': ['.ts', '.tsx', '.js'],
+            '.jsx': ['.tsx', '.jsx', '.js'],
+            '.mjs': ['.mts', '.mjs'],
+            '.cjs': ['.cts', '.cjs'],
+        };
         if (isServer) {
             config.ignoreWarnings = [{ module: /opentelemetry/ }];
         }

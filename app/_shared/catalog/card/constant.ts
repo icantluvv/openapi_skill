@@ -1,4 +1,4 @@
-import type { Option } from '~/api/models/types';
+import type { Option } from '~/lib/models/types';
 
 export type PizzaSize = 20 | 30 | 40;
 

@@ -2,7 +2,7 @@
 
 import { useMemo } from 'react';
 
-import type { Product } from '~/api/models/types';
+import type { Product } from '~/lib/models/types';
 
 import Card from '@/_shared/catalog/card/card';
 import { useCartStore } from '@/store/cart-store';

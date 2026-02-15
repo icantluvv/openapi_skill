@@ -3,7 +3,7 @@
 import { Button } from '@repo/core/button';
 import Image from 'next/image';
 
-import type { Category } from '~/api/models/types';
+import type { Category } from '~/lib/models/types';
 
 import { useSortStore } from '@/store/sort-bar-store';
 

@@ -1,7 +1,7 @@
 import Parallax from '@/_shared/ParallaxItem';
 import MobileSlider from '@/_shared/promo/mobile-slider';
 import Promo from '@/_shared/promo/promo';
-import getPromo from '~/api/services/products/get-all-promo';
+import getPromo from '~/lib/services/products/get-all-promo';
 
 async function Promos() {
     const promos = await getPromo();

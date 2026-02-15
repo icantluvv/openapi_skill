@@ -2,7 +2,7 @@ import { Button } from '@repo/core/button';
 import { Typography } from '@repo/core/typography';
 import { useState } from 'react';
 
-import type { Option } from '~/api/models/types';
+import type { Option } from '~/lib/models/types';
 
 type SizeOptionButtonProps = {
     onClick: (option: Option) => void;

@@ -1,6 +1,6 @@
 'use client';
 
-import type { Category } from '~/api/models/types';
+import type { Category } from '~/lib/models/types';
 
 import SortButton from '@/_shared/catalog/sort/sort-button';
 import { useSortStore } from '@/store/sort-bar-store';

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import InstagramPhotos from '@/_shared/instagram-image/instagram-photos';
-import getGallery from '~/api/services/products/get-gallery';
+import getGallery from '~/lib/services/products/get-gallery';
 // eslint-disable-next-line no-restricted-imports
 import { Typography } from '~/packages/core/typography';
 

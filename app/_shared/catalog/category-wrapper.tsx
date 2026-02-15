@@ -1,7 +1,7 @@
 import { Typography } from '@repo/core/typography';
 
 import SortBar from '@/_shared/catalog/sort/sort-bar';
-import getAllCategories from '~/api/services/products/get-all-categories';
+import getAllCategories from '~/lib/services/products/get-all-categories';
 
 async function CategoryWrapper() {
     const categories = await getAllCategories();

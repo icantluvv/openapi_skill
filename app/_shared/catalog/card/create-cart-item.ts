@@ -1,5 +1,5 @@
-import type { Option, Product } from '~/api/models/types';
 import type { CartItemType } from '~/app/store/cart-store';
+import type { Option, Product } from '~/lib/models/types';
 
 export function createCartItem(
     product: Product,

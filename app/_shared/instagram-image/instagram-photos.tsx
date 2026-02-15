@@ -3,7 +3,7 @@
 import useMaxPhotos from '#/hooks/use-max-photo';
 import Image from 'next/image';
 
-import type { Gallery, GalleryProps } from '~/api/models/types';
+import type { Gallery, GalleryProps } from '~/lib/models/types';
 
 function InstagramPhotos({ gallery }: GalleryProps) {
     const maxPhotos = useMaxPhotos();

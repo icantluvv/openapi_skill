@@ -1,9 +1,9 @@
 import { Typography } from '@repo/core/typography';
 
-import type { Product } from '~/api/models/types';
+import type { Product } from '~/lib/models/types';
 
 import CardsList from '@/_shared/catalog/card/cards-list';
-import getProducts from '~/api/services/products/get-all-products';
+import getProducts from '~/lib/services/products/get-all-products';
 
 async function ProductsWrapper() {
     const products: Product[] = await getProducts();
