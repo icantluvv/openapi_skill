@@ -1,5 +1,7 @@
 import { create } from 'zustand';
 
+import type { Category } from '~/api/models/types';
+
 type SortStore = {
     categories: Category[];
     chooseCategory: (categoryId: number) => void;

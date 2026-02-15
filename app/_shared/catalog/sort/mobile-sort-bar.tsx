@@ -3,6 +3,8 @@
 import { Button } from '@repo/core/button';
 import Image from 'next/image';
 
+import type { Category } from '~/api/models/types';
+
 import { useSortStore } from '@/store/sort-bar-store';
 
 function MobileSortBar() {
@@ -20,7 +22,7 @@ function MobileSortBar() {
                 'mt-[20px] flex items-center justify-center gap-[28px] md:hidden xl:mt-[55px]'
             }
         >
-            {categories.map(category => (
+            {categories.map((category: Category) => (
                 <Button
                     className="w-[24px]"
                     form={'default'}

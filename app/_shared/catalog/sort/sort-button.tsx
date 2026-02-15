@@ -3,6 +3,8 @@ import { Typography } from '@repo/core/typography';
 import Image from 'next/image';
 import { useState } from 'react';
 
+import type { Category } from '~/api/models/types';
+
 import { useSortStore } from '@/store/sort-bar-store';
 
 type SortButtonProps = {

@@ -1,22 +1,24 @@
 import axios from 'axios';
 
-async function getGallery(): Promise<Product[]> {
+import type { Gallery } from '~/api/models/types';
+
+import { mockGallery } from '~/api/mocks/data';
+
+async function getGallery(): Promise<Gallery[]> {
     const baseUrl = process.env.BACK_INTERNAL_URL;
 
     if (!baseUrl) {
-        console.error('BACK_INTERNAL_URL is not defined');
-
-        return [];
+        return mockGallery;
     }
 
     try {
-        const response = await axios.get<Product[]>(`${baseUrl}/gallery`);
+        const response = await axios.get<Gallery[]>(`${baseUrl}/gallery`);
 
         return response.data;
     } catch (error) {
-        console.error('Ошибка при загрузке продуктов', error);
+        console.error('Ошибка при загрузке галереи', error);
 
-        return [];
+        return mockGallery;
     }
 }
 

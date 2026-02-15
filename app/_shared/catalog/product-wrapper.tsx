@@ -1,5 +1,7 @@
 import { Typography } from '@repo/core/typography';
 
+import type { Product } from '~/api/models/types';
+
 import CardsList from '@/_shared/catalog/card/cards-list';
 import getProducts from '~/api/services/products/get-all-products';
 

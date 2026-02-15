@@ -1,3 +1,5 @@
+import type { Option } from '~/api/models/types';
+
 export type PizzaSize = 20 | 30 | 40;
 
 export const sizeToCssClass: Record<PizzaSize, string> = {

@@ -2,6 +2,8 @@
 
 import { useMemo } from 'react';
 
+import type { Product } from '~/api/models/types';
+
 import Card from '@/_shared/catalog/card/card';
 import { useCartStore } from '@/store/cart-store';
 import { useHiddenCardsStore } from '@/store/hidden-cards-store';
@@ -38,7 +40,7 @@ function CardsList({ products }: CardsListProps) {
 
     return (
         <ul className="mt-[13px] grid w-full grid-cols-1 place-content-stretch gap-[5px] [perspective:1000px] md:mt-[40px] md:grid-cols-3 md:gap-[33px] xl:grid-cols-4">
-            {visibleProducts.map(product => {
+            {visibleProducts.map((product: Product) => {
                 const productCategories = categories.filter(cat =>
                     product.categories.includes(Number(cat.id))
                 );

@@ -1,5 +1,7 @@
 import Image from 'next/image';
 
+import type { Category } from '~/api/models/types';
+
 function CategoryImages({ categories, isHovered }: { categories: Category[]; isHovered: boolean }) {
     return (
         <div className="absolute left-2 top-[14px] flex flex-col gap-2 md:left-3 md:top-3 md:h-[20px] md:w-[20px] xl:h-[24px] xl:w-[24px]">

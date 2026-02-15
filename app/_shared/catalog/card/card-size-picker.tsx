@@ -1,6 +1,8 @@
 import { toast } from '@repo/core/sonner';
 import { Typography } from '@repo/core/typography';
 
+import type { Category, Option, Product } from '~/api/models/types';
+
 import BuyButton from '@/_shared/catalog/card/buy-button';
 import { useCartStore } from '@/store/cart-store';
 

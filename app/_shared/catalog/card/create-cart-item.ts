@@ -1,3 +1,4 @@
+import type { Option, Product } from '~/api/models/types';
 import type { CartItemType } from '~/app/store/cart-store';
 
 export function createCartItem(

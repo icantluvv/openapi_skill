@@ -1,22 +1,22 @@
 import axios from 'axios';
 
+import type { Product } from '~/api/models/types';
+
+import { mockProducts } from '~/api/mocks/data';
+
 async function getProducts(): Promise<Product[]> {
-    const baseUrl = process.env.BACK_INTERNAL_URL;
-
-    if (!baseUrl) {
-        console.error('BACK_INTERNAL_URL is not defined');
-
-        return [];
-    }
-
     try {
-        const response = await axios.get<Product[]>(`${baseUrl}/products`);
+        const baseUrl = process.env.BACK_INTERNAL_URL;
+
+        const response = await axios.get<Product[]>(
+            `${baseUrl || 'http://localhost:3000'}/products`
+        );
 
         return response.data;
     } catch (error) {
         console.error('Ошибка при загрузке продуктов', error);
 
-        return [];
+        return mockProducts;
     }
 }
 

@@ -2,15 +2,18 @@
 
 import { useCallback, useRef, useState } from 'react';
 
+import type { Promo as PromoType } from '~/api/models/types';
+
 import Promo from '@/_shared/promo/promo';
 
 type MobileSliderProps = {
-    items: Promo[];
+    items: PromoType[];
 };
 
 function MobileSlider({ items }: MobileSliderProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const list: PromoType[] = Array.isArray(items) ? items : [];
 
     const handleScroll = useCallback(() => {
         if (!containerRef.current) {
@@ -30,7 +33,7 @@ function MobileSlider({ items }: MobileSliderProps) {
                 onScroll={handleScroll}
                 ref={containerRef}
             >
-                {items.map((item, index) => (
+                {list.map((item, index) => (
                     <div className="w-full flex-none snap-center" data-index={index} key={item.id}>
                         <Promo description={item.description} src={item.image} title={item.title} />
                     </div>
@@ -38,7 +41,7 @@ function MobileSlider({ items }: MobileSliderProps) {
             </div>
 
             <div className="mt-[20px] flex justify-center gap-2">
-                {items.map((item, index) => (
+                {list.map((item, index) => (
                     <div
                         className={`h-[12px] w-[12px] rounded-full transition-colors ${
                             currentIndex === index ? 'bg-primary' : 'bg-gray-300'

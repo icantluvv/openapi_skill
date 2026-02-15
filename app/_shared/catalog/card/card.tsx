@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 import type { DeepNonNullable } from '@/types/utilities';
+import type { Category, Option, Product } from '~/api/models/types';
 
 import CardSizePicker from '@/_shared/catalog/card/card-size-picker';
 import CategoryImages from '@/_shared/catalog/card/category-images';
@@ -24,7 +25,8 @@ function Card({ categories, isRemoving = false, product }: DeepNonNullable<CardP
 
     const { description, id, image, options, title } = product;
 
-    const [selectedOption, setSelectedOption] = useState<Option>(options[0] ?? DEFAULT_OPTION);
+    const initialOption: Option = options[0] ?? DEFAULT_OPTION;
+    const [selectedOption, setSelectedOption] = useState<Option>(initialOption);
 
     function handleMouse() {
         setIsHovered(!isHovered);
