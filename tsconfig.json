@@ -6,6 +6,7 @@
             "@/*": ["./app/*"],
             "#/*": ["./src/*"]
         },
+        "moduleResolution": "bundler",
         "plugins": [{ "name": "next" }],
         "types": ["@vitest/browser/providers/playwright", "./src/types/global.d.ts"]
     },
