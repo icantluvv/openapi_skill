@@ -1,19 +1,24 @@
-import { useMedia } from 'react-use';
+import { useMedia as useMediaQuery } from 'react-use';
 
 export function useDesktopMediaQuery() {
-    return useMedia('(min-width: 1280px)', false);
+    return useMediaQuery('(min-width: 1280px)', false);
 }
 
 export function useLaptopMediaQuery() {
-    return useMedia('(min-width: 1024px)', false);
+    return useMediaQuery('(min-width: 1024px)', false);
 }
 
 export function useMobileMediaQuery() {
-    return useMedia('(min-width: 320px)', true);
+    return useMediaQuery('(min-width: 320px)', true);
 }
 
 export function useTabletMediaQuery() {
-    return useMedia('(min-width: 768px)', false);
+    return useMediaQuery('(min-width: 768px)', false);
+}
+
+/** true — мобилка (max-width: 1023px), false — ПК */
+export function useMedia() {
+    return useMediaQuery('(max-width: 1023px)', true);
 }
 
 export function useBreakpoints() {

@@ -1,6 +1,7 @@
 'use client';
 
 import { Typography } from '@repo/core/typography';
+import { useMedia } from '#/hooks/use-responsive';
 import { cva } from 'class-variance-authority';
 import { motion, type MotionValue, useMotionValue, useTransform } from 'framer-motion';
 import Image from 'next/image';
@@ -50,14 +51,16 @@ function Feature({
     title,
     url,
 }: Readonly<FeatureProps>) {
+    const isMobile = useMedia();
     const defaultProgress = useMotionValue(1);
     const progress = scrollYProgress ?? defaultProgress;
+    const parallaxOffset = isMobile ? 0 : IMAGE_PARALLAX_OFFSET;
     const [segmentStart, segmentEnd] = SEGMENT_BOUNDS[index] ?? [
         index / count,
         (index + 1) / count,
     ];
     const segmentProgress = useTransform(progress, [0, segmentStart, segmentEnd, 1], [0, 0, 1, 1]);
-    const imageY = useTransform(segmentProgress, [0, 1], [IMAGE_PARALLAX_OFFSET, 0]);
+    const imageY = useTransform(segmentProgress, [0, 1], [parallaxOffset, 0]);
     const imageStyle = useMemo(() => ({ y: imageY }), [imageY]);
 
     return (
