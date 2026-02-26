@@ -8,7 +8,7 @@
         },
         "moduleResolution": "bundler",
         "plugins": [{ "name": "next" }],
-        "types": ["@vitest/browser/providers/playwright", "./src/types/global.d.ts"]
+        "types": ["@vitest/browser/providers/playwright"]
     },
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", ".storybook"],
     "exclude": ["node_modules", ".next", "build", "dist", "packages/routes"]

@@ -1,6 +1,7 @@
 'use client';
 
 import { Typography } from '@repo/core/typography';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -9,21 +10,26 @@ import type { Category, Option, Product } from '~/lib/models/types';
 
 import CardSizePicker from '@/_shared/catalog/card/card-size-picker';
 import CategoryImages from '@/_shared/catalog/card/category-images';
-import { useHiddenCardsStore } from '@/store/hidden-cards-store';
 
 import { DEFAULT_OPTION, type PizzaSize, sizeToCssClass } from './constant';
 
 type CardProps = {
     categories: Category[];
-    isRemoving?: boolean;
     product: Product;
 };
 
-function Card({ categories, isRemoving = false, product }: DeepNonNullable<CardProps>) {
-    const [isHovered, setIsHovered] = useState(false);
-    const addHiddenId = useHiddenCardsStore(state => state.addHiddenId);
+const cardAnimate = { opacity: 1, rotateY: 0 };
+const cardExit = {
+    opacity: 0,
+    rotateY: 180,
+    transition: { duration: 0.6, ease: 'easeInOut' },
+};
+const cardStyle = { originX: 0.5, originY: 0.5, perspective: 1000 };
 
-    const { description, id, image, options, title } = product;
+function Card({ categories, product }: DeepNonNullable<CardProps>) {
+    const [isHovered, setIsHovered] = useState(false);
+
+    const { description, image, options, title } = product;
 
     const initialOption: Option = options[0] ?? DEFAULT_OPTION;
     const [selectedOption, setSelectedOption] = useState<Option>(initialOption);
@@ -32,18 +38,15 @@ function Card({ categories, isRemoving = false, product }: DeepNonNullable<CardP
         setIsHovered(!isHovered);
     }
 
-    function handleAnimationEnd() {
-        if (isRemoving) {
-            addHiddenId(id);
-        }
-    }
-
     return (
-        <li
-            className={`shadow-custom relative flex rounded-sm p-[2px] md:flex-col md:items-center md:p-[10px] md:pb-[40px] xl:p-[20px] xl:pb-[40px] ${isRemoving ? 'animate-card-flip-out origin-center [perspective:1000px]' : ''}`}
-            onAnimationEnd={handleAnimationEnd}
+        <motion.li
+            animate={cardAnimate}
+            className="shadow-custom relative flex rounded-sm p-[2px] md:flex-col md:items-center md:p-[10px] md:pb-[40px] xl:p-[20px] xl:pb-[40px]"
+            exit={cardExit}
+            initial={false}
             onMouseEnter={handleMouse}
             onMouseLeave={handleMouse}
+            style={cardStyle}
         >
             <CategoryImages categories={categories} isHovered={isHovered} />
 
@@ -88,7 +91,7 @@ function Card({ categories, isRemoving = false, product }: DeepNonNullable<CardP
                     setSelectedOption={setSelectedOption}
                 />
             </div>
-        </li>
+        </motion.li>
     );
 }
 

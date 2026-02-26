@@ -12,6 +12,7 @@ import { NuqsAdapter } from 'nuqs/adapters/next/app';
 import { routing } from '~/i18n/routing';
 
 import { cn } from '../../src/utils/cn';
+import ThemeProvider from '../styled_component/theme-provider';
 
 const roboto = Roboto({
     display: 'swap',
@@ -72,12 +73,14 @@ export default async function RootLayout({
             suppressHydrationWarning
         >
             <body className={cn('font-sans antialiased')}>
-                <NuqsAdapter>
-                    <main className="bg-background relative flex size-full flex-col items-center justify-center overflow-hidden antialiased">
-                        <NextIntlClientProvider>{children}</NextIntlClientProvider>
-                    </main>
-                    <Toaster />
-                </NuqsAdapter>
+                <ThemeProvider>
+                    <NuqsAdapter>
+                        <main className="bg-background relative flex size-full flex-col items-center justify-center overflow-hidden antialiased">
+                            <NextIntlClientProvider>{children}</NextIntlClientProvider>
+                        </main>
+                        <Toaster />
+                    </NuqsAdapter>
+                </ThemeProvider>
             </body>
         </html>
     );

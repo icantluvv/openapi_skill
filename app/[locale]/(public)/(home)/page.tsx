@@ -17,6 +17,13 @@ function HomePage() {
             <CartModal />
             <Hero />
             <Promos />
+            {/* <ExampleButton size="large" variant="primary">
+                Кнопка с несколькими CSS модулями
+            </ExampleButton>
+
+            <Button toggleTheme>Click me</Button>
+            <ErrorButtonComponent>Click me</ErrorButtonComponent>
+            <CustomLink href="/">Click me</CustomLink> */}
             <Catalog />
             <Steps />
             <Features />

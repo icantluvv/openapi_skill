@@ -12,8 +12,8 @@ type ParallaxProps = {
 
 export default function Parallax({ children, className = '', offset = 50 }: ParallaxProps) {
     const ref = useRef<HTMLDivElement>(null);
-    const isMobile = useMedia();
-    const effectiveOffset = isMobile ? 0 : offset;
+    const gtLaptop = useMedia();
+    const effectiveOffset = gtLaptop ? 0 : offset;
 
     const { scrollYProgress } = useScroll({
         offset: ['start end', 'end start'],

@@ -1,11 +1,11 @@
 'use client';
 
+import type { ComponentProps, Ref } from 'react';
+
 import { Typography } from '@repo/core/typography';
-import { useMedia } from '#/hooks/use-responsive';
 import { cva } from 'class-variance-authority';
-import { motion, type MotionValue, useMotionValue, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { type ComponentProps, type Ref, useMemo } from 'react';
 
 const featureVariants = cva('flex gap-[16px] md:items-center md:gap-[42px] xl:gap-[30px]', {
     defaultVariants: {
@@ -21,21 +21,17 @@ const featureVariants = cva('flex gap-[16px] md:items-center md:gap-[42px] xl:ga
 
 const IMAGE_PARALLAX_OFFSET = 100;
 
-const SEGMENT_BOUNDS: [number, number][] = [
-    [0, 0.35],
-    [0.2, 0.5],
-    [0.4, 0.63],
-];
+const imageVariants = {
+    hidden: { opacity: 0, y: IMAGE_PARALLAX_OFFSET },
+    visible: { opacity: 1, y: 0 },
+};
 
 type FeatureProps = {
     align?: 'left' | 'right';
-    alt?: string;
     className?: string;
-    count?: number;
     description: string;
     index?: number;
     ref?: Ref<HTMLDivElement>;
-    scrollYProgress?: MotionValue<number>;
     title: string;
     url: string;
 } & ComponentProps<'div'>;
@@ -43,30 +39,26 @@ type FeatureProps = {
 function Feature({
     align = 'left',
     className,
-    count = 1,
     description,
     index = 0,
     ref,
-    scrollYProgress,
     title,
     url,
 }: Readonly<FeatureProps>) {
-    const isMobile = useMedia();
-    const defaultProgress = useMotionValue(1);
-    const progress = scrollYProgress ?? defaultProgress;
-    const parallaxOffset = isMobile ? 0 : IMAGE_PARALLAX_OFFSET;
-    const [segmentStart, segmentEnd] = SEGMENT_BOUNDS[index] ?? [
-        index / count,
-        (index + 1) / count,
-    ];
-    const segmentProgress = useTransform(progress, [0, segmentStart, segmentEnd, 1], [0, 0, 1, 1]);
-    const imageY = useTransform(segmentProgress, [0, 1], [parallaxOffset, 0]);
-    const imageStyle = useMemo(() => ({ y: imageY }), [imageY]);
-
     return (
         <div className={featureVariants({ align, className })} ref={ref}>
-            <div className="w-[80px] min-w-[80px] md:w-[243px] md:min-w-[243px] xl:min-w-[304px]">
-                <motion.div style={imageStyle}>
+            <div className="w-[80px] min-w-[80px] overflow-visible md:w-[243px] md:min-w-[243px] xl:min-w-[304px]">
+                <motion.div
+                    initial="hidden"
+                    transition={{
+                        delay: index * 0.15,
+                        duration: 0.6,
+                        ease: 'easeOut',
+                    }}
+                    variants={imageVariants}
+                    viewport={{ amount: 0.2, once: false }}
+                    whileInView="visible"
+                >
                     <Image
                         alt={title}
                         className="object-cover"

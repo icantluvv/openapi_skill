@@ -1,6 +1,7 @@
 'use client';
 
-import { useMemo } from 'react';
+import { AnimatePresence } from 'framer-motion';
+import { useEffect, useMemo } from 'react';
 
 import type { Product } from '~/lib/models/types';
 
@@ -16,12 +17,20 @@ type CardsListProps = {
 function CardsList({ products }: CardsListProps) {
     const { categories, chosenCategory } = useSortStore();
     const { items } = useCartStore();
-    const { hiddenIds } = useHiddenCardsStore();
+    const { addHiddenId, hiddenIds } = useHiddenCardsStore();
 
     const productIdsWithDuplicate = useMemo(
         () => new Set(items.filter(item => item.quantity >= 2).map(item => item.id)),
         [items]
     );
+
+    useEffect(() => {
+        for (const id of productIdsWithDuplicate) {
+            if (!hiddenIds.has(id)) {
+                addHiddenId(id);
+            }
+        }
+    }, [productIdsWithDuplicate, hiddenIds, addHiddenId]);
 
     const filteredProducts = useMemo(() => {
         if (!chosenCategory) {
@@ -40,21 +49,21 @@ function CardsList({ products }: CardsListProps) {
 
     return (
         <ul className="mt-[13px] grid w-full grid-cols-1 place-content-stretch gap-[5px] [perspective:1000px] md:mt-[40px] md:grid-cols-3 md:gap-[33px] xl:grid-cols-4">
-            {visibleProducts.map((product: Product) => {
-                const productCategories = categories.filter(cat =>
-                    product.categories.includes(Number(cat.id))
-                );
-                const isRemoving = productIdsWithDuplicate.has(product.id);
+            <AnimatePresence mode="popLayout">
+                {visibleProducts.map((product: Product) => {
+                    const productCategories = categories.filter(cat =>
+                        product.categories.includes(Number(cat.id))
+                    );
 
-                return (
-                    <Card
-                        categories={productCategories}
-                        isRemoving={isRemoving}
-                        key={product.id}
-                        product={product}
-                    />
-                );
-            })}
+                    return (
+                        <Card
+                            categories={productCategories}
+                            key={product.id}
+                            product={product}
+                        />
+                    );
+                })}
+            </AnimatePresence>
         </ul>
     );
 }
