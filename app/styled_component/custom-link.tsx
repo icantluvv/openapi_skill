@@ -1,5 +1,7 @@
 'use client';
 
+import type { ComponentPropsWithoutRef } from 'react';
+
 import Link from 'next/link';
 import sc, { type CSSProperties } from 'styled-components';
 
@@ -54,10 +56,11 @@ const StyledLink = sc(Link)`
         font-size: 0.9rem;
     }
 `;
+ 
 
 type CustomLinkProps = {
     sx?: CSSProperties;
-} & React.ComponentPropsWithoutRef<typeof Link>;
+} & ComponentPropsWithoutRef<typeof Link>;
 
 function CustomLink({ style, sx, ...props }: CustomLinkProps) {
     const mergedStyle = sx || style ? { ...sx, ...style } : undefined;

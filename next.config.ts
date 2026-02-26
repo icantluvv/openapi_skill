@@ -6,6 +6,7 @@ import { createJiti } from 'jiti';
 import { nanoid } from 'nanoid';
 import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
+import webpack from 'webpack';
 
 const jiti = createJiti(import.meta.url);
 
@@ -21,6 +22,7 @@ const nextConfig: NextConfig = {
 
     poweredByHeader: false,
 
+    eslint: { ignoreDuringBuilds: true },
     cleanDistDir: true,
 
     webpack: (config, { isServer, nextRuntime }) => {
@@ -33,6 +35,12 @@ const nextConfig: NextConfig = {
         if (isServer) {
             config.ignoreWarnings = [{ module: /opentelemetry/ }];
         }
+
+        config.plugins.push(
+            new webpack.ProvidePlugin({
+                React: 'react',
+            })
+        );
 
         if (process.env.ANALYZE === 'true') {
             if (config.name === 'client') {
